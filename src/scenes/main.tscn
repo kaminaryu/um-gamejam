@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1p7sbpohe7tw"]
+
+[ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
+[ext_resource type="PackedScene" uid="uid://b1bggfak8myqx" path="res://src/objects/tree.tscn" id="2_rr2wm"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_kkvs4")]
+
+[node name="Tree" parent="." instance=ExtResource("2_rr2wm")]
+position = Vector2(153, 57)
+
+[node name="Tree2" parent="." instance=ExtResource("2_rr2wm")]
+position = Vector2(-183, 59)
+
+[node name="Tree3" parent="." instance=ExtResource("2_rr2wm")]
+position = Vector2(133, -44)
+
+[node name="Tree4" parent="." instance=ExtResource("2_rr2wm")]
+position = Vector2(-156, -100)
+
+[node name="Tree5" parent="." instance=ExtResource("2_rr2wm")]
+position = Vector2(-9, 155)
+
+[node name="Tree6" parent="." instance=ExtResource("2_rr2wm")]
+position = Vector2(38, -132)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8qw7ykpxrqo0"]
+
+[ext_resource type="Script" uid="uid://8326h0bgf0cn" path="res://src/player/player.gd" id="1_rxibo"]
+[ext_resource type="Texture2D" uid="uid://yc35cmvisgqf" path="res://assets/Placeholder/Player.png" id="2_mf2ua"]
+[ext_resource type="PackedScene" uid="uid://bkuhk6i3067lk" path="res://src/mechanism/mechanism_handler.tscn" id="3_mf2ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_244u8"]
+size = Vector2(32, 32)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rxibo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mf2ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_244u8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MechanismHandler" parent="." instance=ExtResource("3_mf2ua")]
