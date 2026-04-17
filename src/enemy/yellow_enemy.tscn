@@ -11,6 +11,7 @@
 size = Vector2(26, 25)
 
 [node name="YellowEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
 script = ExtResource("1_jhtwy")
 _enemy_name = "Yellow Enemy"
 _health = 40

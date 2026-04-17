@@ -8,10 +8,8 @@ var player: CharacterBody2D
 func _ready():
 	parent = get_parent()
 	player = get_tree().get_first_node_in_group("Player")
-	print(parent)
-	print(player)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player == null:
 		return
 	
