@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		var normal = collision.get_normal()
 		
+		print(collider)
 		# Handle Damage & Visuals
 		if collider.has_node("DamageableComponent"):
 			var component = collider.get_node("DamageableComponent")
