@@ -15,9 +15,9 @@ run/main_scene="uid://d1p7sbpohe7tw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[editor_plugins]
+[global_group]
 
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
+Bullet=""
 
 [input]
 
