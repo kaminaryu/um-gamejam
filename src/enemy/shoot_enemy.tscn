@@ -1,12 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://r2kti73kk5rm"]
+[gd_scene load_steps=13 format=3 uid="uid://r2kti73kk5rm"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_qxwab"]
-[ext_resource type="Texture2D" uid="uid://d4jcsiv0vyvvd" path="res://assets/Placeholder/shoot.png" id="2_nwtf3"]
+[ext_resource type="Texture2D" uid="uid://chruuse327fwl" path="res://assets/enemy/shoot_enemy_spritesheet.png" id="2_rgd58"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_rgd58"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_qmxb7"]
 [ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="5_0yrf3"]
 [ext_resource type="Script" uid="uid://bhbxh0h0k7iwj" path="res://src/enemy/enemy_components/shoot_component.gd" id="6_rgd58"]
 [ext_resource type="PackedScene" uid="uid://b778wegs1e0et" path="res://src/mechanism/shooting/bullet.tscn" id="7_rgd58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmxb7"]
+atlas = ExtResource("2_rgd58")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yrf3"]
+atlas = ExtResource("2_rgd58")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw0k7"]
+atlas = ExtResource("2_rgd58")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vmp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmxb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yrf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw0k7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
 radius = 27.074
@@ -19,11 +48,14 @@ _health = 20
 _damage = 10
 _speed = 80.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.8, -2.95)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_nwtf3")
+sprite_frames = SubResource("SpriteFrames_8vmp5")
+autoplay = "default"
+frame = 2
+frame_progress = 0.973773
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m4s3r")
