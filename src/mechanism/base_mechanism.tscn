@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt8oumgy6b6ba"]
+
+[ext_resource type="Script" uid="uid://cnpampj614cpm" path="res://src/mechanism/base_mechanism.gd" id="1_uu2f0"]
+[ext_resource type="Script" uid="uid://dycuvcajfyx5v" path="res://src/mechanism/controlled.gd" id="2_n2frg"]
+[ext_resource type="Script" uid="uid://cp7aoarkpyi2y" path="res://src/mechanism/uncontrolled.gd" id="3_8fxso"]
+
+[node name="BaseMechanism" type="Node2D"]
+script = ExtResource("1_uu2f0")
+
+[node name="Controlled" type="Node2D" parent="."]
+script = ExtResource("2_n2frg")
+
+[node name="Uncontrolled" type="Node2D" parent="."]
+script = ExtResource("3_8fxso")
+
+[node name="RandomDelay" type="Timer" parent="Uncontrolled"]
