@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://d08d5fanp4ydu"]
+
+[ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_rm0dw"]
+[ext_resource type="Texture2D" uid="uid://cvjynp0bivsw8" path="res://assets/Placeholder/red.png" id="2_rm0dw"]
+[ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_qtehb"]
+[ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_kkv5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
+radius = 27.074
+
+[node name="RedEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+script = ExtResource("1_rm0dw")
+_enemy_name = "Red Enemy"
+_health = 20
+_damage = 10
+_speed = 80.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_rm0dw")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m4s3r")
+
+[node name="MovementComponent" type="Node2D" parent="."]
+script = ExtResource("3_qtehb")
+
+[node name="DamageableComponent" type="Node2D" parent="."]
+script = ExtResource("4_kkv5q")

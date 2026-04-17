@@ -15,7 +15,7 @@ func handle_hit(incoming_velocity: Vector2):
 	var tween = create_tween()
 	
 	# 2. Smoothly move the position
-	# TRANS_QUART and EASE_OUT make it start fast and slow down gently
+	# TRANS_QUART and EASE_OUT make it start fast and slotw down gently
 	tween.tween_property(parent, "global_position", target_pos, 0.15)\
 		.set_trans(Tween.TRANS_QUART)\
 		.set_ease(Tween.EASE_OUT)
