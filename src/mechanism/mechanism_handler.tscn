@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkuhk6i3067lk"]
+[gd_scene load_steps=7 format=3 uid="uid://bkuhk6i3067lk"]
 
 [ext_resource type="PackedScene" uid="uid://dy64dygpjdpcw" path="res://src/mechanism/shooting/shooting_mech.tscn" id="1_86mfr"]
 [ext_resource type="Script" uid="uid://ccs4w1ayvhdyn" path="res://src/mechanism/mechanism_handler.gd" id="1_ivdr4"]
+[ext_resource type="Script" uid="uid://bth3fnips6nfw" path="res://src/mechanism/attacking.gd" id="3_g0oxe"]
 [ext_resource type="PackedScene" uid="uid://ks2pwqt2xl7e" path="res://src/mechanism/dashing/dash_mech.tscn" id="3_oktyj"]
+[ext_resource type="PackedScene" uid="uid://br2vk1r1ectfk" path="res://src/mechanism/aiming/aiming_mechanism.tscn" id="4_7k0xv"]
+[ext_resource type="PackedScene" uid="uid://b440ik82p356t" path="res://src/mechanism/vision/vision_mech.tscn" id="6_ltcot"]
 
 [node name="MechanismHandler" type="Node2D"]
 script = ExtResource("1_ivdr4")
 
-[node name="ShootingMech" parent="." instance=ExtResource("1_86mfr")]
-
 [node name="DashMech" parent="." instance=ExtResource("3_oktyj")]
+
+[node name="Attacking" type="Node2D" parent="."]
+script = ExtResource("3_g0oxe")
+
+[node name="AimingMechanism" parent="Attacking" instance=ExtResource("4_7k0xv")]
+
+[node name="ShootingMech" parent="Attacking" instance=ExtResource("1_86mfr")]
+
+[node name="VisionMech" parent="." instance=ExtResource("6_ltcot")]
