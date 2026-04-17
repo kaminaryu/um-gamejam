@@ -1,12 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn405aqx3l8rq"]
+[gd_scene load_steps=10 format=3 uid="uid://dkyf6pdk36yrr"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_xso4u"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="2_ig63i"]
-[ext_resource type="Texture2D" uid="uid://bs7ankgxjymj8" path="res://assets/Placeholder/green.png" id="2_s7fyc"]
+[ext_resource type="Texture2D" uid="uid://4ggdpqbf7ps0" path="res://assets/enemy/blue_enemy_spritesheet.png" id="2_s7fyc"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_s7fyc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
-radius = 27.074
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pcoy"]
+atlas = ExtResource("2_s7fyc")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u05cw"]
+atlas = ExtResource("2_s7fyc")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv2bj"]
+atlas = ExtResource("2_s7fyc")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wkgc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pcoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u05cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv2bj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le7p8"]
+radius = 17.7642
+height = 76.0132
 
 [node name="BlueEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
@@ -16,13 +46,15 @@ _health = 30
 _damage = 10
 _speed = 80.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_s7fyc")
+sprite_frames = SubResource("SpriteFrames_6wkgc")
+autoplay = "default"
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_m4s3r")
+rotation = -0.598648
+shape = SubResource("CapsuleShape2D_le7p8")
 
 [node name="MovementComponent" type="Node2D" parent="."]
 script = ExtResource("2_ig63i")
