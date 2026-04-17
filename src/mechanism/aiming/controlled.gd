@@ -7,7 +7,7 @@ var shootingPaused = false
 
 func enable(enable: bool) -> void :
     if (enable) :
-        process_mode = Node.PROCESS_MODE_ALWAYS
+        process_mode = Node.PROCESS_MODE_INHERIT
     else :
         process_mode = Node.PROCESS_MODE_DISABLED
         

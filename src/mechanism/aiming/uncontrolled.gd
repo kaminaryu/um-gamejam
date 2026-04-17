@@ -6,7 +6,7 @@ var new_rot: float
 
 func enable(enable: bool) -> void :
     if (enable) :
-        process_mode = Node.PROCESS_MODE_ALWAYS
+        process_mode = Node.PROCESS_MODE_INHERIT
         $AimingDelay.start(2.5)
     else :
         process_mode = Node.PROCESS_MODE_DISABLED

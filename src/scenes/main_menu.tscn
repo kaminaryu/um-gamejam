@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7k6dspwo3ks3"]
+
+[ext_resource type="Script" uid="uid://cb0saakdnwjcc" path="res://src/scenes/main_menu.gd" id="1_rm437"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rm437")
+
+[node name="Game Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 128.0
+offset_right = 55.0
+offset_bottom = 152.0
+grow_horizontal = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(55, 12)
+text = "UM Game Jam"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 219.0
+offset_right = 584.0
+offset_bottom = 250.0
+scale = Vector2(3, 3)
+text = "Play
+"
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 346.0
+offset_right = 574.0
+offset_bottom = 377.0
+scale = Vector2(3, 3)
+text = "Options"
+
+[node name="TutorialsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 470.0
+offset_right = 575.0
+offset_bottom = 501.0
+scale = Vector2(3, 3)
+text = "Tutorial"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
