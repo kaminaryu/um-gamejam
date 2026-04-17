@@ -11,9 +11,9 @@ func _ready():
 	current_health = MAX_HEALTH
 	
 func _physics_process(delta: float) -> void :
-    handle_movement(delta)
+	handle_movement(delta)
 
-    
+	
 func handle_movement(delta: float) -> void :
 	var direction := Vector2.ZERO;
 	
