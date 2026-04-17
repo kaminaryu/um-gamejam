@@ -11,6 +11,8 @@ func _ready() -> void :
     toggle_control()
 
 func toggle_control() -> void :
+    controlled = !controlled
+    
     if (controlled) :
         $Controlled.enable(true)
         $Uncontrolled.enable(false)

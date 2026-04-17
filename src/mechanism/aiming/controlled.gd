@@ -6,6 +6,7 @@ var shootingPaused = false
 
 
 func enable(enable: bool) -> void :
+    print("AIming is enabled contrlleda ", enable)
     if (enable) :
         process_mode = Node.PROCESS_MODE_INHERIT
     else :
