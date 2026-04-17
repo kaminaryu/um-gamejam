@@ -16,11 +16,9 @@ func toggle_control() -> void :
     if (controlled) :
         $Controlled.enable(true)
         $Uncontrolled.enable(false)
-        print("Aiming Is Controlleable")
     else :
         $Controlled.enable(false)
         $Uncontrolled.enable(true)
-        print("Aiming Is Uncontrolleable")
 
 
 func on_shooting() -> void :

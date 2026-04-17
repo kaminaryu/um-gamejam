@@ -19,7 +19,7 @@ func _process(delta: float) -> void :
     
     
 func aim_randomly() -> void :
-    print("Aiming new locationwd")
+    print("Aiming new location")
     var delta_rad = randf_range(-PI, PI)
     new_rot = get_parent().rotation + delta_rad
 
