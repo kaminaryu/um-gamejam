@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1bggfak8myqx"]
+
+[ext_resource type="Texture2D" uid="uid://ci2rcl6l7nbkh" path="res://assets/Placeholder/tre.png" id="1_64mh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33j6i"]
+size = Vector2(32, 32)
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_64mh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_33j6i")

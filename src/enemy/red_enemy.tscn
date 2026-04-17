@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://d08d5fanp4ydu"]
+
+[ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_rm0dw"]
+[ext_resource type="Texture2D" uid="uid://d3wt3kfyoclmu" path="res://assets/enemy/red_enemy_spritesheet.png" id="2_rm0dw"]
+[ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_qtehb"]
+[ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_kkv5q"]
+[ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="5_rxb7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxb7l"]
+atlas = ExtResource("2_rm0dw")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtehb"]
+atlas = ExtResource("2_rm0dw")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkv5q"]
+atlas = ExtResource("2_rm0dw")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_quivi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxb7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtehb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkv5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
+radius = 42.92
+
+[node name="RedEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_rm0dw")
+_enemy_name = "Red Enemy"
+_health = 20
+_damage = 10
+_speed = 80.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.715, -0.83)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_quivi")
+autoplay = "default"
+frame = 1
+frame_progress = 0.328379
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m4s3r")
+
+[node name="MovementComponent" type="Node2D" parent="."]
+script = ExtResource("3_qtehb")
+
+[node name="DamageableComponent" type="Node2D" parent="."]
+script = ExtResource("4_kkv5q")
+
+[node name="AttackComponent" type="Node2D" parent="."]
+script = ExtResource("5_rxb7l")

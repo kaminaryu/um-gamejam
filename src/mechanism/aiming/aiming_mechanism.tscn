@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://br2vk1r1ectfk"]
+
+[ext_resource type="Script" uid="uid://8l63m6pjprsi" path="res://src/mechanism/aiming/aiming_mechanism.gd" id="1_5312n"]
+[ext_resource type="Script" uid="uid://6mw03c6tx6hn" path="res://src/mechanism/aiming/controlled.gd" id="2_6rol8"]
+[ext_resource type="Script" uid="uid://du8w1602jgll6" path="res://src/mechanism/aiming/uncontrolled.gd" id="3_ocxxr"]
+[ext_resource type="Texture2D" uid="uid://jxkvm6kviyr6" path="res://assets/Placeholder/shooter_spritesheet.png" id="4_ocxxr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhewq"]
+atlas = ExtResource("4_ocxxr")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udsbt"]
+atlas = ExtResource("4_ocxxr")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcap5"]
+atlas = ExtResource("4_ocxxr")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6b2ur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhewq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udsbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcap5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AimingMechanism" type="Node2D"]
+z_index = -1
+script = ExtResource("1_5312n")
+
+[node name="Controlled" type="Node2D" parent="."]
+script = ExtResource("2_6rol8")
+
+[node name="Uncontrolled" type="Node2D" parent="."]
+script = ExtResource("3_ocxxr")
+
+[node name="AimingDelay" type="Timer" parent="Uncontrolled"]
+
+[node name="Cannon" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(16, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_6b2ur")
+autoplay = "default"
+frame_progress = 0.539187
+
+[connection signal="timeout" from="Uncontrolled/AimingDelay" to="Uncontrolled" method="_on_aiming_delay_timeout"]
