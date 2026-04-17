@@ -33,9 +33,6 @@ Bullet=""
 Bullet=""
 Enemy=""
 Player=""
-
-[global_group]
-
 Entities=""
 
 [input]

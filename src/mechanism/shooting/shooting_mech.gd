@@ -4,9 +4,9 @@ signal shot
 
 @export var controlled: bool
 func _ready() -> void :
-	controlled = false
-	toggle_control()
-	
+    controlled = false
+    toggle_control()
+    
 func toggle_control() -> void :
     controlled = !controlled
     

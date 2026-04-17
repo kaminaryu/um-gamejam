@@ -10,7 +10,7 @@ func enable(enable: bool) -> void :
 
 
 func _on_timer_timeout() -> void:
-	var random_time := randf_range(0.3, 0.67)
-	$Timer.start(random_time)
-	
-	get_parent().shoot()
+    var random_time := randf_range(0.3, 0.67)
+    $Timer.start(random_time)
+    
+    get_parent().shoot()

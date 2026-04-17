@@ -14,10 +14,10 @@ func enable(enable: bool) -> void :
 
 
 func _process(delta: float) -> void :
-	# for larping, i mean lerping
-	get_parent().rotation = lerp_angle(get_parent().rotation, new_rot, SPEED * delta)
-	
-	
+    # for larping, i mean lerping
+    get_parent().rotation = lerp_angle(get_parent().rotation, new_rot, SPEED * delta)
+    
+    
 func aim_randomly() -> void :
     print("Aiming new location")
     var delta_rad = randf_range(-PI, PI)
@@ -25,7 +25,7 @@ func aim_randomly() -> void :
 
 
 func _on_aiming_delay_timeout() -> void:
-	aim_randomly()
-	
-	var new_time = randf_range(1, 5)
-	$AimingDelay.start(new_time)
+    aim_randomly()
+    
+    var new_time = randf_range(1, 5)
+    $AimingDelay.start(new_time)

@@ -13,8 +13,8 @@ func enable(enable: bool) -> void :
 
 
 func _process(delta: float) -> void :
-	get_parent().look_at(get_global_mouse_position())
+    get_parent().look_at(get_global_mouse_position())
 
 
 func _on_shooting_delay_timeout() -> void:
-	shootingPaused = false
+    shootingPaused = false
