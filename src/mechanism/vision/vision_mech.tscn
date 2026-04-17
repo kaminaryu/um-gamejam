@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b440ik82p356t"]
+
+[ext_resource type="Script" uid="uid://bf5hpmcgrgj5x" path="res://src/mechanism/vision/vision_mech.gd" id="1_opqy5"]
+
+[sub_resource type="Gradient" id="Gradient_r6doa"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_opqy5"]
+gradient = SubResource("Gradient_r6doa")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="VisionMech" type="PointLight2D"]
+blend_mode = 2
+texture = SubResource("GradientTexture2D_opqy5")
+texture_scale = 7.43
+script = ExtResource("1_opqy5")
+
+[node name="FluctuationDelay" type="Timer" parent="."]
+
+[connection signal="timeout" from="FluctuationDelay" to="." method="_on_fluctuation_delay_timeout"]
