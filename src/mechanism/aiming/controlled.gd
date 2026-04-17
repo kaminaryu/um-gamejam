@@ -1,6 +1,9 @@
 extends Node2D
 
+const BULLET_SCENE = preload("res://src/mechanism/shooting/bullet.tscn")
+
 var shootingPaused = false
+
 
 func enable(enable: bool) -> void :
     if (enable) :
@@ -10,14 +13,7 @@ func enable(enable: bool) -> void :
         
         
 func _process(delta: float) -> void :
-    if (Input.is_action_pressed("shoot")) :
-        if (shootingPaused) :
-            return
-            
-        $ShootingDelay.start()
-        shootingPaused = true
-            
-        get_parent().shoot()
+    get_parent().look_at(get_global_mouse_position())
 
 
 func _on_shooting_delay_timeout() -> void:

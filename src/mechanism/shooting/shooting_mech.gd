@@ -1,7 +1,8 @@
 extends Node2D
 
-@export var controlled: bool
+signal shot
 
+@export var controlled: bool
 func _ready() -> void :
     controlled = false
     toggle_control()
@@ -19,4 +20,6 @@ func toggle_control() -> void :
         print("Shooting Is Uncontrolleable")
 
 
+func shoot() -> void :
+    shot.emit()
     
