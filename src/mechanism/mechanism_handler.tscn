@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dy64dygpjdpcw" path="res://src/mechanism/shooting/shooting_mech.tscn" id="1_86mfr"]
 [ext_resource type="Script" uid="uid://ccs4w1ayvhdyn" path="res://src/mechanism/mechanism_handler.gd" id="1_ivdr4"]
-[ext_resource type="Script" uid="uid://bth3fnips6nfw" path="res://src/mechanism/attacking.gd" id="3_g0oxe"]
+[ext_resource type="Script" path="res://src/mechanism/attacking.gd" id="3_g0oxe"]
 [ext_resource type="PackedScene" uid="uid://ks2pwqt2xl7e" path="res://src/mechanism/dashing/dash_mech.tscn" id="3_oktyj"]
 [ext_resource type="PackedScene" uid="uid://br2vk1r1ectfk" path="res://src/mechanism/aiming/aiming_mechanism.tscn" id="4_7k0xv"]
 [ext_resource type="PackedScene" uid="uid://b440ik82p356t" path="res://src/mechanism/vision/vision_mech.tscn" id="6_ltcot"]
