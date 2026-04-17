@@ -1,6 +1,7 @@
 extends Node
 
 const PAUSE_MENU_SCENE := preload("res://src/scenes/pause_menu.tscn")
+const DEATH_MENU_SCENE := preload("res://src/scenes/death_screen.tscn")
 
 @onready var pause_menu: CanvasLayer = null
 var game_paused: bool
@@ -32,6 +33,12 @@ func pause_game(pause: bool) -> void :
             return
         get_tree().paused = false
         pause_menu.queue_free()
+
+
+func player_death() -> void :
+    var death_menu = DEATH_MENU_SCENE.instantiate()
+    get_tree().paused = true
+    get_tree().root.add_child(death_menu)
 
 
 func _input(event: InputEvent) -> void :
