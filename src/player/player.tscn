@@ -44,15 +44,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_244u8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5f2sf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jiejy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_244u8")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_o822w")
 }, {
 "duration": 1.0,
@@ -66,15 +57,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jiejy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_244u8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5f2sf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jiejy")
 }],
 "loop": true,
 "name": &"default",
@@ -82,7 +64,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_244u8"]
-size = Vector2(70, 74)
+size = Vector2(64, 64)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rxibo")
@@ -92,7 +74,7 @@ texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_8ydov")
 autoplay = "default"
-frame = 9
+frame = 8
 frame_progress = 0.0954284
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
