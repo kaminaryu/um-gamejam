@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djvdicttabypj"
-path="res://.godot/imported/player_spritesheet.png-0db7f38ce1cb11f6e6080a27125ae91d.ctex"
+uid="uid://ctrtmhqgmujr6"
+path="res://.godot/imported/fat_enemy_spritesheet.png-b1fcfb96f14fb0c9525108d35d89a93f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Placeholder/player_spritesheet.png"
-dest_files=["res://.godot/imported/player_spritesheet.png-0db7f38ce1cb11f6e6080a27125ae91d.ctex"]
+source_file="res://assets/enemy/fat_enemy_spritesheet.png"
+dest_files=["res://.godot/imported/fat_enemy_spritesheet.png-b1fcfb96f14fb0c9525108d35d89a93f.ctex"]
 
 [params]
 
