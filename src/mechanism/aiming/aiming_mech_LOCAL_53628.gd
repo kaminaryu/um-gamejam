@@ -29,6 +29,6 @@ func on_shooting() -> void :
 	bullet.rotation = rotation
 	
 	# offset the bullet so it doesnt clip with the player
-	bullet.global_position += Vector2.RIGHT.rotated(bullet.rotation) * PLAYER_SIZE
+	bullet.global_position += Vector2.RIGHT.rotated(bullet.rotation) * PLAYER_SIZE * 1.75
 	
 	get_tree().root.add_child(bullet)

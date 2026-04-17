@@ -5,7 +5,7 @@ var is_dashing: bool = false
 func enable(enable: bool) -> void :
     if (enable) :
         process_mode = Node.PROCESS_MODE_ALWAYS
-        $DashDelay.start(10)
+        $DashDelay.start(7)
     else :
         process_mode = Node.PROCESS_MODE_DISABLED
         $DashDelay.stop()
@@ -38,7 +38,7 @@ func _on_dash_duration_timeout() -> void:
 
 
 func _on_dash_delay_timeout() -> void:
-    var random_time := randf_range(5, 15)
+    var random_time := randf_range(5, 10)
     $DashDelay.start(random_time)
     
     dash()

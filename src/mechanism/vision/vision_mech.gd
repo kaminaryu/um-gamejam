@@ -17,10 +17,8 @@ func toggle_control() -> void :
     if (controlled) :
         texture_scale = DEFAULT_TEXTURE_SCALE
         $FluctuationDelay.stop()
-        print("Vision Is Normal")
     else :
         $FluctuationDelay.start(5)
-        print("Vison Is Fluctuating")
   
 func _process(delta: float) -> void :
     if (controlled) :

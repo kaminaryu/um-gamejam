@@ -27,13 +27,15 @@ window/size/initial_position_type=3
 [editor_plugins]
 
 Bullet=""
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
 [global_group]
 
 Bullet=""
 Enemy=""
 Player=""
+
+[global_group]
+
 Entities=""
 
 [input]
