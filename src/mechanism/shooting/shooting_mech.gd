@@ -20,5 +20,5 @@ func toggle_control() -> void :
 
 func shoot() -> void :
     shot.emit()
-    print("Shooting")
+    #print("Shooting")
     
