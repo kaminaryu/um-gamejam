@@ -26,26 +26,6 @@ position = Vector2(-9, 155)
 [node name="Tree6" parent="." instance=ExtResource("2_rr2wm")]
 position = Vector2(38, -132)
 
-<<<<<<< HEAD
-[node name="BlueEnemy" parent="." instance=ExtResource("3_32aa5")]
-position = Vector2(-217, -2)
-
-[node name="GreenEnemy" parent="." instance=ExtResource("4_5dlwx")]
-position = Vector2(360, -6)
-
-[node name="RedEnemy" parent="." instance=ExtResource("5_o81g6")]
-position = Vector2(416, -69)
-
-[node name="YellowEnemy" parent="." instance=ExtResource("6_dbro3")]
-position = Vector2(-333, 47)
-
-[node name="BigEnemy" parent="." instance=ExtResource("7_2lg1k")]
-position = Vector2(-259, 77)
-scale = Vector2(1.92, 1.92)
-
-[node name="FastEnemy" parent="." instance=ExtResource("8_5lsyw")]
-position = Vector2(309, 157)
-=======
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
@@ -54,4 +34,3 @@ color = Color(0, 0, 0, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Map"]
 z_index = -67
 texture = ExtResource("3_32aa5")
->>>>>>> origin/core/player
