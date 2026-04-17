@@ -39,6 +39,7 @@ radius = 42.92
 
 [node name="RedEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_rm0dw")
 _enemy_name = "Red Enemy"
 _health = 20

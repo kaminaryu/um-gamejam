@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7rewandit45d"]
+[gd_scene load_steps=11 format=3 uid="uid://7rewandit45d"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_pw2gi"]
 [ext_resource type="Texture2D" uid="uid://dtnc686l88r4i" path="res://assets/Placeholder/split.png" id="2_pw2gi"]
@@ -6,12 +6,16 @@
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_7os5y"]
 [ext_resource type="Script" uid="uid://bdgoiwvpnjjmq" path="res://src/enemy/enemy_components/split_on_death_component.gd" id="5_dhenx"]
 [ext_resource type="PackedScene" uid="uid://b0j7mqwfukueb" path="res://src/enemy/green_enemy.tscn" id="6_7os5y"]
+[ext_resource type="PackedScene" uid="uid://d08d5fanp4ydu" path="res://src/enemy/red_enemy.tscn" id="7_fmb8w"]
+[ext_resource type="PackedScene" uid="uid://cn405aqx3l8rq" path="res://src/enemy/blue_enemy.tscn" id="8_a7lsf"]
+[ext_resource type="PackedScene" uid="uid://ck8s2hlj8i1vh" path="res://src/enemy/yellow_enemy.tscn" id="9_5752k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
 radius = 27.074
 
 [node name="SplitEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_pw2gi")
 _enemy_name = "Green Enemy"
 _health = 15
@@ -35,4 +39,4 @@ script = ExtResource("4_7os5y")
 [node name="SplitOnDeathComponent" type="Node2D" parent="."]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("5_dhenx")
-spawn_scene = ExtResource("6_7os5y")
+spawn_scenes = Array[PackedScene]([ExtResource("6_7os5y"), ExtResource("7_fmb8w"), ExtResource("8_a7lsf"), ExtResource("9_5752k")])

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://saqlqh1twmpf"]
+
+[ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_6pl6v"]
+[ext_resource type="Texture2D" uid="uid://bptxqlmjvwyph" path="res://assets/Placeholder/fast.png" id="2_6pl6v"]
+[ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_ylhfm"]
+[ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_0rtb7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
+radius = 27.074
+
+[node name="FastEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_6pl6v")
+_enemy_name = "Fast Enemy"
+_health = 5
+_damage = 10
+_speed = 400.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_6pl6v")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m4s3r")
+
+[node name="MovementComponent" type="Node2D" parent="."]
+script = ExtResource("3_ylhfm")
+
+[node name="DamageableComponent" type="Node2D" parent="."]
+script = ExtResource("4_0rtb7")

@@ -40,6 +40,7 @@ height = 76.0132
 
 [node name="BlueEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_xso4u")
 _enemy_name = "Blue Enemy"
 _health = 30
