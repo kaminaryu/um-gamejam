@@ -1,9 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck8s2hlj8i1vh"]
+[gd_scene load_steps=10 format=3 uid="uid://d1gmrpxlp1mlr"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_jhtwy"]
-[ext_resource type="Texture2D" uid="uid://bs7ankgxjymj8" path="res://assets/Placeholder/green.png" id="2_jhtwy"]
+[ext_resource type="Texture2D" uid="uid://caxaab385uqns" path="res://assets/enemy/yellow_enemy_spritesheet.png" id="2_jhtwy"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_s5fui"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_0nagg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnxrt"]
+atlas = ExtResource("2_jhtwy")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5fui"]
+atlas = ExtResource("2_jhtwy")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nagg"]
+atlas = ExtResource("2_jhtwy")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4k7hf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnxrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5fui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nagg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
 radius = 27.074
@@ -16,10 +45,12 @@ _health = 40
 _damage = 10
 _speed = 80.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(1.8, -2.95)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_jhtwy")
+sprite_frames = SubResource("SpriteFrames_4k7hf")
+frame_progress = 0.377874
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m4s3r")

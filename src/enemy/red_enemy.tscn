@@ -1,12 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://d08d5fanp4ydu"]
+[gd_scene load_steps=10 format=3 uid="uid://cfatt12r5u3nw"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_rm0dw"]
-[ext_resource type="Texture2D" uid="uid://cvjynp0bivsw8" path="res://assets/Placeholder/red.png" id="2_rm0dw"]
+[ext_resource type="Texture2D" uid="uid://d3wt3kfyoclmu" path="res://assets/enemy/red_enemy_spritesheet.png" id="2_rm0dw"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_qtehb"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_kkv5q"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxb7l"]
+atlas = ExtResource("2_rm0dw")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtehb"]
+atlas = ExtResource("2_rm0dw")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkv5q"]
+atlas = ExtResource("2_rm0dw")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_quivi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxb7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtehb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkv5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
-radius = 27.074
+radius = 42.92
 
 [node name="RedEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
@@ -16,10 +45,14 @@ _health = 20
 _damage = 10
 _speed = 80.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(1.715, -0.83)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_rm0dw")
+sprite_frames = SubResource("SpriteFrames_quivi")
+autoplay = "default"
+frame = 1
+frame_progress = 0.328379
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m4s3r")
