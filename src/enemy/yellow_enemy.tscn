@@ -50,6 +50,7 @@ texture_filter = 1
 position = Vector2(1.8, -2.95)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4k7hf")
+autoplay = "default"
 frame_progress = 0.377874
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
