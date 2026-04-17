@@ -68,6 +68,11 @@ func apply_knockback(from_position: Vector2) -> void:
 	# Set the knockback_velocity (the variable used in your handle_movement)
 	knockback_velocity = push_dir * rebound_strength
 	
+	
+	
+
+func take_damage(dmg: int):
+	current_health -= dmg
 	var sprite = $Sprite2D
 	var tween = create_tween()
 	
@@ -76,10 +81,6 @@ func apply_knockback(from_position: Vector2) -> void:
 	tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_IN_OUT)
-	
-
-func take_damage(dmg: int):
-	current_health -= dmg
 	if current_health <= 0:
 		die()
 

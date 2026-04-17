@@ -25,7 +25,7 @@ func _attack(player):
 	# Deal the damage
 	if player.has_method("take_damage"):
 		print("Player takes ", parent._damage, " damage")
-		player.take_damage(parent._damage)
+		player.take_damage(damage)
 	
 	# Start cooldown timer so the player doesn't die in 1 frame
 	get_tree().create_timer(attack_cooldown).timeout.connect(_on_cooldown_finished)

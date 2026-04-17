@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://r2kti73kk5rm"]
+
+[ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_qxwab"]
+[ext_resource type="Texture2D" uid="uid://d4jcsiv0vyvvd" path="res://assets/Placeholder/shoot.png" id="2_nwtf3"]
+[ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_rgd58"]
+[ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_qmxb7"]
+[ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="5_0yrf3"]
+[ext_resource type="Script" uid="uid://bhbxh0h0k7iwj" path="res://src/enemy/enemy_components/shoot_component.gd" id="6_rgd58"]
+[ext_resource type="PackedScene" uid="uid://b778wegs1e0et" path="res://src/mechanism/shooting/bullet.tscn" id="7_rgd58"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
+radius = 27.074
+
+[node name="ShootEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+script = ExtResource("1_qxwab")
+_enemy_name = "Shoot Enemy"
+_health = 20
+_damage = 10
+_speed = 80.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.8, -2.95)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_nwtf3")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m4s3r")
+
+[node name="MovementComponent" type="Node2D" parent="."]
+script = ExtResource("3_rgd58")
+
+[node name="DamageableComponent" type="Node2D" parent="."]
+script = ExtResource("4_qmxb7")
+
+[node name="AttackComponent" type="Node2D" parent="."]
+script = ExtResource("5_0yrf3")
+
+[node name="ShootingComponent" type="Node2D" parent="."]
+position = Vector2(1.8, -2.95)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("6_rgd58")
+bullet_scene = ExtResource("7_rgd58")
+shoot_interval = 1.5
