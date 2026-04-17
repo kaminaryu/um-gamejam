@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1p7sbpohe7tw"]
+[gd_scene load_steps=7 format=3 uid="uid://d1p7sbpohe7tw"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
 [ext_resource type="PackedScene" uid="uid://b1bggfak8myqx" path="res://src/objects/tree.tscn" id="2_rr2wm"]
+[ext_resource type="PackedScene" uid="uid://cfatt12r5u3nw" path="res://src/enemy/red_enemy.tscn" id="3_dbro3"]
+[ext_resource type="PackedScene" uid="uid://b0j7mqwfukueb" path="res://src/enemy/green_enemy.tscn" id="4_2lg1k"]
+[ext_resource type="PackedScene" uid="uid://d1gmrpxlp1mlr" path="res://src/enemy/yellow_enemy.tscn" id="5_5lsyw"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,6 +15,15 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_32aa5")
 
 [node name="Player" parent="." instance=ExtResource("1_kkvs4")]
+
+[node name="RedEnemy" parent="." instance=ExtResource("3_dbro3")]
+position = Vector2(-100, -474)
+
+[node name="GreenEnemy" parent="." instance=ExtResource("4_2lg1k")]
+position = Vector2(-369, -384)
+
+[node name="YellowEnemy" parent="." instance=ExtResource("5_5lsyw")]
+position = Vector2(134, -391)
 
 [node name="Tree" parent="." instance=ExtResource("2_rr2wm")]
 position = Vector2(153, 57)
@@ -30,3 +42,4 @@ position = Vector2(38, -132)
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
