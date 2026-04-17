@@ -1,26 +1,58 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjxtk3i8yy03u"]
+[gd_scene load_steps=11 format=3 uid="uid://cjxtk3i8yy03u"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_8bncd"]
-[ext_resource type="Texture2D" uid="uid://dyvt6tpql5wf4" path="res://assets/Placeholder/fat.png" id="2_8bncd"]
+[ext_resource type="Texture2D" uid="uid://ctrtmhqgmujr6" path="res://assets/enemy/fat_enemy_spritesheet.png" id="2_8bncd"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_7u44w"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_7f7tr"]
 [ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="5_4opmr"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hllk"]
+atlas = ExtResource("2_8bncd")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u44w"]
+atlas = ExtResource("2_8bncd")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f7tr"]
+atlas = ExtResource("2_8bncd")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4opmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hllk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u44w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f7tr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
-radius = 57.0351
+radius = 69.029
 
 [node name="BigEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_8bncd")
 _enemy_name = "Big Enemy"
-_health = 40
+_health = 60
 _damage = 30
-_speed = 20.0
+_speed = 40.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_8bncd")
+sprite_frames = SubResource("SpriteFrames_4opmr")
+autoplay = "default"
+frame = 1
+frame_progress = 0.63906
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m4s3r")

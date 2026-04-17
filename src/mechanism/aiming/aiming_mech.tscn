@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8l63m6pjprsi" path="res://src/mechanism/aiming/aiming_mech.gd" id="1_5312n"]
 [ext_resource type="Script" uid="uid://6mw03c6tx6hn" path="res://src/mechanism/aiming/controlled.gd" id="2_6rol8"]
 [ext_resource type="Script" uid="uid://du8w1602jgll6" path="res://src/mechanism/aiming/uncontrolled.gd" id="3_ocxxr"]
-[ext_resource type="Texture2D" uid="uid://jxkvm6kviyr6" path="res://assets/Placeholder/shooter_spritesheet.png" id="4_ocxxr"]
+[ext_resource type="Texture2D" uid="uid://jxkvm6kviyr6" path="res://assets/player/shooter_spritesheet.png" id="4_ocxxr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhewq"]
 atlas = ExtResource("4_ocxxr")

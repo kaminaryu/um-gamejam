@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="1_mf2ua"]
 [ext_resource type="Script" uid="uid://8326h0bgf0cn" path="res://src/player/player.gd" id="1_rxibo"]
-[ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/Placeholder/player_spritesheet.png" id="2_mf2ua"]
+[ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/player/player_spritesheet.png" id="2_mf2ua"]
 [ext_resource type="PackedScene" uid="uid://bkuhk6i3067lk" path="res://src/mechanism/mechanism_handler.tscn" id="3_mf2ua"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_244u8"]

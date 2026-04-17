@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://7rewandit45d"]
+[gd_scene load_steps=16 format=3 uid="uid://7rewandit45d"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_pw2gi"]
-[ext_resource type="Texture2D" uid="uid://dtnc686l88r4i" path="res://assets/Placeholder/split.png" id="2_pw2gi"]
+[ext_resource type="Texture2D" uid="uid://6ew6t76gwqbj" path="res://assets/enemy/split_enemy_spritesheet.png" id="2_a7lsf"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_dhenx"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_7os5y"]
 [ext_resource type="Script" uid="uid://bdgoiwvpnjjmq" path="res://src/enemy/enemy_components/split_on_death_component.gd" id="5_dhenx"]
@@ -10,6 +10,35 @@
 [ext_resource type="PackedScene" uid="uid://cn405aqx3l8rq" path="res://src/enemy/blue_enemy.tscn" id="8_a7lsf"]
 [ext_resource type="PackedScene" uid="uid://ck8s2hlj8i1vh" path="res://src/enemy/yellow_enemy.tscn" id="9_5752k"]
 [ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="10_a7lsf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5752k"]
+atlas = ExtResource("2_a7lsf")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l2hd"]
+atlas = ExtResource("2_a7lsf")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_can3v"]
+atlas = ExtResource("2_a7lsf")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d06vk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5752k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l2hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_can3v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
 radius = 27.074
@@ -23,10 +52,14 @@ _health = 15
 _damage = 10
 _speed = 70.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 2)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_pw2gi")
+sprite_frames = SubResource("SpriteFrames_d06vk")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0628055
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m4s3r")

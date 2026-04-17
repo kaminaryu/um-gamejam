@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=11 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
 [ext_resource type="PackedScene" uid="uid://d08d5fanp4ydu" path="res://src/enemy/red_enemy.tscn" id="3_dbro3"]
+[ext_resource type="PackedScene" uid="uid://saqlqh1twmpf" path="res://src/enemy/fast_enemy.tscn" id="4_lp058"]
+[ext_resource type="PackedScene" uid="uid://7rewandit45d" path="res://src/enemy/split_enemy.tscn" id="5_24j03"]
+[ext_resource type="PackedScene" uid="uid://cjxtk3i8yy03u" path="res://src/enemy/big_enemy.tscn" id="6_p1ia5"]
+[ext_resource type="PackedScene" uid="uid://b0j7mqwfukueb" path="res://src/enemy/green_enemy.tscn" id="7_kbdt0"]
+[ext_resource type="PackedScene" uid="uid://ck8s2hlj8i1vh" path="res://src/enemy/yellow_enemy.tscn" id="8_4rjby"]
+[ext_resource type="PackedScene" uid="uid://cn405aqx3l8rq" path="res://src/enemy/blue_enemy.tscn" id="9_ccybt"]
+[ext_resource type="PackedScene" uid="uid://r2kti73kk5rm" path="res://src/enemy/shoot_enemy.tscn" id="10_50ugh"]
 
 [node name="Main" type="Node2D"]
 
@@ -23,6 +30,27 @@ metadata/_edit_lock_ = true
 
 [node name="RedEnemy" parent="." instance=ExtResource("3_dbro3")]
 position = Vector2(271, -126)
+
+[node name="FastEnemy" parent="." instance=ExtResource("4_lp058")]
+position = Vector2(-526, -606)
+
+[node name="SplitEnemy" parent="." instance=ExtResource("5_24j03")]
+position = Vector2(-768, 412)
+
+[node name="BigEnemy" parent="." instance=ExtResource("6_p1ia5")]
+position = Vector2(713, 509)
+
+[node name="GreenEnemy" parent="." instance=ExtResource("7_kbdt0")]
+position = Vector2(-457, 748)
+
+[node name="YellowEnemy" parent="." instance=ExtResource("8_4rjby")]
+position = Vector2(-984, -278)
+
+[node name="BlueEnemy" parent="." instance=ExtResource("9_ccybt")]
+position = Vector2(698, -539)
+
+[node name="ShootEnemy" parent="." instance=ExtResource("10_50ugh")]
+position = Vector2(1118, -65)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
