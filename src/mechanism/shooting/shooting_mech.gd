@@ -8,18 +8,16 @@ func _ready() -> void :
 	toggle_control()
 	
 func toggle_control() -> void :
-	controlled = !controlled
-	
-	if (controlled) :
-		$Controlled.enable(true)
-		$Uncontrolled.enable(false)
-		print("Shooting Is Controlleable")
-	else :
-		$Controlled.enable(false)
-		$Uncontrolled.enable(true)
-		print("Shooting Is Uncontrolleable")
+    controlled = !controlled
+    
+    if (controlled) :
+        $Controlled.enable(true)
+        $Uncontrolled.enable(false)
+    else :
+        $Controlled.enable(false)
+        $Uncontrolled.enable(true)
 
 
 func shoot() -> void :
-	shot.emit()
-	
+    shot.emit()
+    #print("Shooting")

@@ -1,5 +1,4 @@
 extends Node2D
 
 func _ready() -> void :
-	$ShootingMech.shot.connect($AimingMechanism.on_shooting)
-	
+    $ShootingMech.shot.connect($AimingMech.on_shooting)
