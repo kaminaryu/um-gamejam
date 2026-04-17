@@ -7,8 +7,8 @@ const SPEED = 600
 
 var bounces_left: int
 func _ready() -> void:
-	bounces_left = max_bounces
-	velocity = transform.x * SPEED 
+    bounces_left = max_bounces
+    velocity = transform.x * SPEED 
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
