@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 600
 @export var max_bounces = 1
 @export var lifetime: float = 10.0
+@export var damage: int = 5
 
 var bounces_left: int
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		# Handle Damage & Visuals
 		if collider.has_node("DamageableComponent"):
 			var component = collider.get_node("DamageableComponent")
-			collider.take_damage(5) # Assuming this is on the Enemy
+			collider.take_damage(damage)
 			component.handle_hit(velocity) # Visual/Nudge logic
 			
 		velocity = velocity.bounce(normal)
