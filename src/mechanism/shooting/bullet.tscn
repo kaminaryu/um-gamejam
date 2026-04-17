@@ -7,7 +7,10 @@
 radius = 4.12311
 
 [node name="Bullet" type="CharacterBody2D" groups=["Bullet"]]
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_fa3oe")
+max_bounces = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

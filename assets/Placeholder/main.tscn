@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1p7sbpohe7tw"]
+
+[ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_xnsy1"]
+[ext_resource type="PackedScene" uid="uid://b1bggfak8myqx" path="res://src/objects/tree.tscn" id="2_roh7f"]
+[ext_resource type="Texture2D" uid="uid://d13rog27kcbii" path="res://assets/Placeholder/map.png" id="3_yphoc"]
+[ext_resource type="PackedScene" uid="uid://7rewandit45d" path="res://src/enemy/split_enemy.tscn" id="5_roh7f"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_xnsy1")]
+
+[node name="Tree" parent="." instance=ExtResource("2_roh7f")]
+position = Vector2(153, 57)
+
+[node name="Tree2" parent="." instance=ExtResource("2_roh7f")]
+position = Vector2(-183, 59)
+
+[node name="Tree3" parent="." instance=ExtResource("2_roh7f")]
+position = Vector2(133, -44)
+
+[node name="Tree4" parent="." instance=ExtResource("2_roh7f")]
+position = Vector2(-156, -100)
+
+[node name="Tree5" parent="." instance=ExtResource("2_roh7f")]
+position = Vector2(-9, 155)
+
+[node name="Tree6" parent="." instance=ExtResource("2_roh7f")]
+position = Vector2(38, -132)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="Map" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map"]
+z_index = -67
+texture = ExtResource("3_yphoc")
+
+[node name="SplitEnemy" parent="." instance=ExtResource("5_roh7f")]
+position = Vector2(319, -71)
+
+[node name="SplitEnemy2" parent="." instance=ExtResource("5_roh7f")]
+position = Vector2(-336, -224)
+
+[node name="SplitEnemy3" parent="." instance=ExtResource("5_roh7f")]
+position = Vector2(394, -206)
