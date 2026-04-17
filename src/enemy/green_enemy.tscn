@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0j7mqwfukueb"]
+[gd_scene load_steps=11 format=3 uid="uid://b0j7mqwfukueb"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_m4s3r"]
 [ext_resource type="Texture2D" uid="uid://c4nsob855ux3m" path="res://assets/enemy/green_enemy_spritesheet.png" id="2_m4s3r"]
 [ext_resource type="Script" uid="uid://dn4a1ghu2vu7c" path="res://src/enemy/enemy_components/movement_component.gd" id="3_56tls"]
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="4_6oniy"]
+[ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="5_obad3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obad3"]
 atlas = ExtResource("2_m4s3r")
@@ -60,3 +61,6 @@ script = ExtResource("3_56tls")
 
 [node name="DamageableComponent" type="Node2D" parent="."]
 script = ExtResource("4_6oniy")
+
+[node name="AttackComponent" type="Node2D" parent="."]
+script = ExtResource("5_obad3")

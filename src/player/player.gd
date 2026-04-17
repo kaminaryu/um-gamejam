@@ -49,8 +49,6 @@ func _check_rebound():
 		var collider = collision.get_collider()
 		
 		# Make sure your enemies are in a group called "enemies"
-		print(collider)
-		print(collider.get_groups())
 		if collider.is_in_group("Enemy"):
 			# Calculate direction AWAY from the enemy
 			var bounce_dir = collider.global_position.direction_to(global_position)
