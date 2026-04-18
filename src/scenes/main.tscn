@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
+[ext_resource type="Script" uid="uid://boauqk60dp5qt" path="res://src/scenes/main.gd" id="1_o81g6"]
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
-[ext_resource type="AudioStream" uid="uid://tx41g51uogee" path="res://assets/soundtracks/Bouncing Pyramids.wav" id="5_o81g6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font_size = 200
@@ -12,6 +12,7 @@ outline_size = 25
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_o81g6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -5
@@ -30,7 +31,6 @@ polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, 
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
@@ -48,7 +48,3 @@ label_settings = SubResource("LabelSettings_5dlwx")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_5dlwx")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_o81g6")
-autoplay = true

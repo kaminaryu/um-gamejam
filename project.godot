@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 WaveHandler="*res://src/autoloads/wave_handler.gd"
 GameMaster="*res://src/autoloads/game_master.gd"
+MusicPlayer="*res://src/autoloads/music_player.gd"
+SfxPlayer="*res://src/autoloads/sfx_player.gd"
 
 [display]
 
