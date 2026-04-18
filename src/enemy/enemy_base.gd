@@ -28,8 +28,8 @@ func take_damage(dmg: int):
 		die()
 
 func die():
-	WaveHandler.enemy_defeated()
 	death.emit()
+	WaveHandler.enemy_defeated()
 	queue_free()
 	
 signal death

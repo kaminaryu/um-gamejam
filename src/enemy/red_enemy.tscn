@@ -43,7 +43,7 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_rm0dw")
 _enemy_name = "Red Enemy"
-_health = 20
+_health = 15
 _damage = 10
 _speed = 80.0
 

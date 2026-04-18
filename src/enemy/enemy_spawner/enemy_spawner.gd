@@ -13,7 +13,7 @@ extends Marker2D
 	# Add the rest: "Big", "Fast", "Shoot"
 }
 
-@export var spawn_radius: float = 1500.0
+@export var spawn_radius: float = 1300.0
 var current_wave_enemies = []
 
 func _ready() -> void:
@@ -49,23 +49,14 @@ func spawn_table_wave(wave_data: Dictionary) -> void:
 			# Visual Pop-in
 			_apply_spawn_effects(enemy)
 			
-			# Disable movement initially
-			var move_comp = enemy.get_node_or_null("MovementComponent")
-			if move_comp: move_comp.enabled = false
-			
+		
 			get_tree().current_scene.add_child(enemy)
 			current_wave_enemies.append(enemy)
 			
 			# Stagger slightly so 15 enemies don't lag the game
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(0.5).timeout
 
-	# Wait for animations, then activate
-	await get_tree().create_timer(0.5).timeout
-	for enemy in current_wave_enemies:
-		if is_instance_valid(enemy):
-			var move_comp = enemy.get_node_or_null("MovementComponent")
-			if move_comp: move_comp.enabled = true
-
+	
 func _apply_spawn_effects(node: Node2D):
 	node.scale = Vector2.ZERO
 	node.modulate.a = 0

@@ -8,10 +8,14 @@ var wave_number: int
 var enemy_count: int
 
 var waves = [
-	{"Green": 5, "Red": 5}, # Wave 1
-	{"Green": 5, "Red": 5, "Blue": 5}, # Wave 2
+	{"Green": 5, "Red": 5}, 
 	{"Green": 5, "Red": 5, "Blue": 5, "Yellow": 5},
-	{"Green": 10, "Red": 5, "Split": 5}
+	{"Green": 5, "Red": 5, "Split": 5},
+	{"Green": 10, "Blue": 10, "Split": 5},
+	{"Green": 5, "Red": 7, "Yellow": 5, "Split": 5, "Fast": 3},
+	{"Green": 5, "Blue": 5, "Yellow": 2, "Split": 8, "Big": 2,"Fast": 3},
+	{"Green": 5, "Red": 5,"Blue": 5, "Yellow": 5, "Split": 3, "Big": 2,"Fast": 3, "Shoot": 2},
+	{"Green": 10, "Red": 5,"Blue": 5, "Yellow": 5, "Split": 5, "Big": 2,"Fast": 5, "Shoot": 2}
 ]
 
 func _ready() -> void :
@@ -19,15 +23,15 @@ func _ready() -> void :
 	reset()
 
 func reset() -> void :
-	wave_number = 4
+	wave_number = 1
 	enemy_count = 0
 
 func register_enemy():
 	enemy_count+=1
-	print("Total Enemy: ", enemy_count)
 	
 func enemy_defeated():
 	enemy_count-=1
+	print("Enemy Left: ", enemy_count)
 	if enemy_count <= 0:
 		finished_wave.emit()
 		increase_wave()
@@ -48,8 +52,9 @@ func increase_wave() -> void :
 
 func start_wave():
 	print("Wave Start")
+	var data: Dictionary
 	if wave_number <= waves.size():
-		var data = waves[wave_number-1]
-		started_wave.emit(data)
+		data = waves[wave_number-1]
 	else:
-		print("Waves finished")
+		data = waves[waves.size()-1]
+	started_wave.emit(data)

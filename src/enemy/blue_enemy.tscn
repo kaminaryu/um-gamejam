@@ -44,7 +44,7 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_xso4u")
 _enemy_name = "Blue Enemy"
-_health = 30
+_health = 20
 _damage = 10
 _speed = 80.0
 

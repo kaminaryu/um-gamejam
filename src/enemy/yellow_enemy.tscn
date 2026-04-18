@@ -43,7 +43,7 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_jhtwy")
 _enemy_name = "Yellow Enemy"
-_health = 40
+_health = 25
 _damage = 10
 _speed = 80.0
 

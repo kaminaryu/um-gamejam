@@ -57,7 +57,7 @@ func _check_rebound():
 			knockback_velocity = bounce_dir * rebound_strength
 			
 			# Optional: nudge position to prevent "sticking"
-			global_position += bounce_dir * 2.0
+			global_position += bounce_dir * 3.0
 
 # Inside your Player script
 
@@ -70,8 +70,8 @@ func apply_knockback(from_position: Vector2) -> void:
 	
 	
 	
-
 func take_damage(dmg: int):
+	print("Current Health: ", current_health)
 	current_health -= dmg
 	var sprite = $Sprite2D
 	var tween = create_tween()
