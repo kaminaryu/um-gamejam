@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://llw1vr6dll4t"
-path="res://.godot/imported/mechanism.png-7e8eaf241f3741a97fb2f2bf343a4ab2.ctex"
+uid="uid://b2g3clvgjceo"
+path="res://.godot/imported/tutorial_title.png-190e49adf94a5d717d3772e53d5d83d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/game/tutorial/mechanism.png"
-dest_files=["res://.godot/imported/mechanism.png-7e8eaf241f3741a97fb2f2bf343a4ab2.ctex"]
+source_file="res://assets/ui/tutorial/tutorial_title.png"
+dest_files=["res://.godot/imported/tutorial_title.png-190e49adf94a5d717d3772e53d5d83d3.ctex"]
 
 [params]
 

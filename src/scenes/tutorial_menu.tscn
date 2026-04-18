@@ -1,0 +1,336 @@
+[gd_scene load_steps=19 format=3 uid="uid://d3tivrpd3lcxr"]
+
+[ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/clipboard_frame.png" id="1_2q1jc"]
+[ext_resource type="Script" uid="uid://uwl6xk1du2sq" path="res://src/scenes/tutorial_menu.gd" id="1_ambg3"]
+[ext_resource type="Texture2D" uid="uid://b2g3clvgjceo" path="res://assets/ui/tutorial/tutorial_title.png" id="2_dfj4a"]
+[ext_resource type="Texture2D" uid="uid://ckasrfipsmp2m" path="res://assets/ui/tutorial/enemies.png" id="3_gt86l"]
+[ext_resource type="Texture2D" uid="uid://depbm66ykknnn" path="res://assets/ui/tutorial/controls.png" id="4_4ttsb"]
+[ext_resource type="Texture2D" uid="uid://llw1vr6dll4t" path="res://assets/ui/tutorial/mechanism.png" id="5_tacun"]
+[ext_resource type="Texture2D" uid="uid://cty60oyjc8scs" path="res://assets/ui/options/back.png" id="6_cipkq"]
+[ext_resource type="Texture2D" uid="uid://lpad0blyfohl" path="res://assets/ui/options/back_hover.png" id="7_ambg3"]
+[ext_resource type="Texture2D" uid="uid://x4w5aucri5c0" path="res://assets/ui/tutorial/left_button.png" id="8_4ttsb"]
+[ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="9_cipkq"]
+[ext_resource type="Texture2D" uid="uid://buo5e4nyloy75" path="res://assets/ui/tutorial/sticky_note_tutorial.png" id="9_tacun"]
+[ext_resource type="Texture2D" uid="uid://fkjp4rvjnpqk" path="res://assets/Placeholder/the.jpg" id="10_ambg3"]
+[ext_resource type="Texture2D" uid="uid://b5wldgb2jlek3" path="res://assets/ui/tutorial/right_button.png" id="10_cipkq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mc24"]
+bg_color = Color(0, 0, 0, 0.478431)
+
+[sub_resource type="Animation" id="Animation_ambg3"]
+resource_name = "reveal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.0647042, 1),
+"update": 0,
+"values": [Vector2(246.5, 649), Vector2(246.5, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.153893, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.478431)]
+}
+
+[sub_resource type="Animation" id="Animation_2mc24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246.5, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.478431)]
+}
+
+[sub_resource type="Animation" id="Animation_8c6br"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(4.14105, 1),
+"update": 0,
+"values": [Vector2(246.5, 51), Vector2(246.5, 649)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.478431), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bqpf"]
+_data = {
+&"RESET": SubResource("Animation_2mc24"),
+&"close": SubResource("Animation_8c6br"),
+&"reveal": SubResource("Animation_ambg3")
+}
+
+[node name="TutorialMenu" type="CanvasLayer"]
+script = ExtResource("1_ambg3")
+
+[node name="BGBlur" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2mc24")
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -329.5
+offset_top = -597.0
+offset_right = 329.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_2q1jc")
+metadata/_edit_group_ = true
+
+[node name="Title" type="TextureRect" parent="Control/TextureRect"]
+layout_mode = 2
+offset_left = 200.5
+offset_top = 149.0
+offset_right = 458.5
+offset_bottom = 227.0
+size_flags_horizontal = 4
+texture = ExtResource("2_dfj4a")
+
+[node name="SelectTutorial" type="Control" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect/SelectTutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -342.0
+offset_right = 129.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/SelectTutorial/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Enemies" type="TextureButton" parent="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_gt86l")
+
+[node name="Controls" type="TextureButton" parent="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_4ttsb")
+
+[node name="Mechanism" type="TextureButton" parent="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_tacun")
+
+[node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/SelectTutorial"]
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 171.0
+offset_bottom = 155.0
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 42
+
+[node name="Close" type="TextureButton" parent="Control/TextureRect/SelectTutorial/CloseButton"]
+layout_mode = 2
+texture_normal = ExtResource("6_cipkq")
+texture_hover = ExtResource("7_ambg3")
+
+[node name="TutorialPage" type="Control" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutorialFrame" type="TextureRect" parent="Control/TextureRect/TutorialPage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -72.5
+offset_right = 91.0
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_tacun")
+
+[node name="ContentMargin" type="MarginContainer" parent="Control/TextureRect/TutorialPage/TutorialFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.8333
+offset_top = 28.3333
+offset_right = -19.1667
+offset_bottom = -59.6667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Content" type="VBoxContainer" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin"]
+custom_minimum_size = Vector2(3.205, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.192157, 0.152941, 1)
+theme_override_fonts/font = ExtResource("9_cipkq")
+text = "Title"
+horizontal_alignment = 1
+
+[node name="Image" type="TextureRect" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
+custom_minimum_size = Vector2(0, 115.005)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("10_ambg3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.192157, 0.152941, 1)
+theme_override_fonts/font = ExtResource("9_cipkq")
+theme_override_font_sizes/font_size = 11
+text = "This is a cat lol! the the the he the the the the the the the the the the the the the the the the the the the the"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Control/TextureRect/TutorialPage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -67.5
+offset_right = 202.0
+offset_bottom = 268.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 320
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Left" type="TextureButton" parent="Control/TextureRect/TutorialPage/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_4ttsb")
+
+[node name="Right" type="TextureButton" parent="Control/TextureRect/TutorialPage/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_cipkq")
+
+[node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/TutorialPage"]
+offset_left = -251.0
+offset_top = -235.5
+offset_right = -160.0
+offset_bottom = -144.5
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 42
+
+[node name="Close" type="TextureButton" parent="Control/TextureRect/TutorialPage/CloseButton"]
+layout_mode = 2
+texture_normal = ExtResource("6_cipkq")
+texture_hover = ExtResource("7_ambg3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0bqpf")
+}
+
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" to="." method="_on_enemies_pressed"]
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" to="." method="_on_mechanism_pressed"]
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/CloseButton/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/TextureRect/TutorialPage/Buttons/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Control/TextureRect/TutorialPage/Buttons/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Control/TextureRect/TutorialPage/CloseButton/Close" to="." method="_on_close2_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

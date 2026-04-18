@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cn405aqx3l8rq" path="res://src/enemy/blue_enemy.tscn" id="8_a7lsf"]
 [ext_resource type="PackedScene" uid="uid://ck8s2hlj8i1vh" path="res://src/enemy/yellow_enemy.tscn" id="9_5752k"]
 [ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="10_a7lsf"]
-[ext_resource type="Script" uid="uid://dxci872kmgvea" path="res://src/enemy/enemy_spit.gd" id="11_5752k"]
+[ext_resource type="Script" path="res://src/enemy/enemy_spit.gd" id="11_5752k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5752k"]
 atlas = ExtResource("2_a7lsf")

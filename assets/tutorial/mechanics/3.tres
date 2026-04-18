@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://r3n8jm2osdj4"]
+
+[ext_resource type="Texture2D" uid="uid://bshhhy21vwu1p" path="res://assets/player/buddy.png" id="1_74aax"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_2gva4"]
+
+[resource]
+script = ExtResource("2_2gva4")
+title = "HETEHTEH"
+picture = ExtResource("1_74aax")
+description = "rgerge"
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

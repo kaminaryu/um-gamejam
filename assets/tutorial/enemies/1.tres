@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://b7iv0frwba8wl"]
+
+[ext_resource type="Texture2D" uid="uid://bl7xmgr0j0j40" path="res://assets/Placeholder/5282291.png" id="1_qcdga"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_3l63s"]
+
+[resource]
+script = ExtResource("2_3l63s")
+title = "Page1"
+picture = ExtResource("1_qcdga")
+description = "rththrrthrthtrh"
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"
