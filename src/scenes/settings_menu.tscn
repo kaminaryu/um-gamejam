@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4kdd2ebmfoxw"]
+[gd_scene load_steps=21 format=3 uid="uid://c4kdd2ebmfoxw"]
 
 [ext_resource type="Script" uid="uid://d3xg53rhhtcdc" path="res://src/scenes/settings_menu.gd" id="1_oaxli"]
 [ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/clipboard_frame.png" id="2_3wh55"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://c82gsxvnhvf53" path="res://assets/ui/options/sfx.png" id="6_d2cta"]
 [ext_resource type="Theme" uid="uid://cgconoji58hmb" path="res://assets/ui/options/options.tres" id="7_pd2eg"]
 [ext_resource type="Texture2D" uid="uid://dmi8ovx8ycmv2" path="res://assets/ui/options/goofy.png" id="8_dfyab"]
+[ext_resource type="Script" uid="uid://d0a0tuno8dir2" path="res://src/scenes/master_control.gd" id="8_hud32"]
+[ext_resource type="Script" uid="uid://1yn6ysokvcd2" path="res://src/scenes/music_control.gd" id="9_d2cta"]
+[ext_resource type="Script" uid="uid://bayie8uax6352" path="res://src/scenes/sfx_control.gd" id="10_pd2eg"]
 [ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="11_p2fji"]
+[ext_resource type="Script" uid="uid://c64ya256xm64j" path="res://src/scenes/close.gd" id="14_dfyab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcnqr"]
 bg_color = Color(0, 0, 0, 0.478431)
@@ -186,28 +190,34 @@ theme_override_constants/separation = 22
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+mouse_default_cursor_shape = 10
 theme = ExtResource("7_pd2eg")
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = ExtResource("8_hud32")
 
 [node name="MusicControl" type="HSlider" parent="Frame/Contents/ControlMenu/Inputs"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+mouse_default_cursor_shape = 10
 theme = ExtResource("7_pd2eg")
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = ExtResource("9_d2cta")
 
 [node name="SFXControl" type="HSlider" parent="Frame/Contents/ControlMenu/Inputs"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+mouse_default_cursor_shape = 10
 theme = ExtResource("7_pd2eg")
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = ExtResource("10_pd2eg")
 
 [node name="Toggle" type="CheckButton" parent="Frame/Contents"]
 layout_mode = 2
@@ -229,8 +239,10 @@ theme_override_constants/margin_top = 42
 
 [node name="Close" type="TextureButton" parent="Frame/MarginContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_ebbay")
 texture_hover = ExtResource("4_aq0g2")
+script = ExtResource("14_dfyab")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -239,8 +251,16 @@ libraries = {
 
 [node name="ButtonSfx" parent="." instance=ExtResource("11_p2fji")]
 
+[connection signal="mouse_entered" from="Frame/Contents/ControlMenu/Inputs/MasterControl" to="Frame/Contents/ControlMenu/Inputs/MasterControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Frame/Contents/ControlMenu/Inputs/MasterControl" to="Frame/Contents/ControlMenu/Inputs/MasterControl" method="_on_mouse_exited"]
 [connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/MasterControl" to="." method="_on_master_control_value_changed"]
+[connection signal="mouse_entered" from="Frame/Contents/ControlMenu/Inputs/MusicControl" to="Frame/Contents/ControlMenu/Inputs/MusicControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Frame/Contents/ControlMenu/Inputs/MusicControl" to="Frame/Contents/ControlMenu/Inputs/MusicControl" method="_on_mouse_exited"]
 [connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="mouse_entered" from="Frame/Contents/ControlMenu/Inputs/SFXControl" to="Frame/Contents/ControlMenu/Inputs/SFXControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Frame/Contents/ControlMenu/Inputs/SFXControl" to="Frame/Contents/ControlMenu/Inputs/SFXControl" method="_on_mouse_exited"]
 [connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/SFXControl" to="." method="_on_sfx_control_value_changed"]
+[connection signal="mouse_entered" from="Frame/MarginContainer/Close" to="Frame/MarginContainer/Close" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Frame/MarginContainer/Close" to="Frame/MarginContainer/Close" method="_on_mouse_exited"]
 [connection signal="pressed" from="Frame/MarginContainer/Close" to="." method="_on_close_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
