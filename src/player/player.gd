@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-const MAX_HEALTH := 10
+signal health_changed(new_value)
+
+const MAX_HEALTH := 100
 const SPEED := 200
 const DASH_MULTIPLIER := 3
 
@@ -84,7 +86,7 @@ func take_damage(dmg: int):
 	_is_invincible = true
 	
 	current_health -= dmg
-	
+	health_changed.emit(current_health)
 	print("taking damage: ", current_health)
 	
 	var sprite = $Sprite2D
@@ -110,6 +112,7 @@ func heal() -> void :
 	current_health += delta_health
 	current_health = min(current_health, MAX_HEALTH)
 	print("Healing (", delta_health, "): ", current_health)
+	health_changed.emit(current_health)
 	
 
 func _on_finished_iframe() -> void :
