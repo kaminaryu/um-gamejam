@@ -1,49 +1,25 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3tivrpd3lcxr"]
+[gd_scene load_steps=23 format=3 uid="uid://d3tivrpd3lcxr"]
 
 [ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/clipboard_frame.png" id="1_2q1jc"]
 [ext_resource type="Script" uid="uid://uwl6xk1du2sq" path="res://src/scenes/tutorial_menu.gd" id="1_ambg3"]
 [ext_resource type="Texture2D" uid="uid://b2g3clvgjceo" path="res://assets/ui/tutorial/tutorial_title.png" id="2_dfj4a"]
 [ext_resource type="Texture2D" uid="uid://ckasrfipsmp2m" path="res://assets/ui/tutorial/enemies.png" id="3_gt86l"]
 [ext_resource type="Texture2D" uid="uid://depbm66ykknnn" path="res://assets/ui/tutorial/controls.png" id="4_4ttsb"]
+[ext_resource type="Script" uid="uid://cf4viumrb1vqu" path="res://src/scenes/enemies.gd" id="5_2mc24"]
 [ext_resource type="Texture2D" uid="uid://llw1vr6dll4t" path="res://assets/ui/tutorial/mechanism.png" id="5_tacun"]
 [ext_resource type="Texture2D" uid="uid://cty60oyjc8scs" path="res://assets/ui/options/back.png" id="6_cipkq"]
+[ext_resource type="Script" uid="uid://ds28avmsusvy8" path="res://src/scenes/controls.gd" id="7_8c6br"]
 [ext_resource type="Texture2D" uid="uid://lpad0blyfohl" path="res://assets/ui/options/back_hover.png" id="7_ambg3"]
 [ext_resource type="Texture2D" uid="uid://x4w5aucri5c0" path="res://assets/ui/tutorial/left_button.png" id="8_4ttsb"]
+[ext_resource type="Script" uid="uid://lcclg8pp3qcp" path="res://src/scenes/mechanism.gd" id="9_0bqpf"]
 [ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="9_cipkq"]
 [ext_resource type="Texture2D" uid="uid://buo5e4nyloy75" path="res://assets/ui/tutorial/sticky_note_tutorial.png" id="9_tacun"]
 [ext_resource type="Texture2D" uid="uid://fkjp4rvjnpqk" path="res://assets/Placeholder/the.jpg" id="10_ambg3"]
 [ext_resource type="Texture2D" uid="uid://b5wldgb2jlek3" path="res://assets/ui/tutorial/right_button.png" id="10_cipkq"]
+[ext_resource type="Script" uid="uid://c64ya256xm64j" path="res://src/scenes/close.gd" id="12_2pml3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mc24"]
 bg_color = Color(0, 0, 0, 0.478431)
-
-[sub_resource type="Animation" id="Animation_ambg3"]
-resource_name = "reveal"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.0647042, 1),
-"update": 0,
-"values": [Vector2(246.5, 649), Vector2(246.5, 51)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.153893, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.478431)]
-}
 
 [sub_resource type="Animation" id="Animation_2mc24"]
 length = 0.001
@@ -98,6 +74,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0.478431), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ambg3"]
+resource_name = "reveal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.0647042, 1),
+"update": 0,
+"values": [Vector2(246.5, 649), Vector2(246.5, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.153893, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.478431)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0bqpf"]
@@ -181,19 +185,26 @@ theme_override_constants/separation = 15
 [node name="Enemies" type="TextureButton" parent="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_gt86l")
+script = ExtResource("5_2mc24")
 
 [node name="Controls" type="TextureButton" parent="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_4ttsb")
+script = ExtResource("7_8c6br")
 
 [node name="Mechanism" type="TextureButton" parent="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_tacun")
+script = ExtResource("9_0bqpf")
 
 [node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/SelectTutorial"]
+layout_mode = 0
 offset_left = 80.0
 offset_top = 64.0
 offset_right = 171.0
@@ -203,10 +214,13 @@ theme_override_constants/margin_top = 42
 
 [node name="Close" type="TextureButton" parent="Control/TextureRect/SelectTutorial/CloseButton"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_cipkq")
 texture_hover = ExtResource("7_ambg3")
+script = ExtResource("12_2pml3")
 
 [node name="TutorialPage" type="Control" parent="Control/TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -309,6 +323,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("10_cipkq")
 
 [node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/TutorialPage"]
+layout_mode = 0
 offset_left = -251.0
 offset_top = -235.5
 offset_right = -160.0
@@ -326,9 +341,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_0bqpf")
 }
 
+[connection signal="mouse_entered" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" to="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" to="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" to="." method="_on_enemies_pressed"]
+[connection signal="mouse_entered" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" to="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" to="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="mouse_entered" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" to="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" to="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" to="." method="_on_mechanism_pressed"]
+[connection signal="mouse_entered" from="Control/TextureRect/SelectTutorial/CloseButton/Close" to="Control/TextureRect/SelectTutorial/CloseButton/Close" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/TextureRect/SelectTutorial/CloseButton/Close" to="Control/TextureRect/SelectTutorial/CloseButton/Close" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/TextureRect/SelectTutorial/CloseButton/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Control/TextureRect/TutorialPage/Buttons/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Control/TextureRect/TutorialPage/Buttons/Right" to="." method="_on_right_pressed"]
