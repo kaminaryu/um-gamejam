@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ks2pwqt2xl7e"]
+[gd_scene load_steps=9 format=3 uid="uid://ks2pwqt2xl7e"]
 
 [ext_resource type="Script" uid="uid://c7q01071ug33p" path="res://src/mechanism/dashing/dash_mech.gd" id="1_hgdwd"]
 [ext_resource type="Script" uid="uid://cdo536pv6y6h6" path="res://src/mechanism/dashing/controlled.gd" id="2_i8anb"]
 [ext_resource type="Script" uid="uid://l4qd3l2jgqc2" path="res://src/mechanism/dashing/uncontrolled.gd" id="3_i8anb"]
 [ext_resource type="Texture2D" uid="uid://big068dh0ca43" path="res://assets/player/player.png" id="5_2xmh0"]
+[ext_resource type="Script" uid="uid://qvtjyl6tv3yg" path="res://src/mechanism/dashing/woosh.gd" id="5_8pn6h"]
 
 [sub_resource type="Gradient" id="Gradient_8pn6h"]
 colors = PackedColorArray(1, 1, 1, 0.580392, 1, 1, 1, 0.266667)
@@ -41,6 +42,9 @@ emitting = false
 texture = ExtResource("5_2xmh0")
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_7vh8h")
+
+[node name="Woosh" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("5_8pn6h")
 
 [connection signal="timeout" from="Controlled/DashDuration" to="Controlled" method="_on_dash_duration_timeout"]
 [connection signal="timeout" from="Uncontrolled/DashDuration" to="Uncontrolled" method="_on_dash_duration_timeout"]

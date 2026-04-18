@@ -23,3 +23,7 @@ func get_dash_multiplier() -> float :
 
 func after_image(enable: bool) -> void :
     $AfterImageBlue.emitting = enable
+    
+    if (enable) :
+        $Woosh.pitch_scale = randf_range(0.9, 1.1)
+        $Woosh.play()
