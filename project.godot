@@ -24,6 +24,7 @@ SfxPlayer="*res://src/autoloads/sfx_player.gd"
 
 [display]
 
+window/size/mode=3
 window/size/initial_position_type=3
 
 [editor_plugins]

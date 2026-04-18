@@ -3,6 +3,7 @@ extends Node
 @onready var music_player := AudioStreamPlayer.new()
 
 const MUSICS = {
+    "Mainmenu": preload("res://assets/soundtracks/Choose Your Racer.wav"),
     "Gameplay": preload("res://assets/soundtracks/Bouncing Pyramids.wav"),
     "Gameover": preload("res://assets/soundtracks/You Lost.wav"),
 }
