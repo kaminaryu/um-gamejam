@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://df3da37hah20l"]
+
+[ext_resource type="Texture2D" uid="uid://cuqgrn7mdsm6r" path="res://assets/tutorial/img/shoot.png" id="1_rih5p"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_yemw6"]
+
+[resource]
+script = ExtResource("2_yemw6")
+title = "Shoot Germ"
+picture = ExtResource("1_rih5p")
+description = "Shoot Germs shoots disgusting germ bullets at you so you better watch out!"
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

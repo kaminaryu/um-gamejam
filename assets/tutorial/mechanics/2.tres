@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://dr60v2np81nvg"]
 
-[ext_resource type="Texture2D" uid="uid://bl7xmgr0j0j40" path="res://assets/Placeholder/5282291.png" id="1_xc1rm"]
+[ext_resource type="Texture2D" uid="uid://c1a6nvra0vt4f" path="res://assets/tutorial/img/icons-x.png" id="1_52dk2"]
 [ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_ojcup"]
 
 [resource]
 script = ExtResource("2_ojcup")
-title = "Page1"
-picture = ExtResource("1_xc1rm")
-description = "rththrrthrthtrh"
+title = "Mechanics (2)"
+picture = ExtResource("1_52dk2")
+description = "When a mechanism breaks down, you are not able to control that specific mechanism and is controlled randomly"
 metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

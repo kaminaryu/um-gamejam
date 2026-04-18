@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_2gva4")
-title = "HETEHTEH"
+title = "Buddy (Challenge 2)"
 picture = ExtResource("1_74aax")
-description = "rgerge"
+description = "Each wave also has a chance to summon Buddy to help you! (probably)"
 metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_1f5ub")
-title = "dash"
+title = "Shoot"
 picture = ExtResource("1_qewat")
-description = "press shift to dash"
+description = "Use Left Click to Shoot"
 metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

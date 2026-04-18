@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3tivrpd3lcxr"]
+[gd_scene load_steps=19 format=3 uid="uid://j7wxmtek347c"]
 
 [ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/clipboard_frame.png" id="1_2q1jc"]
 [ext_resource type="Script" uid="uid://uwl6xk1du2sq" path="res://src/scenes/tutorial_menu.gd" id="1_ambg3"]
@@ -16,34 +16,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mc24"]
 bg_color = Color(0, 0, 0, 0.478431)
-
-[sub_resource type="Animation" id="Animation_ambg3"]
-resource_name = "reveal"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.0647042, 1),
-"update": 0,
-"values": [Vector2(246.5, 649), Vector2(246.5, 51)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.153893, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.478431)]
-}
 
 [sub_resource type="Animation" id="Animation_2mc24"]
 length = 0.001
@@ -98,6 +70,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0.478431), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ambg3"]
+resource_name = "reveal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.0647042, 1),
+"update": 0,
+"values": [Vector2(246.5, 649), Vector2(246.5, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.153893, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.478431)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0bqpf"]
@@ -194,6 +194,7 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("5_tacun")
 
 [node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/SelectTutorial"]
+layout_mode = 0
 offset_left = 80.0
 offset_top = 64.0
 offset_right = 171.0
@@ -207,6 +208,7 @@ texture_normal = ExtResource("6_cipkq")
 texture_hover = ExtResource("7_ambg3")
 
 [node name="TutorialPage" type="Control" parent="Control/TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -273,7 +275,6 @@ stretch_mode = 5
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.262745, 0.192157, 0.152941, 1)
-theme_override_fonts/font = ExtResource("9_cipkq")
 theme_override_font_sizes/font_size = 11
 text = "This is a cat lol! the the the he the the the the the the the the the the the the the the the the the the the the"
 horizontal_alignment = 1
@@ -309,6 +310,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("10_cipkq")
 
 [node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/TutorialPage"]
+layout_mode = 0
 offset_left = -251.0
 offset_top = -235.5
 offset_right = -160.0

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://q06u5uqofrmk"]
 
-[ext_resource type="Texture2D" uid="uid://bl7xmgr0j0j40" path="res://assets/Placeholder/5282291.png" id="1_4acsg"]
+[ext_resource type="Texture2D" uid="uid://cggsxjgyoxhd8" path="res://assets/tutorial/img/split.png" id="1_qcdga"]
 [ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_dy1e6"]
 
 [resource]
 script = ExtResource("2_dy1e6")
-title = "Page1"
-picture = ExtResource("1_4acsg")
-description = "rththrrthrthtrh"
+title = "Split Germs"
+picture = ExtResource("1_qcdga")
+description = "Split Germs split into multiple colored germs after being killed"
 metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

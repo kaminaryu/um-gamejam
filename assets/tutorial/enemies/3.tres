@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://dh7huooshof80"]
 
-[ext_resource type="Texture2D" uid="uid://bl7xmgr0j0j40" path="res://assets/Placeholder/5282291.png" id="1_n5ft0"]
+[ext_resource type="Texture2D" uid="uid://by0ex11afp4l7" path="res://assets/tutorial/img/fast.png" id="1_4acsg"]
 [ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_8xvgp"]
 
 [resource]
 script = ExtResource("2_8xvgp")
-title = "Page1"
-picture = ExtResource("1_n5ft0")
-description = "rththrrthrthtrh"
+title = "Fast Germs"
+picture = ExtResource("1_4acsg")
+description = "Fast Germs are suuuuper fast, but they are extremely fragile so look out."
 metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

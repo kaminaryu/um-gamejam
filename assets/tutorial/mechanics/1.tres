@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://dw6hkikh6r4c2"]
 
-[ext_resource type="Texture2D" uid="uid://bl7xmgr0j0j40" path="res://assets/Placeholder/5282291.png" id="1_52dk2"]
+[ext_resource type="Texture2D" uid="uid://cn0xxvumawyfo" path="res://assets/tutorial/img/icons.png" id="1_3ddrd"]
 [ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_1h16f"]
 
 [resource]
 script = ExtResource("2_1h16f")
-title = "Page1"
-picture = ExtResource("1_52dk2")
-description = "rththrrthrthtrh"
+title = "Mechanics (1)"
+picture = ExtResource("1_3ddrd")
+description = "You have a total of 4 mechanics that has a chance to break down each wave"
 metadata/_custom_type_script = "uid://dsyc4h4q7wt28"
