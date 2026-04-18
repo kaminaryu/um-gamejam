@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://t1pnsa0jckw2"]
+[gd_scene load_steps=3 format=3 uid="uid://t1pnsa0jckw2"]
 
 [ext_resource type="Script" uid="uid://btuappoiwdkqo" path="res://src/scenes/pause_menu.gd" id="1_scldf"]
+[ext_resource type="PackedScene" uid="uid://c4kdd2ebmfoxw" path="res://src/scenes/settings_menu.tscn" id="2_nwvxt"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_scldf")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_nwvxt")]
+layer = 10
+visible = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -33,14 +38,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 453.0
-offset_top = 189.0
+offset_top = 144.0
 offset_right = 523.0
-offset_bottom = 220.0
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 text = "Resume
 "
+
+[node name="SettingsButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 453.0
+offset_top = 256.0
+offset_right = 523.0
+offset_bottom = 287.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Settings"
 
 [node name="RestartButton" type="Button" parent="Control"]
 layout_mode = 1
@@ -50,9 +71,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 453.0
-offset_top = 305.0
+offset_top = 366.0
 offset_right = 523.0
-offset_bottom = 336.0
+offset_bottom = 397.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -66,14 +87,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 454.0
-offset_top = 428.0
+offset_top = 479.0
 offset_right = 524.0
-offset_bottom = 459.0
+offset_bottom = 510.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 text = "Menu"
 
 [connection signal="pressed" from="Control/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]

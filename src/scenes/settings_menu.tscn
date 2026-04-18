@@ -1,6 +1,24 @@
-[gd_scene format=3 uid="uid://c4kdd2ebmfoxw"]
+[gd_scene load_steps=2 format=3 uid="uid://c4kdd2ebmfoxw"]
+
+[ext_resource type="Script" uid="uid://d3xg53rhhtcdc" path="res://src/scenes/settings_menu.gd" id="1_oaxli"]
 
 [node name="SettingsMenu" type="CanvasLayer"]
+script = ExtResource("1_oaxli")
+
+[node name="BGBlur" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 282.0
+offset_top = 100.0
+offset_right = 322.0
+offset_bottom = 140.0
+scale = Vector2(15.28, 13.64)
+color = Color(0.268454, 0.199111, 0.157796, 1)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -12,57 +30,66 @@ grow_vertical = 2
 
 [node name="Master" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 383.0
+offset_left = 319.0
 offset_top = 237.0
-offset_right = 423.0
-offset_bottom = 260.0
+offset_right = 427.0
+offset_bottom = 282.0
 theme_override_font_sizes/font_size = 32
 text = "Master"
 
-[node name="Control" type="HSlider" parent="Control/Master"]
+[node name="MasterControl" type="HSlider" parent="Control/Master"]
 layout_mode = 0
 offset_left = 122.0
 offset_top = 21.0
 offset_right = 282.0
 offset_bottom = 37.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Music" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 383.0
+offset_left = 319.0
 offset_top = 281.0
-offset_right = 491.0
+offset_right = 427.0
 offset_bottom = 326.0
 theme_override_font_sizes/font_size = 32
 text = "Music"
 
-[node name="Control" type="HSlider" parent="Control/Music"]
+[node name="MusicControl" type="HSlider" parent="Control/Music"]
 layout_mode = 0
 offset_left = 122.0
 offset_top = 21.0
 offset_right = 282.0
 offset_bottom = 37.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="SFX" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 383.0
+offset_left = 319.0
 offset_top = 327.0
-offset_right = 491.0
+offset_right = 427.0
 offset_bottom = 372.0
 theme_override_font_sizes/font_size = 32
 text = "SFX"
 
-[node name="Control" type="HSlider" parent="Control/SFX"]
+[node name="SFXControl" type="HSlider" parent="Control/SFX"]
 layout_mode = 0
 offset_left = 122.0
 offset_top = 21.0
 offset_right = 282.0
 offset_bottom = 37.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="GoofySFX" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 383.0
+offset_left = 319.0
 offset_top = 389.0
-offset_right = 491.0
+offset_right = 789.0
 offset_bottom = 434.0
 theme_override_font_sizes/font_size = 32
 text = "Toggle Goofy SFX (Challenge 1)"
@@ -77,9 +104,22 @@ scale = Vector2(2, 2)
 
 [node name="Keymaps" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 382.0
+offset_left = 318.0
 offset_top = 167.0
-offset_right = 523.0
+offset_right = 459.0
 offset_bottom = 198.0
 scale = Vector2(2, 2)
 text = "Change Keymaps"
+
+[node name="Close" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 114.0
+offset_right = 309.0
+offset_bottom = 122.0
+text = " X "
+
+[connection signal="value_changed" from="Control/Master/MasterControl" to="." method="_on_master_control_value_changed"]
+[connection signal="value_changed" from="Control/Music/MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="value_changed" from="Control/SFX/SFXControl" to="." method="_on_sfx_control_value_changed"]
+[connection signal="pressed" from="Control/Close" to="." method="_on_close_pressed"]
