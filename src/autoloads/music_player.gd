@@ -13,6 +13,13 @@ func _ready() -> void :
     # this is a stringID type shit, instead of checking chars one by one, each string have ID
     # yk.... LIKE A POINTER
     music_player.bus = &"Music"
+    
+    # DEBUG: Check if the bus exists
+    var index = AudioServer.get_bus_index(&"Music")
+    if index == -1:
+        print("ERROR: Bus 'Music' not found! Audio is defaulting to Master.")
+    else:
+        print("Music bus found at index: ", index)
 
 func switch_to_track(name: String) -> void :
     if not MUSICS.has(name) :

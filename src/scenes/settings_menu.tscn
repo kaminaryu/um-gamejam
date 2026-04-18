@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c4kdd2ebmfoxw"]
+
+[node name="SettingsMenu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 237.0
+offset_right = 423.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 32
+text = "Master"
+
+[node name="Control" type="HSlider" parent="Control/Master"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 21.0
+offset_right = 282.0
+offset_bottom = 37.0
+
+[node name="Music" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 281.0
+offset_right = 491.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 32
+text = "Music"
+
+[node name="Control" type="HSlider" parent="Control/Music"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 21.0
+offset_right = 282.0
+offset_bottom = 37.0
+
+[node name="SFX" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 327.0
+offset_right = 491.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 32
+text = "SFX"
+
+[node name="Control" type="HSlider" parent="Control/SFX"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 21.0
+offset_right = 282.0
+offset_bottom = 37.0
+
+[node name="GoofySFX" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 389.0
+offset_right = 491.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 32
+text = "Toggle Goofy SFX (Challenge 1)"
+
+[node name="Toggle" type="CheckButton" parent="Control/GoofySFX"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 2.0
+offset_right = 519.0
+offset_bottom = 26.0
+scale = Vector2(2, 2)
+
+[node name="Keymaps" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 167.0
+offset_right = 523.0
+offset_bottom = 198.0
+scale = Vector2(2, 2)
+text = "Change Keymaps"
