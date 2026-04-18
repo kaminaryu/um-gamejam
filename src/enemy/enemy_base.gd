@@ -8,37 +8,37 @@ class_name Enemy
 @export var _speed: float
 
 func _ready() -> void:
-    WaveHandler.register_enemy()
+	WaveHandler.register_enemy()
 
 func set_enemy_name(name: String):
-    _enemy_name = name
+	_enemy_name = name
 
 func set_max_health(health: int):
-    _health = health
-    
+	_health = health
+	
 func set_damage(damage: int):
-    _damage = damage
-    
+	_damage = damage
+	
 func set_speed(speed: int):
-    _speed = speed
+	_speed = speed
 
 func take_damage(dmg: int):
-    _health -= dmg
-    if _health <= 0:
-        die()
-        
-    var sfx = SfxPlayer.get_audio("EnemyHurt")
-    _play_global_sfx(sfx)
-    
+	_health -= dmg
+	if _health <= 0:
+		die()
+		
+	var sfx = SfxPlayer.get_audio("EnemyHurt")
+	_play_global_sfx(sfx)
+	
 
 func die():
-    death.emit()
-    WaveHandler.enemy_defeated()
-    queue_free()
-    
-    var sfx = SfxPlayer.get_audio("EnemyDeath")
-    _play_global_sfx(sfx)
-    
+	death.emit()
+	WaveHandler.enemy_defeated()
+	queue_free()
+	
+	var sfx = SfxPlayer.get_audio("EnemyDeath")
+	_play_global_sfx(sfx)
+	
 signal death
 
 
