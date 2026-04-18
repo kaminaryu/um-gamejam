@@ -220,11 +220,13 @@ value = 1.0
 script = ExtResource("10_pd2eg")
 
 [node name="Toggle" type="CheckButton" parent="Frame/Contents"]
+visible = false
 layout_mode = 2
 theme = ExtResource("7_pd2eg")
 icon = ExtResource("8_dfyab")
 
 [node name="Keymaps" type="Button" parent="Frame/Contents"]
+visible = false
 layout_mode = 2
 text = "Change Keymaps"
 
