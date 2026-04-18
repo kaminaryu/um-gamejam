@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5wldgb2jlek3"
-path="res://.godot/imported/right_button.png-f6a7ce132f3b63b4b42f92e250108f44.ctex"
+uid="uid://depbm66ykknnn"
+path="res://.godot/imported/controls.png-97abf7c4485e54299f9ed7be14b3f06f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/game/tutorial/right_button.png"
-dest_files=["res://.godot/imported/right_button.png-f6a7ce132f3b63b4b42f92e250108f44.ctex"]
+source_file="res://assets/ui/tutorial/controls.png"
+dest_files=["res://.godot/imported/controls.png-97abf7c4485e54299f9ed7be14b3f06f.ctex"]
 
 [params]
 

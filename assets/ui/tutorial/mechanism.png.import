@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buo5e4nyloy75"
-path="res://.godot/imported/sticky_note_tutorial.png-f21969e409ae336210c7d9ef9bdc4c7f.ctex"
+uid="uid://llw1vr6dll4t"
+path="res://.godot/imported/mechanism.png-331c8a01a5802398ec1a2e051fc5a2bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/game/tutorial/sticky_note_tutorial.png"
-dest_files=["res://.godot/imported/sticky_note_tutorial.png-f21969e409ae336210c7d9ef9bdc4c7f.ctex"]
+source_file="res://assets/ui/tutorial/mechanism.png"
+dest_files=["res://.godot/imported/mechanism.png-331c8a01a5802398ec1a2e051fc5a2bf.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjvu8tt61aut0"
-path="res://.godot/imported/back_button.png-9b3a8cbf86fab4915c9bbdf15d0bfa51.ctex"
+uid="uid://bs5l0jroe40vi"
+path="res://.godot/imported/clipboard_frame.png-995c9d11964ca408e044b89f909747d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/game/tutorial/back_button.png"
-dest_files=["res://.godot/imported/back_button.png-9b3a8cbf86fab4915c9bbdf15d0bfa51.ctex"]
+source_file="res://assets/ui/clipboard_frame.png"
+dest_files=["res://.godot/imported/clipboard_frame.png-995c9d11964ca408e044b89f909747d8.ctex"]
 
 [params]
 

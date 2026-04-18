@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x4w5aucri5c0"
-path="res://.godot/imported/left_button.png-52a3fd70badfcdd233fbe89cf9997605.ctex"
+uid="uid://buo5e4nyloy75"
+path="res://.godot/imported/sticky_note_tutorial.png-38c098154c78686c6d036633ca716f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/game/tutorial/left_button.png"
-dest_files=["res://.godot/imported/left_button.png-52a3fd70badfcdd233fbe89cf9997605.ctex"]
+source_file="res://assets/ui/tutorial/sticky_note_tutorial.png"
+dest_files=["res://.godot/imported/sticky_note_tutorial.png-38c098154c78686c6d036633ca716f69.ctex"]
 
 [params]
 
