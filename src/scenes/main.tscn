@@ -2,12 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
-[ext_resource type="Script" path="res://src/scenes/main.gd" id="1_o81g6"]
+[ext_resource type="Script" uid="uid://boauqk60dp5qt" path="res://src/scenes/main.gd" id="1_o81g6"]
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
 [ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="4_j04uq"]
 [ext_resource type="Texture2D" uid="uid://b7fwbipf16gl1" path="res://assets/ui/game/char_frame.png" id="5_kokaf"]
-[ext_resource type="AudioStream" uid="uid://tx41g51uogee" path="res://assets/soundtracks/Bouncing Pyramids.wav" id="5_o81g6"]
 [ext_resource type="Texture2D" uid="uid://cea6mdyedd3cy" path="res://assets/ui/game/health/health_background.png" id="6_lp058"]
 [ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/player/player_spritesheet.png" id="6_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://dlg7ojvasxekn" path="res://assets/ui/game/health/health_foreground.png" id="7_24j03"]
@@ -422,7 +421,3 @@ offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_o81g6")
-autoplay = true

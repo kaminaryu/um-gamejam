@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7k6dspwo3ks3"]
+[gd_scene load_steps=30 format=3 uid="uid://b7k6dspwo3ks3"]
 
 [ext_resource type="Script" uid="uid://cb0saakdnwjcc" path="res://src/scenes/main_menu.gd" id="1_rm437"]
 [ext_resource type="Texture2D" uid="uid://bysi3kguhfoep" path="res://assets/ui/main_menu/main_menu_bg.png" id="2_1fbjp"]
@@ -21,7 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://w25il6lkyrst" path="res://assets/ui/main_menu/button_text/tutorial/2.png" id="18_805p8"]
 [ext_resource type="Texture2D" uid="uid://4bxvdgf2tg6c" path="res://assets/ui/main_menu/button_text/tutorial/3.png" id="19_1fbjp"]
 [ext_resource type="Texture2D" uid="uid://bnh0n0biwipm1" path="res://assets/ui/main_menu/title_card.png" id="20_805p8"]
-[ext_resource type="PackedScene" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
+[ext_resource type="PackedScene" uid="uid://c4kdd2ebmfoxw" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
+[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="23_qboab"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yrdre"]
 frames = 3
@@ -184,6 +185,8 @@ texture = ExtResource("20_805p8")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("22_5sj7r")]
 visible = false
+
+[node name="ButtonSfx" parent="." instance=ExtResource("23_qboab")]
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

@@ -26,6 +26,7 @@ func close_settings() -> void:
 
 func _on_close_pressed() -> void:
     close_settings()
+    $ButtonSfx.play_audio()
 
 
 # --- Slider Signal Handlers ---

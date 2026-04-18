@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://t1pnsa0jckw2"]
+[gd_scene load_steps=4 format=3 uid="uid://t1pnsa0jckw2"]
 
 [ext_resource type="Script" uid="uid://btuappoiwdkqo" path="res://src/scenes/pause_menu.gd" id="1_scldf"]
 [ext_resource type="PackedScene" uid="uid://c4kdd2ebmfoxw" path="res://src/scenes/settings_menu.tscn" id="2_nwvxt"]
+[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="3_lhlp2"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -94,6 +95,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 text = "Menu"
+
+[node name="ButtonSfx" parent="." instance=ExtResource("3_lhlp2")]
 
 [connection signal="pressed" from="Control/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
