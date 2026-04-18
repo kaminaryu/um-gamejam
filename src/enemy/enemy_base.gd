@@ -46,6 +46,7 @@ func _play_global_sfx(stream: AudioStream):
     if stream:
         var player = AudioStreamPlayer2D.new()
         player.stream = stream
+        player.pitch_scale = randf_range(0.9, 1.1)
         player.global_position = global_position
         
         player.bus = &"SFX"

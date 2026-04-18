@@ -27,4 +27,5 @@ func _physics_process(delta: float) -> void:
         velocity = velocity.bounce(normal)
         global_position += normal * 3.0 # Clears the hitbox
         
+        $BulletBounce.pitch_scale = randf_range(0.9, 1.1)
         $BulletBounce.play()

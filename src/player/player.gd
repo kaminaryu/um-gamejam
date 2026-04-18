@@ -98,6 +98,7 @@ func take_damage(dmg: int):
         .set_trans(Tween.TRANS_SINE)\
         .set_ease(Tween.EASE_IN_OUT)
         
+    $PlayerHurt.pitch_scale = randf_range(0.9, 1.1)
     $PlayerHurt.play()
     
     if current_health <= 0:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp6mvmxqmwlf4"]
+[gd_scene load_steps=6 format=3 uid="uid://dp6mvmxqmwlf4"]
 
 [ext_resource type="Script" uid="uid://bpsh7pu736bw7" path="res://src/player/buddy.gd" id="1_c1ini"]
 [ext_resource type="Texture2D" uid="uid://bshhhy21vwu1p" path="res://assets/player/buddy.png" id="2_c1ini"]
 [ext_resource type="Script" uid="uid://rj200yh0fhkr" path="res://src/player/buddy_spawn.gd" id="3_oymbu"]
+[ext_resource type="Script" uid="uid://cvhk8133fhgha" path="res://src/player/buddy_bounce.gd" id="4_qcssq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1ini"]
 size = Vector2(19, 23)
@@ -25,5 +26,8 @@ wait_time = 0.2
 [node name="BuddySpawn" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
 script = ExtResource("3_oymbu")
+
+[node name="BuddyBounce" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_qcssq")
 
 [connection signal="timeout" from="ShootingDelay" to="." method="_on_shooting_delay_timeout"]

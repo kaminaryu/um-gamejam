@@ -31,4 +31,5 @@ func on_shooting() -> void :
 
     get_tree().root.add_child(bullet)
     
+    $PlayerShoot.pitch_scale = randf_range(0.9, 1.1)
     $PlayerShoot.play()

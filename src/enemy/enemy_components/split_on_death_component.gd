@@ -14,6 +14,7 @@ func _on_death():
     # This picks 2, 3, or 4 (as we discussed before!)
     var spawn_count = randi_range(2, 4)
     
+    get_node("../EnemySplit").pitch_scale = randf_range(0.9, 1.1)
     get_node("../EnemySplit").play()
     
     for i in spawn_count:

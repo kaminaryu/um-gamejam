@@ -12,6 +12,7 @@ var shooting_rotation: float
 func _ready() -> void :
     moving_direction = randf_range(-PI, PI)
     init_shooting()
+    $BuddySpawn.pitch_scale = randf_range(0.9, 1.1)
     $BuddySpawn.play()
     
     
@@ -30,7 +31,10 @@ func _physics_process(delta: float) -> void:
         var bounced_velocity = velocity.bounce(normal)
         moving_direction = bounced_velocity.angle()
         global_position += normal * 3.0
-
+        
+        $BuddyBounce.pitch_scale = randf_range(0.9, 1.1)
+        $BuddyBounce.play()
+        
 
 func init_shooting() -> void :
     var random_time = randf_range(1.0, 2.5)
