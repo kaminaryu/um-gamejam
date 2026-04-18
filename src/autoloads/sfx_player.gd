@@ -13,6 +13,7 @@ const SFX = {
         #"BulletBounce": preload("res://assets/soundeffects/bullet_bounce_2.wav"),
         #"BuddyBounce": preload("res://assets/soundeffects/bullet_bounce_2.wav"),
         #"WaveCompleted": preload("res://assets/soundeffects/wave_complete_1.wav"),
+        #"Woosh": preload("res://assets/soundeffects/wave_complete_1.wav"),
     },
     "Goofy": {
         "PlayerHurt": preload("res://assets/soundeffects/player_hurt_1.wav"),
@@ -26,6 +27,7 @@ const SFX = {
         "BulletBounce": preload("res://assets/soundeffects/bullet_bounce_1.wav"),
         "BuddyBounce": preload("res://assets/soundeffects/bullet_bounce_2.wav"),
         "WaveCompleted": preload("res://assets/soundeffects/wave_complete_1.wav"),
+        "Woosh": preload("res://assets/soundeffects/dash.wav"),
     },
 }
 

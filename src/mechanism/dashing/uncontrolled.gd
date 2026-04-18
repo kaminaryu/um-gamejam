@@ -22,6 +22,9 @@ func dash() -> void :
     
     var dash_mult: float = get_parent().get_dash_multiplier()
     apply_dash(dash_mult)
+            
+    get_parent().after_image(true)
+
 
 
 func apply_dash(multiplier: float) -> void :
@@ -34,7 +37,9 @@ func apply_dash(multiplier: float) -> void :
 
 func _on_dash_duration_timeout() -> void:
     is_dashing = false
-    apply_dash(1)
+    apply_dash(1)            
+    get_parent().after_image(false)
+
 
 
 func _on_dash_delay_timeout() -> void:

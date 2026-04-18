@@ -7,8 +7,8 @@ extends Node
 @export var spread_speed: float = 3.0
 
 func _ready():
-	# Connecting to the parent's death signal
-	get_parent().death.connect(_on_death)
+    # Connecting to the parent's death signal
+    get_parent().death.connect(_on_death)
 
 func _on_death():
 	# This picks 2, 3, or 4 (as we discussed before!)
