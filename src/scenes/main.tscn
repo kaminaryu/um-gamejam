@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=24 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cq5ak54bev4k7" path="res://assets/ui/game/texts/you.png" id="7_kbdt0"]
 [ext_resource type="Texture2D" uid="uid://dyjnbqw265c41" path="res://assets/ui/game/health/health_fill.png" id="8_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://cspwv46mheiss" path="res://assets/ui/game/texts/health.png" id="11_4rjby"]
+[ext_resource type="Texture2D" uid="uid://cctqiamlkmjml" path="res://assets/ui/game/texts/enemies_left.png" id="12_ccybt"]
+[ext_resource type="Texture2D" uid="uid://dfuq6lcdlev0k" path="res://assets/ui/game/wave_frame/waveframe.png" id="13_50ugh"]
+[ext_resource type="Texture2D" uid="uid://kav0n3332vqc" path="res://assets/ui/game/texts/wave_indicator.png" id="14_lcp4o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font_size = 200
@@ -92,8 +95,7 @@ build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
 metadata/_edit_lock_ = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
+[node name="BlackScreen" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
@@ -177,6 +179,41 @@ offset_bottom = -28.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_4rjby")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("12_ccybt")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("13_50ugh")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -18.5
+offset_right = 161.0
+offset_bottom = 21.5
+grow_vertical = 2
+texture = ExtResource("14_lcp4o")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_o81g6")
