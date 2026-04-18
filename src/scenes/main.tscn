@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=37 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cq5ak54bev4k7" path="res://assets/ui/game/texts/you.png" id="7_kbdt0"]
 [ext_resource type="Texture2D" uid="uid://dyjnbqw265c41" path="res://assets/ui/game/health/health_fill.png" id="8_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://cspwv46mheiss" path="res://assets/ui/game/texts/health.png" id="11_4rjby"]
-[ext_resource type="Script" path="res://src/player/health.gd" id="11_n75dp"]
+[ext_resource type="Script" uid="uid://cgcf8q8stk5w4" path="res://src/player/health.gd" id="11_n75dp"]
 [ext_resource type="Texture2D" uid="uid://cctqiamlkmjml" path="res://assets/ui/game/texts/enemies_left.png" id="12_ccybt"]
 [ext_resource type="Texture2D" uid="uid://dfuq6lcdlev0k" path="res://assets/ui/game/wave_frame/waveframe.png" id="13_50ugh"]
 [ext_resource type="Texture2D" uid="uid://kav0n3332vqc" path="res://assets/ui/game/texts/wave_indicator.png" id="14_lcp4o"]
