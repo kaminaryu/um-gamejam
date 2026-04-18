@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=37 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
 [ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="4_j04uq"]
 [ext_resource type="Texture2D" uid="uid://b7fwbipf16gl1" path="res://assets/ui/game/char_frame.png" id="5_kokaf"]
-[ext_resource type="AudioStream" uid="uid://tx41g51uogee" path="res://assets/soundtracks/Bouncing Pyramids.wav" id="5_o81g6"]
 [ext_resource type="Texture2D" uid="uid://cea6mdyedd3cy" path="res://assets/ui/game/health/health_background.png" id="6_lp058"]
 [ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/player/player_spritesheet.png" id="6_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://dlg7ojvasxekn" path="res://assets/ui/game/health/health_foreground.png" id="7_24j03"]
@@ -124,7 +123,6 @@ polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, 
 metadata/_edit_lock_ = true
 
 [node name="BlackScreen" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
@@ -426,7 +424,3 @@ offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_o81g6")
-autoplay = true
