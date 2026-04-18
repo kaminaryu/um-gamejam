@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
+[ext_resource type="Script" uid="uid://boauqk60dp5qt" path="res://src/scenes/main.gd" id="1_o81g6"]
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
 [ext_resource type="Texture2D" uid="uid://b7fwbipf16gl1" path="res://assets/ui/game/char_frame.png" id="5_kokaf"]
@@ -21,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cmxnuaddalox7" path="res://assets/ui/game/icons/x.png" id="17_qsm7c"]
 [ext_resource type="Texture2D" uid="uid://d3e4a0fpdvkjk" path="res://assets/ui/game/icons/icon_pew.png" id="18_j04uq"]
 [ext_resource type="Texture2D" uid="uid://kxfj50yj3cvc" path="res://assets/ui/game/icons/icon_vision.png" id="19_tyryd"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font_size = 200
@@ -84,6 +86,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_o81g6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -5
@@ -102,7 +105,6 @@ polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, 
 metadata/_edit_lock_ = true
 
 [node name="BlackScreen" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]

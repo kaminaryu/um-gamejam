@@ -44,6 +44,8 @@ func player_death() -> void :
     var death_menu = DEATH_MENU_SCENE.instantiate()
     get_tree().paused = true
     get_tree().root.add_child(death_menu)
+    
+    MusicPlayer.switch_to_track("Gameover")
 
 
 func _input(event: InputEvent) -> void :
