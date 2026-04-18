@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var controlled: bool
-const _DASH_MULTIPLIER := 3
+const _DASH_MULTIPLIER := 5
 
 func _ready() -> void :
     controlled = false
