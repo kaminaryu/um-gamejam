@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://khhtnvffvach"]
+
+[ext_resource type="Texture2D" uid="uid://cmnweac01yru1" path="res://assets/tutorial/img/shoot_icon.png" id="1_8sap8"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_s10vv"]
+
+[resource]
+script = ExtResource("2_s10vv")
+title = "Shoot Mechanism"
+picture = ExtResource("1_8sap8")
+description = "Ability to shoot. Lose this and the protobot will shoot randomly."
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

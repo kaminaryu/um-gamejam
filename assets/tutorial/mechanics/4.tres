@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://cw6l8pjbh17ub"]
+
+[ext_resource type="Texture2D" uid="uid://dankpgfk84kw4" path="res://assets/tutorial/img/aim_icon.png" id="1_sj583"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_mqk3a"]
+
+[resource]
+script = ExtResource("2_mqk3a")
+title = "Aiming Mechanism"
+picture = ExtResource("1_sj583")
+description = "Ability to aim. Lose this and the protobot will aim randomly."
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

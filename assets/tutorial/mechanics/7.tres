@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://x5tjm5ilwosw"]
+
+[ext_resource type="Texture2D" uid="uid://gtnk86edd7rs" path="res://assets/tutorial/img/vision_icon.png" id="1_egnje"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_oxgm4"]
+
+[resource]
+script = ExtResource("2_oxgm4")
+title = "Vision Mechanism"
+picture = ExtResource("1_egnje")
+description = "Ability to see. Lose this and the protobot vision will fluctuate randomly."
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"

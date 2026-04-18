@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://bmqleswop4vca"]
+
+[ext_resource type="Texture2D" uid="uid://b1qra1yfxomdv" path="res://assets/tutorial/img/dash_icon.png" id="1_hubb7"]
+[ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_5cjqm"]
+
+[resource]
+script = ExtResource("2_5cjqm")
+title = "Dashing Mechanism"
+picture = ExtResource("1_hubb7")
+description = "Ability to dash. Lose this and the protobot will dash randomly."
+metadata/_custom_type_script = "uid://dsyc4h4q7wt28"
