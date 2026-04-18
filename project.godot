@@ -23,6 +23,7 @@ GameMaster="*res://src/autoloads/game_master.gd"
 [display]
 
 window/size/initial_position_type=3
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
