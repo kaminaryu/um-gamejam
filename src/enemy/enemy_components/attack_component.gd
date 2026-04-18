@@ -1,7 +1,6 @@
 class_name AttackComponent
 extends Node
 
-@export var damage: int = 10
 @export var attack_cooldown: float = 1.0
 
 var can_attack: bool = true
@@ -24,8 +23,7 @@ func _attack(player):
 	
 	# Deal the damage
 	if player.has_method("take_damage"):
-		print("Player takes ", parent._damage, " damage")
-		player.take_damage(damage)
+		player.take_damage(parent._damage)
 	
 	# Start cooldown timer so the player doesn't die in 1 frame
 	get_tree().create_timer(attack_cooldown).timeout.connect(_on_cooldown_finished)
