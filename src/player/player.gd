@@ -4,7 +4,7 @@ const MAX_HEALTH := 100000
 const SPEED := 200
 const DASH_MULTIPLIER := 3
 
-@export var rebound_strength: float = 500.0
+@export var rebound_strength: float = 1000.0
 @export var rebound_friction: float = 10.0
 
 var dash_mult := 1.0

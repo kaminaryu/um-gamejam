@@ -1,7 +1,7 @@
 class_name DamageableComponent
 extends Node2D
 
-@export var nudge_distance: float = 15.0
+@export var nudge_distance: float = 45.0
 var parent: CharacterBody2D
 
 func _ready():
