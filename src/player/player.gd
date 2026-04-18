@@ -74,13 +74,13 @@ func apply_knockback(from_position: Vector2) -> void:
     # Set the knockback_velocity (the variable used in your handle_movement)
     knockback_velocity = push_dir * rebound_strength
     
-    
 
 func take_damage(dmg: int):
     if (_is_invincible) :
         return
         
     $IFrames.apply_iframe()
+    $PassiveHealing.stop_healing()
     _is_invincible = true
     
     current_health -= dmg
@@ -104,9 +104,17 @@ func die():
     death.emit()
     queue_free()
     
+    
+func heal() -> void :
+    var delta_health = randi_range(3, 5)
+    current_health += delta_health
+    current_health = min(current_health, MAX_HEALTH)
+    print("Healing (", delta_health, "): ", current_health)
+    
 
 func _on_finished_iframe() -> void :
     _is_invincible = false
+    $PassiveHealing.init_healing()
 
 
 signal death

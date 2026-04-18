@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://3yj0m61kdrk5"]
+
+[ext_resource type="Script" uid="uid://c1tpx1jod3njo" path="res://src/player/passive_healing.gd" id="1_kgbgm"]
+
+[node name="PassiveHealing" type="Node2D"]
+script = ExtResource("1_kgbgm")
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[node name="StartingCooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="StartingCooldown" to="." method="_on_starting_cooldown_timeout"]
