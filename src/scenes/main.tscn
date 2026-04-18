@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
-[ext_resource type="PackedScene" uid="uid://dp6mvmxqmwlf4" path="res://src/player/buddy.tscn" id="5_o81g6"]
+[ext_resource type="AudioStream" uid="uid://tx41g51uogee" path="res://assets/soundtracks/Bouncing Pyramids.wav" id="5_o81g6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font_size = 200
@@ -44,11 +44,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Ready?"
 label_settings = SubResource("LabelSettings_5dlwx")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_5dlwx")
 
-[node name="Buddy" parent="." instance=ExtResource("5_o81g6")]
-position = Vector2(7, -132)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o81g6")
+autoplay = true

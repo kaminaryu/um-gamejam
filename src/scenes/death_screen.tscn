@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dinc0qbdqtw07"]
+[gd_scene load_steps=3 format=3 uid="uid://dinc0qbdqtw07"]
 
-[ext_resource type="Script" uid="uid://c8wwn2u28fqg0" path="res://src/scenes/death_screen.gd" id="1_l20v2"]
+[ext_resource type="Script" path="res://src/scenes/death_screen.gd" id="1_l20v2"]
+[ext_resource type="AudioStream" uid="uid://bau05kgyscwcw" path="res://assets/soundtracks/You Lost.wav" id="2_vvawb"]
 
 [node name="DeathScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_l20v2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vvawb")
+autoplay = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
