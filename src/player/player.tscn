@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkuhk6i3067lk" path="res://src/mechanism/mechanism_handler.tscn" id="3_mf2ua"]
 [ext_resource type="Script" uid="uid://dnktldbteouts" path="res://src/player/i_frames.gd" id="5_5f2sf"]
 [ext_resource type="PackedScene" uid="uid://3yj0m61kdrk5" path="res://src/player/passive_healing.tscn" id="6_jiejy"]
-[ext_resource type="Script" uid="uid://b811gb17u6cm3" path="res://src/player/player_hurt.gd" id="7_o822w"]
+[ext_resource type="Script" path="res://src/player/player_hurt.gd" id="7_o822w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_244u8"]
 size = Vector2(64, 64)

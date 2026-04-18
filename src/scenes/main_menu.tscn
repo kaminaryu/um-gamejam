@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://w25il6lkyrst" path="res://assets/ui/main_menu/button_text/tutorial/2.png" id="18_805p8"]
 [ext_resource type="Texture2D" uid="uid://4bxvdgf2tg6c" path="res://assets/ui/main_menu/button_text/tutorial/3.png" id="19_1fbjp"]
 [ext_resource type="Texture2D" uid="uid://bnh0n0biwipm1" path="res://assets/ui/main_menu/title_card.png" id="20_805p8"]
-[ext_resource type="PackedScene" uid="uid://c4kdd2ebmfoxw" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
-[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="23_qboab"]
+[ext_resource type="PackedScene" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
+[ext_resource type="PackedScene" path="res://src/scenes/button_sfx.tscn" id="23_qboab"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yrdre"]
 frames = 3

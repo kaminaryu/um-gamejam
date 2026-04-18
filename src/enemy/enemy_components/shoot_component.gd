@@ -30,11 +30,12 @@ func shoot() -> void:
 
 	var bullet = bullet_scene.instantiate()
 	
+	var sprite = bullet.get_node("Sprite2D")
 	# Calculate direction to player
 	var direction = global_position.direction_to(target.global_position)
 	
-	# THE OFFSET: Move the spawn point 50 pixels in the direction of the shot
-	# This places the bullet outside the enemy's hitbox.
+	sprite.modulate = Color("#49ab7b")
+	
 	var spawn_offset = direction * 50.0 
 	bullet.global_position = global_position + spawn_offset
 	

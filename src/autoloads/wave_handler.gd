@@ -22,61 +22,61 @@ var waves = [
 	{"Green": 0, "Red": 0, "Blue": 0, "Yellow": 0, "Split": 6, "Big": 7, "Fast": 10, "Shoot": 7},
 ]
 func _ready() -> void :
-    print("wave is ready")
-    reset()
-    
-    
+	print("wave is ready")
+	reset()
+	
+	
 func reset() -> void :
-    wave_number = 1
-    enemy_count = 0
-    
-    
+	wave_number = 1
+	enemy_count = 0
+	
+	
 func register_enemy():
-    enemy_count+=1
-    
-    
+	enemy_count+=1
+	
+	
 func enemy_defeated():
-    enemy_count-=1
-    print("Enemy Left: ", enemy_count)
-    if enemy_count <= 0:
-        finished_wave.emit()
-        increase_wave()
-        var sfx = SfxPlayer.get_audio("WaveCompleted")
-        _play_global_sfx(sfx)
-        
-        
+	enemy_count-=1
+	print("Enemy Left: ", enemy_count)
+	if enemy_count <= 0:
+		finished_wave.emit()
+		increase_wave()
+		var sfx = SfxPlayer.get_audio("WaveCompleted")
+		_play_global_sfx(sfx)
+		
+		
 func _input(event: InputEvent) -> void :
-    if (event.is_action_pressed("(DEBUG)IncreaseWave")) :
-        increase_wave()
-        start_wave()
-        
-        
+	if (event.is_action_pressed("(DEBUG)IncreaseWave")) :
+		increase_wave()
+		start_wave()
+		
+		
 func increase_wave() -> void :
-    wave_number += 1
-    print("Wave: ", wave_number)
-    await get_tree().create_timer(2.0).timeout
-    increased_wave.emit()
-    await get_tree().create_timer(2.0).timeout
-    start_wave()
-    
-    
+	wave_number += 1
+	print("Wave: ", wave_number)
+	await get_tree().create_timer(2.0).timeout
+	increased_wave.emit()
+	await get_tree().create_timer(2.0).timeout
+	start_wave()
+	
+	
 func start_wave():
-    print("Wave Start")
-    var data: Dictionary
-    if wave_number <= waves.size():
-        data = waves[wave_number-1]
-    else:
-        data = waves[waves.size()-1]
-    started_wave.emit(data)
+	print("Wave Start")
+	var data: Dictionary
+	if wave_number <= waves.size():
+		data = waves[wave_number-1]
+	else:
+		data = waves[waves.size()-1]
+	started_wave.emit(data)
 
 
 func _play_global_sfx(stream: AudioStream):
-    if stream:
-        var player = AudioStreamPlayer.new()
-        player.stream = stream
-        
-        player.bus = &"SFX"
-        get_tree().root.add_child(player)
-        
-        player.play()
-        player.finished.connect(player.queue_free)
+	if stream:
+		var player = AudioStreamPlayer.new()
+		player.stream = stream
+		
+		player.bus = &"SFX"
+		get_tree().root.add_child(player)
+		
+		player.play()
+		player.finished.connect(player.queue_free)

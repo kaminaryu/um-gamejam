@@ -16,111 +16,111 @@ var _is_invincible := false
 
 
 func _ready():
-    current_health = MAX_HEALTH
-    
-    $IFrames.finished_iframe.connect(_on_finished_iframe)
+	current_health = MAX_HEALTH
+	
+	$IFrames.finished_iframe.connect(_on_finished_iframe)
 
 
 func _physics_process(delta: float) -> void:
-    # 1. Bleed off knockback velocity every frame
-    knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, rebound_friction * delta)
-    handle_movement(delta)
+	# 1. Bleed off knockback velocity every frame
+	knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, rebound_friction * delta)
+	handle_movement(delta)
 
 func handle_movement(delta: float) -> void:
-    var direction := Vector2.ZERO
-    
-    if (Input.is_action_pressed("move_up")):
-        direction.y += -1
-    if (Input.is_action_pressed("move_left")):
-        direction.x += -1
-    if (Input.is_action_pressed("move_down")):
-        direction.y += 1
-    if (Input.is_action_pressed("move_right")):
-        direction.x += 1
-    
-    # 2. Combine normal movement with knockback
-    var move_velocity = direction.normalized() * SPEED * dash_mult
-    velocity = move_velocity + knockback_velocity
-    
-    move_and_slide()
-    
-    # 3. Check if we bumped into an enemy
-    _check_rebound()
+	var direction := Vector2.ZERO
+	
+	if (Input.is_action_pressed("move_up")):
+		direction.y += -1
+	if (Input.is_action_pressed("move_left")):
+		direction.x += -1
+	if (Input.is_action_pressed("move_down")):
+		direction.y += 1
+	if (Input.is_action_pressed("move_right")):
+		direction.x += 1
+	
+	# 2. Combine normal movement with knockback
+	var move_velocity = direction.normalized() * SPEED * dash_mult
+	velocity = move_velocity + knockback_velocity
+	
+	move_and_slide()
+	
+	# 3. Check if we bumped into an enemy
+	_check_rebound()
 
 
 func _check_rebound():
-    for i in get_slide_collision_count():
-        var collision = get_slide_collision(i)
-        var collider = collision.get_collider()
-        
-        # Make sure your enemies are in a group called "enemies"
-        if collider.is_in_group("Enemy"):
-            # Calculate direction AWAY from the enemy
-            var bounce_dir = collider.global_position.direction_to(global_position)
-            
-            # Apply the knockback force
-            knockback_velocity = bounce_dir * rebound_strength
-            
-            # Optional: nudge position to prevent "sticking"
-            global_position += bounce_dir * 3.0
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		# Make sure your enemies are in a group called "enemies"
+		if collider.is_in_group("Enemy"):
+			# Calculate direction AWAY from the enemy
+			var bounce_dir = collider.global_position.direction_to(global_position)
+			
+			# Apply the knockback force
+			knockback_velocity = bounce_dir * rebound_strength
+			
+			# Optional: nudge position to prevent "sticking"
+			global_position += bounce_dir * 3.0
 
 # Inside your Player script
 
 func apply_knockback(from_position: Vector2) -> void:
-    if (_is_invincible) :
-        return
-        
-    # Calculate direction from the enemy to the player
-    var push_dir = from_position.direction_to(global_position)
-    
-    # Set the knockback_velocity (the variable used in your handle_movement)
-    knockback_velocity = push_dir * rebound_strength
-    
+	if (_is_invincible) :
+		return
+		
+	# Calculate direction from the enemy to the player
+	var push_dir = from_position.direction_to(global_position)
+	
+	# Set the knockback_velocity (the variable used in your handle_movement)
+	knockback_velocity = push_dir * rebound_strength
+	
 
 func take_damage(dmg: int):
-    if (_is_invincible) :
-        return
-        
-    $IFrames.apply_iframe()
-    $PassiveHealing.stop_healing()
-    _is_invincible = true
-    
-    current_health -= dmg
-    health_changed.emit(current_health)
-    print("taking damage: ", current_health)
-    
-    var sprite = $Sprite2D
-    var tween = create_tween()
-    
-    sprite.modulate = Color(10,10,10)
-    
-    tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)\
-        .set_trans(Tween.TRANS_SINE)\
-        .set_ease(Tween.EASE_IN_OUT)
-        
-    $PlayerHurt.play()
-    
-    if current_health <= 0:
-        GameMaster.player_death()
-        
+	if (_is_invincible) :
+		return
+		
+	$IFrames.apply_iframe()
+	$PassiveHealing.stop_healing()
+	_is_invincible = true
+	
+	current_health -= dmg
+	health_changed.emit(current_health)
+	print("taking damage: ", current_health)
+	
+	var sprite = $Sprite2D
+	var tween = create_tween()
+	
+	sprite.modulate = Color(10,10,10)
+	
+	tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
+		
+	$PlayerHurt.play()
+	
+	if current_health <= 0:
+		GameMaster.player_death()
+		
 
 
 func die():
-    death.emit()
-    queue_free()
-    
-    
+	death.emit()
+	queue_free()
+	
+	
 func heal() -> void :
-    var delta_health = randi_range(3, 5)
-    current_health += delta_health
-    current_health = min(current_health, MAX_HEALTH)
-    print("Healing (", delta_health, "): ", current_health)
-    health_changed.emit(current_health)
-    
+	var delta_health = randi_range(3, 5)
+	current_health += delta_health
+	current_health = min(current_health, MAX_HEALTH)
+	print("Healing (", delta_health, "): ", current_health)
+	health_changed.emit(current_health)
+	
 
 func _on_finished_iframe() -> void :
-    _is_invincible = false
-    $PassiveHealing.init_healing()
+	_is_invincible = false
+	$PassiveHealing.init_healing()
 
 
 signal death

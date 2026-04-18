@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=37 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
@@ -123,6 +123,7 @@ polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, 
 metadata/_edit_lock_ = true
 
 [node name="BlackScreen" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
