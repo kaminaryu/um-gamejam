@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cgconoji58hmb"]
+
+[ext_resource type="Texture2D" uid="uid://cxxh41imc2fg0" path="res://assets/ui/options/check_button/checked.png" id="1_7pg78"]
+[ext_resource type="Texture2D" uid="uid://dcsmf2cl6f2rx" path="res://assets/ui/options/check_button/unchecked.png" id="2_r8aet"]
+[ext_resource type="Texture2D" uid="uid://cnw5n74knn3kn" path="res://assets/ui/options/slider/grabber.png" id="3_ml3ry"]
+[ext_resource type="Texture2D" uid="uid://bbq4prw5bmkof" path="res://assets/ui/options/slider/slider_bg.png" id="4_e188w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0ppk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_584na"]
+texture = ExtResource("4_e188w")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utgvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ci1mp"]
+texture = ExtResource("4_e188w")
+texture_margin_bottom = 13.0
+
+[resource]
+CheckButton/icons/checked = ExtResource("1_7pg78")
+CheckButton/icons/unchecked = ExtResource("2_r8aet")
+CheckButton/styles/normal = SubResource("StyleBoxTexture_j0ppk")
+HSlider/icons/grabber = ExtResource("3_ml3ry")
+HSlider/icons/grabber_highlight = ExtResource("3_ml3ry")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_584na")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_utgvi")
+HSlider/styles/slider = SubResource("StyleBoxTexture_ci1mp")
