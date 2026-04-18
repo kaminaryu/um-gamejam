@@ -43,14 +43,14 @@ signal death
 
 
 func _play_global_sfx(stream: AudioStream):
-	if stream:
-		var player = AudioStreamPlayer2D.new()
-		player.stream = stream
-		player.pitch_scale = randf_range(0.9, 1.1)
-		player.global_position = global_position
-		
-		player.bus = &"SFX"
-		get_tree().root.add_child(player)
-		
-		player.play()
-		player.finished.connect(player.queue_free)
+    if stream:
+        var player = AudioStreamPlayer2D.new()
+        player.stream = stream
+        player.pitch_scale = randf_range(0.9, 1.1)
+        player.global_position = global_position
+        
+        player.bus = &"SFX"
+        get_tree().root.add_child(player)
+        
+        player.play()
+        player.finished.connect(player.queue_free)

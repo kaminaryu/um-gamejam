@@ -10,12 +10,12 @@ var moving_direction: float
 var shooting_rotation: float
 
 func _ready() -> void :
-	moving_direction = randf_range(-PI, PI)
-	init_shooting()
-	$BuddySpawn.pitch_scale = randf_range(0.9, 1.1)
-	$BuddySpawn.play()
-	
-	
+    moving_direction = randf_range(-PI, PI)
+    init_shooting()
+    $BuddySpawn.pitch_scale = randf_range(0.9, 1.1)
+    $BuddySpawn.play()
+    
+    
 func _process(delta: float) -> void :
     shooting_rotation += delta * ROT_SPEED
     $Sprite2D.rotation = shooting_rotation
@@ -24,17 +24,17 @@ func _process(delta: float) -> void :
 func _physics_process(delta: float) -> void:
     velocity = Vector2.RIGHT.rotated(moving_direction) * SPEED
 
-	var collision = move_and_collide(velocity * delta)
-	
-	if collision:
-		var normal = collision.get_normal()
-		var bounced_velocity = velocity.bounce(normal)
-		moving_direction = bounced_velocity.angle()
-		global_position += normal * 3.0
-		
-		$BuddyBounce.pitch_scale = randf_range(0.9, 1.1)
-		$BuddyBounce.play()
-		
+    var collision = move_and_collide(velocity * delta)
+    
+    if collision:
+        var normal = collision.get_normal()
+        var bounced_velocity = velocity.bounce(normal)
+        moving_direction = bounced_velocity.angle()
+        global_position += normal * 3.0
+        
+        $BuddyBounce.pitch_scale = randf_range(0.9, 1.1)
+        $BuddyBounce.play()
+        
 
 func init_shooting() -> void :
     var random_time = randf_range(1.0, 2.5)
