@@ -53,6 +53,16 @@ func randomly_remove_mechanism() -> void :
         print("Wave: % to remove control is now ", percentage_to_lose_control)
         return
         
+        
+    # roll for buddy spawn (50% always)
+    dice_roll = randf()
+    
+    if (dice_roll > 0.5) :
+        print("Spawning Buddy...")
+        $BuddyHandler.spawn_buddy()
+        return
+        
+        
     # pick a control to remove randomly
     var total_enabled_weight: float = calculate_total_enabled_weight()
     

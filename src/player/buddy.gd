@@ -3,7 +3,7 @@ extends CharacterBody2D
 const BULLET_SCENE = preload("res://src/mechanism/shooting/bullet.tscn")
 
 const ROT_SPEED := 2.0
-const SPEED := 67
+const SPEED := 500
 const BUDDY_SIZE := 24.0
 
 var moving_direction: float
