@@ -1,6 +1,8 @@
 extends Node2D
 
 var is_dashing: bool = false
+var able_to_dash: bool = true
+
 
 func enable(enable: bool) -> void :
     if (enable) :
@@ -8,8 +10,9 @@ func enable(enable: bool) -> void :
     else :
         process_mode = Node.PROCESS_MODE_DISABLED
     
+    
 func _process(delta: float) -> void :
-    if (is_dashing) :
+    if (is_dashing or not able_to_dash) :
         return 
     
     if (Input.is_action_just_pressed("dash")) :
@@ -21,6 +24,9 @@ func _process(delta: float) -> void :
         apply_dash(dash_mult)
         
         get_parent().after_image(true)
+        
+        $DashCooldown.start()
+        able_to_dash = false
 
 
 func apply_dash(multiplier: float) -> void :
@@ -35,3 +41,7 @@ func _on_dash_duration_timeout() -> void:
     is_dashing = false
     apply_dash(1)
     get_parent().after_image(false)
+
+
+func _on_dash_cooldown_timeout() -> void:
+    able_to_dash = true

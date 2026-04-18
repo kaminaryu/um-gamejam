@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ks2pwqt2xl7e"]
+[gd_scene load_steps=10 format=3 uid="uid://ks2pwqt2xl7e"]
 
 [ext_resource type="Script" uid="uid://c7q01071ug33p" path="res://src/mechanism/dashing/dash_mech.gd" id="1_hgdwd"]
 [ext_resource type="Script" uid="uid://cdo536pv6y6h6" path="res://src/mechanism/dashing/controlled.gd" id="2_i8anb"]
+[ext_resource type="Script" uid="uid://cijbboc8cfjj1" path="res://src/mechanism/dashing/progress_bar.gd" id="3_8pn6h"]
 [ext_resource type="Script" uid="uid://l4qd3l2jgqc2" path="res://src/mechanism/dashing/uncontrolled.gd" id="3_i8anb"]
 [ext_resource type="Texture2D" uid="uid://big068dh0ca43" path="res://assets/player/player.png" id="5_2xmh0"]
 [ext_resource type="Script" uid="uid://qvtjyl6tv3yg" path="res://src/mechanism/dashing/woosh.gd" id="5_8pn6h"]
@@ -28,6 +29,21 @@ script = ExtResource("2_i8anb")
 [node name="DashDuration" type="Timer" parent="Controlled"]
 wait_time = 0.2
 
+[node name="DashCooldown" type="Timer" parent="Controlled"]
+wait_time = 2.0
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Controlled"]
+z_index = 10
+offset_left = -64.0
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 56.0
+max_value = 2.0
+value = 2.0
+show_percentage = false
+script = ExtResource("3_8pn6h")
+
 [node name="Uncontrolled" type="Node2D" parent="."]
 script = ExtResource("3_i8anb")
 
@@ -47,5 +63,6 @@ process_material = SubResource("ParticleProcessMaterial_7vh8h")
 script = ExtResource("5_8pn6h")
 
 [connection signal="timeout" from="Controlled/DashDuration" to="Controlled" method="_on_dash_duration_timeout"]
+[connection signal="timeout" from="Controlled/DashCooldown" to="Controlled" method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Uncontrolled/DashDuration" to="Uncontrolled" method="_on_dash_duration_timeout"]
 [connection signal="timeout" from="Uncontrolled/DashDelay" to="Uncontrolled" method="_on_dash_delay_timeout"]
