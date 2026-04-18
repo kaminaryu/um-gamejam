@@ -208,24 +208,28 @@ theme_override_constants/separation = 30
 [node name="ResumeButton" type="TextureButton" parent="Control/PaperFrame/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_akt61")
 texture_hover = ExtResource("5_ocjko")
 
 [node name="SettingsButton" type="TextureButton" parent="Control/PaperFrame/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_4v4cw")
 texture_hover = ExtResource("7_kvepw")
 
 [node name="RestartButton" type="TextureButton" parent="Control/PaperFrame/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_cuns8")
 texture_hover = ExtResource("9_gkjv3")
 
 [node name="MenuButton" type="TextureButton" parent="Control/PaperFrame/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_u6erg")
 texture_hover = ExtResource("11_sylqh")
 

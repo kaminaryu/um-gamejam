@@ -80,27 +80,28 @@ func apply_knockback(from_position: Vector2) -> void:
 func take_damage(dmg: int):
     if (_is_invincible) :
         return
-        
+
+
     $IFrames.apply_iframe()
     $PassiveHealing.stop_healing()
     _is_invincible = true
-    
+
     current_health -= dmg
     health_changed.emit(current_health)
     print("taking damage: ", current_health)
-    
+
     var sprite = $Sprite2D
     var tween = create_tween()
-    
+
     sprite.modulate = Color(10,10,10)
-    
+
     tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)\
         .set_trans(Tween.TRANS_SINE)\
         .set_ease(Tween.EASE_IN_OUT)
-        
+
     $PlayerHurt.pitch_scale = randf_range(0.9, 1.1)
     $PlayerHurt.play()
-    
+
     if current_health <= 0:
         GameMaster.player_death()
 

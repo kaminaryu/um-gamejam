@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b7k6dspwo3ks3"]
+[gd_scene load_steps=33 format=3 uid="uid://b7k6dspwo3ks3"]
 
 [ext_resource type="Script" uid="uid://cb0saakdnwjcc" path="res://src/scenes/main_menu.gd" id="1_rm437"]
 [ext_resource type="Texture2D" uid="uid://bysi3kguhfoep" path="res://assets/ui/main_menu/main_menu_bg.png" id="2_1fbjp"]
@@ -16,10 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://bx4n2fl3l1va6" path="res://assets/ui/main_menu/small_button/3.png" id="13_hmoou"]
 [ext_resource type="Texture2D" uid="uid://b6esfrw43tj8b" path="res://assets/ui/main_menu/button_text/options/1.png" id="14_emcwr"]
 [ext_resource type="Texture2D" uid="uid://pmv2i00quupj" path="res://assets/ui/main_menu/button_text/options/2.png" id="15_805p8"]
+[ext_resource type="Script" uid="uid://bxtiuvpljapew" path="res://src/scenes/options_button.gd" id="15_ri8ns"]
 [ext_resource type="Texture2D" uid="uid://bleva0j6q05yf" path="res://assets/ui/main_menu/button_text/options/3.png" id="16_1fbjp"]
 [ext_resource type="Texture2D" uid="uid://b0f6pclm1ee84" path="res://assets/ui/main_menu/button_text/tutorial/1.png" id="17_emcwr"]
 [ext_resource type="Texture2D" uid="uid://w25il6lkyrst" path="res://assets/ui/main_menu/button_text/tutorial/2.png" id="18_805p8"]
 [ext_resource type="Texture2D" uid="uid://4bxvdgf2tg6c" path="res://assets/ui/main_menu/button_text/tutorial/3.png" id="19_1fbjp"]
+[ext_resource type="Script" uid="uid://b1nvu33mm8b38" path="res://src/scenes/tutorial_button.gd" id="19_276oj"]
 [ext_resource type="Texture2D" uid="uid://bnh0n0biwipm1" path="res://assets/ui/main_menu/title_card.png" id="20_805p8"]
 [ext_resource type="PackedScene" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
 [ext_resource type="PackedScene" uid="uid://j7wxmtek347c" path="res://src/scenes/tutorial_menu.tscn" id="23_6208y"]
@@ -113,6 +115,7 @@ theme_override_constants/separation = 16
 [node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_yrdre")
 texture_hover = SubResource("AnimatedTexture_n5k5b")
 
@@ -133,7 +136,9 @@ texture = SubResource("AnimatedTexture_2p8af")
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_5sj7r")
+script = ExtResource("15_ri8ns")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/OptionsButton"]
 layout_mode = 1
@@ -154,7 +159,9 @@ texture = SubResource("AnimatedTexture_qboab")
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_5sj7r")
+script = ExtResource("19_276oj")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/TutorialButton"]
 layout_mode = 1
@@ -193,5 +200,9 @@ visible = false
 [node name="ButtonSfx" parent="." instance=ExtResource("23_qboab")]
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/TutorialButton" to="VBoxContainer/TutorialButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/TutorialButton" to="VBoxContainer/TutorialButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
