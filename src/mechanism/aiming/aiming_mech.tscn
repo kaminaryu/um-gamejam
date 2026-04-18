@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://br2vk1r1ectfk"]
+[gd_scene load_steps=10 format=3 uid="uid://br2vk1r1ectfk"]
 
 [ext_resource type="Script" uid="uid://8l63m6pjprsi" path="res://src/mechanism/aiming/aiming_mech.gd" id="1_5312n"]
 [ext_resource type="Script" uid="uid://6mw03c6tx6hn" path="res://src/mechanism/aiming/controlled.gd" id="2_6rol8"]
 [ext_resource type="Script" uid="uid://du8w1602jgll6" path="res://src/mechanism/aiming/uncontrolled.gd" id="3_ocxxr"]
 [ext_resource type="Texture2D" uid="uid://jxkvm6kviyr6" path="res://assets/player/shooter_spritesheet.png" id="4_ocxxr"]
+[ext_resource type="Script" uid="uid://cqiixsb1mdyrs" path="res://src/player/player_shoot.gd" id="5_2m87o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhewq"]
 atlas = ExtResource("4_ocxxr")
@@ -53,5 +54,8 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_6b2ur")
 autoplay = "default"
 frame_progress = 0.539187
+
+[node name="PlayerShoot" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("5_2m87o")
 
 [connection signal="timeout" from="Uncontrolled/AimingDelay" to="Uncontrolled" method="_on_aiming_delay_timeout"]
