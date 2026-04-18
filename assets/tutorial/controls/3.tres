@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TutorialData" load_steps=3 format=3 uid="uid://bhx1bfkqrxnns"]
 
-[ext_resource type="Texture2D" uid="uid://bl7xmgr0j0j40" path="res://assets/Placeholder/5282291.png" id="1_qewat"]
+[ext_resource type="Texture2D" uid="uid://cqcm13davbet6" path="res://assets/tutorial/img/left-click.png" id="1_qewat"]
 [ext_resource type="Script" uid="uid://dsyc4h4q7wt28" path="res://assets/tutorial/tutorial_entry.gd" id="2_1f5ub"]
 
 [resource]
