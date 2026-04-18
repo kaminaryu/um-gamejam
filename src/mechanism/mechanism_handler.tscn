@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ks2pwqt2xl7e" path="res://src/mechanism/dashing/dash_mech.tscn" id="3_oktyj"]
 [ext_resource type="PackedScene" uid="uid://br2vk1r1ectfk" path="res://src/mechanism/aiming/aiming_mech.tscn" id="4_7k0xv"]
 [ext_resource type="PackedScene" uid="uid://b440ik82p356t" path="res://src/mechanism/vision/vision_mech.tscn" id="6_ltcot"]
-[ext_resource type="PackedScene" uid="uid://dwd4f0ibdq7li" path="res://src/player/buddy_handler.tscn" id="7_4r426"]
+[ext_resource type="PackedScene" uid="uid://dlf2csxwqotd6" path="res://src/player/buddy_handler.tscn" id="7_4r426"]
 
 [node name="MechanismHandler" type="Node2D"]
 script = ExtResource("1_ivdr4")
