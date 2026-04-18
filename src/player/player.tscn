@@ -140,6 +140,7 @@ frame = 8
 frame_progress = 0.311851
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="MechanismHandler" parent="." instance=ExtResource("3_mf2ua")]
 

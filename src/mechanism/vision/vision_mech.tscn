@@ -14,7 +14,6 @@ fill_to = Vector2(1, 0.5)
 [node name="VisionMech" type="PointLight2D"]
 blend_mode = 2
 texture = SubResource("GradientTexture2D_opqy5")
-texture_scale = 7.43
 script = ExtResource("1_opqy5")
 
 [node name="FluctuationDelay" type="Timer" parent="."]
