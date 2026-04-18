@@ -284,7 +284,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="Description" type="Label" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
-texture_filter = 1
+texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.262745, 0.192157, 0.152941, 1)
 theme_override_font_sizes/font_size = 11
@@ -313,12 +313,14 @@ metadata/_edit_group_ = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_4ttsb")
 
 [node name="Right" type="TextureButton" parent="Control/TextureRect/TutorialPage/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_cipkq")
 
 [node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/TutorialPage"]
@@ -332,6 +334,7 @@ theme_override_constants/margin_top = 42
 
 [node name="Close" type="TextureButton" parent="Control/TextureRect/TutorialPage/CloseButton"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_cipkq")
 texture_hover = ExtResource("7_ambg3")
 

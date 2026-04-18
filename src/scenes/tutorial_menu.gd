@@ -19,6 +19,19 @@ var tutorial_data: Array[TutorialData];
 
 func _ready() -> void :
     hide();
+    
+func _process(delta: float) -> void :
+    if (currentIndex == 0): 
+        $Control/TextureRect/TutorialPage/Buttons/Left.modulate = Color(1, 1, 1, 0)
+    else :
+        $Control/TextureRect/TutorialPage/Buttons/Left.modulate = Color(1, 1, 1, 1)
+        
+        
+    if (currentIndex == lastItem-1): 
+        $Control/TextureRect/TutorialPage/Buttons/Right.modulate = Color(1, 1, 1, 0)
+    else :
+        $Control/TextureRect/TutorialPage/Buttons/Right.modulate = Color(1, 1, 1, 1)
+
 
 func close_tutorial() -> void:
     hide()
@@ -72,13 +85,15 @@ func assign_data() -> void:
     
     
 func _on_left_pressed() -> void:
-    if (currentIndex == 0): return;
+    if (currentIndex == 0): 
+        return;
     
     currentIndex -= 1;
     assign_data();
     
 func _on_right_pressed() -> void:
-    if (currentIndex == lastItem-1): return;
+    if (currentIndex == lastItem-1): 
+        return;
     
     currentIndex += 1;
     assign_data();
