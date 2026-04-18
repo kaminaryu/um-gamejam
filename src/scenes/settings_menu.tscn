@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4kdd2ebmfoxw"]
+[gd_scene load_steps=17 format=3 uid="uid://c4kdd2ebmfoxw"]
 
 [ext_resource type="Script" uid="uid://d3xg53rhhtcdc" path="res://src/scenes/settings_menu.gd" id="1_oaxli"]
 [ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/game/clipboard_frame.png" id="2_3wh55"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c82gsxvnhvf53" path="res://assets/ui/options/sfx.png" id="6_d2cta"]
 [ext_resource type="Theme" uid="uid://cgconoji58hmb" path="res://assets/ui/options/options.tres" id="7_pd2eg"]
 [ext_resource type="Texture2D" uid="uid://dmi8ovx8ycmv2" path="res://assets/ui/options/goofy.png" id="8_dfyab"]
+[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="11_p2fji"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcnqr"]
 bg_color = Color(0, 0, 0, 0.478431)
@@ -105,6 +106,7 @@ _data = {
 }
 
 [node name="SettingsMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_oaxli")
 
 [node name="BGBlur" type="Panel" parent="."]
@@ -234,6 +236,8 @@ texture_hover = ExtResource("4_aq0g2")
 libraries = {
 &"": SubResource("AnimationLibrary_d2cta")
 }
+
+[node name="ButtonSfx" parent="." instance=ExtResource("11_p2fji")]
 
 [connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/MasterControl" to="." method="_on_master_control_value_changed"]
 [connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/MusicControl" to="." method="_on_music_control_value_changed"]

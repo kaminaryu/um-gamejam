@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8qw7ykpxrqo0"]
+[gd_scene load_steps=19 format=3 uid="uid://c8qw7ykpxrqo0"]
 
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="1_mf2ua"]
 [ext_resource type="Script" uid="uid://8326h0bgf0cn" path="res://src/player/player.gd" id="1_rxibo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkuhk6i3067lk" path="res://src/mechanism/mechanism_handler.tscn" id="3_mf2ua"]
 [ext_resource type="Script" uid="uid://dnktldbteouts" path="res://src/player/i_frames.gd" id="5_5f2sf"]
 [ext_resource type="PackedScene" uid="uid://3yj0m61kdrk5" path="res://src/player/passive_healing.tscn" id="6_jiejy"]
+[ext_resource type="Script" uid="uid://b811gb17u6cm3" path="res://src/player/player_hurt.gd" id="7_o822w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_244u8"]
 size = Vector2(64, 64)
@@ -156,5 +157,9 @@ libraries = {
 }
 
 [node name="PassiveHealing" parent="." instance=ExtResource("6_jiejy")]
+
+[node name="PlayerHurt" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+script = ExtResource("7_o822w")
 
 [connection signal="animation_finished" from="IFrames/AnimationPlayer" to="IFrames" method="_on_animation_player_animation_finished"]

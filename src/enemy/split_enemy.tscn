@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7rewandit45d"]
+[gd_scene load_steps=17 format=3 uid="uid://7rewandit45d"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_pw2gi"]
 [ext_resource type="Texture2D" uid="uid://6ew6t76gwqbj" path="res://assets/enemy/split_enemy_spritesheet.png" id="2_a7lsf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cn405aqx3l8rq" path="res://src/enemy/blue_enemy.tscn" id="8_a7lsf"]
 [ext_resource type="PackedScene" uid="uid://ck8s2hlj8i1vh" path="res://src/enemy/yellow_enemy.tscn" id="9_5752k"]
 [ext_resource type="Script" uid="uid://dvpkoqf65ktm8" path="res://src/enemy/enemy_components/attack_component.gd" id="10_a7lsf"]
+[ext_resource type="Script" uid="uid://dxci872kmgvea" path="res://src/enemy/enemy_spit.gd" id="11_5752k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5752k"]
 atlas = ExtResource("2_a7lsf")
@@ -77,3 +78,7 @@ spawn_scenes = Array[PackedScene]([ExtResource("6_7os5y"), ExtResource("7_fmb8w"
 
 [node name="AttackComponent" type="Node2D" parent="."]
 script = ExtResource("10_a7lsf")
+
+[node name="EnemySplit" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+script = ExtResource("11_5752k")
