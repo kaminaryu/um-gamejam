@@ -17,5 +17,9 @@ func toggle_control() -> void :
         $Controlled.enable(false)
         $Uncontrolled.enable(true)
 
+
 func get_dash_multiplier() -> float :
     return _DASH_MULTIPLIER
+
+func after_image(enable: bool) -> void :
+    $AfterImageBlue.emitting = enable
