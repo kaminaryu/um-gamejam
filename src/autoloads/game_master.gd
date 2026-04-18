@@ -49,7 +49,7 @@ func player_death() -> void :
 
 
 func _input(event: InputEvent) -> void :
-     if (event.is_action_pressed("pause_game")) :
+    if (event.is_action_pressed("pause_game")) :
         if (game_paused) :
             pause_game(false)
         else :
