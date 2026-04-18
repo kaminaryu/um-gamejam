@@ -28,7 +28,6 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 Bullet=""
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
 [global_group]
 

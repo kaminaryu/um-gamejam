@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=37 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
+[ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="4_j04uq"]
 [ext_resource type="Texture2D" uid="uid://b7fwbipf16gl1" path="res://assets/ui/game/char_frame.png" id="5_kokaf"]
 [ext_resource type="AudioStream" uid="uid://tx41g51uogee" path="res://assets/soundtracks/Bouncing Pyramids.wav" id="5_o81g6"]
 [ext_resource type="Texture2D" uid="uid://cea6mdyedd3cy" path="res://assets/ui/game/health/health_background.png" id="6_lp058"]
@@ -12,17 +13,22 @@
 [ext_resource type="Texture2D" uid="uid://cq5ak54bev4k7" path="res://assets/ui/game/texts/you.png" id="7_kbdt0"]
 [ext_resource type="Texture2D" uid="uid://dyjnbqw265c41" path="res://assets/ui/game/health/health_fill.png" id="8_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://cspwv46mheiss" path="res://assets/ui/game/texts/health.png" id="11_4rjby"]
+[ext_resource type="Script" uid="uid://cgcf8q8stk5w4" path="res://src/player/health.gd" id="11_n75dp"]
 [ext_resource type="Texture2D" uid="uid://cctqiamlkmjml" path="res://assets/ui/game/texts/enemies_left.png" id="12_ccybt"]
 [ext_resource type="Texture2D" uid="uid://dfuq6lcdlev0k" path="res://assets/ui/game/wave_frame/waveframe.png" id="13_50ugh"]
 [ext_resource type="Texture2D" uid="uid://kav0n3332vqc" path="res://assets/ui/game/texts/wave_indicator.png" id="14_lcp4o"]
+[ext_resource type="Script" uid="uid://d3kfrdsb3x88d" path="res://src/ui/enemy_label.gd" id="15_tx8mq"]
 [ext_resource type="Texture2D" uid="uid://bxkt04273suis" path="res://assets/ui/game/icons/icon_frame.png" id="15_v252j"]
 [ext_resource type="Texture2D" uid="uid://cxvdwklnpyfer" path="res://assets/ui/game/icons/icon_aim.png" id="16_qsm7c"]
 [ext_resource type="Texture2D" uid="uid://ceyxqqp1qpi0m" path="res://assets/ui/game/icons/icon_dash.png" id="17_n75dp"]
 [ext_resource type="Texture2D" uid="uid://cmxnuaddalox7" path="res://assets/ui/game/icons/x.png" id="17_qsm7c"]
+[ext_resource type="Script" uid="uid://c2wowvw2pj62g" path="res://src/ui/wave_label.gd" id="17_tyryd"]
 [ext_resource type="Texture2D" uid="uid://d3e4a0fpdvkjk" path="res://assets/ui/game/icons/icon_pew.png" id="18_j04uq"]
 [ext_resource type="Texture2D" uid="uid://kxfj50yj3cvc" path="res://assets/ui/game/icons/icon_vision.png" id="19_tyryd"]
+[ext_resource type="Script" uid="uid://dxokp8y1qnnna" path="res://src/ui/control_icons.gd" id="19_xxm0n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
+font = ExtResource("4_j04uq")
 font_size = 200
 outline_size = 25
 outline_color = Color(0, 0, 0, 1)
@@ -82,6 +88,20 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tyryd"]
+font = ExtResource("4_j04uq")
+font_size = 24
+font_color = Color(0.901961, 0.890196, 0.886275, 1)
+outline_size = 7
+outline_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tx8mq"]
+font = ExtResource("4_j04uq")
+font_size = 40
+font_color = Color(0.901961, 0.890196, 0.886275, 1)
+outline_size = 7
+outline_color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -166,11 +186,12 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-value = 48.0
+value = 100.0
 texture_under = ExtResource("6_lp058")
 texture_over = ExtResource("7_24j03")
 texture_progress = ExtResource("8_p1ia5")
 texture_progress_offset = Vector2(-0.56, 0)
+script = ExtResource("11_n75dp")
 
 [node name="HealthText" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/Health"]
 layout_mode = 1
@@ -199,10 +220,20 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/WaveCounterHUD"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaveCounterHUD"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/WaveCounterHUD/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("12_ccybt")
+
+[node name="Enemy_Label" type="Label" parent="CanvasLayer/WaveCounterHUD/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_tyryd")
+horizontal_alignment = 1
+script = ExtResource("15_tx8mq")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD"]
 layout_mode = 2
@@ -222,6 +253,18 @@ offset_bottom = 21.5
 grow_vertical = 2
 texture = ExtResource("14_lcp4o")
 
+[node name="Wave Label" type="Label" parent="CanvasLayer/WaveCounterHUD/TextureRect"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 7.0
+offset_right = 228.0
+offset_bottom = 53.0
+text = "1"
+label_settings = SubResource("LabelSettings_tx8mq")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_tyryd")
+
 [node name="ControlIcons" type="HBoxContainer" parent="CanvasLayer"]
 texture_filter = 1
 offset_left = 166.0
@@ -229,6 +272,7 @@ offset_top = 137.0
 offset_right = 327.0
 offset_bottom = 177.0
 theme_override_constants/separation = 15
+script = ExtResource("19_xxm0n")
 
 [node name="Aim" type="TextureRect" parent="CanvasLayer/ControlIcons"]
 layout_mode = 2
