@@ -1,7 +1,109 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4kdd2ebmfoxw"]
+[gd_scene load_steps=17 format=3 uid="uid://c4kdd2ebmfoxw"]
 
 [ext_resource type="Script" uid="uid://d3xg53rhhtcdc" path="res://src/scenes/settings_menu.gd" id="1_oaxli"]
-[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="2_55vps"]
+[ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/game/clipboard_frame.png" id="2_3wh55"]
+[ext_resource type="Texture2D" uid="uid://cty60oyjc8scs" path="res://assets/ui/options/back.png" id="3_ebbay"]
+[ext_resource type="Texture2D" uid="uid://dg3y4t1ssmd28" path="res://assets/ui/options/options_title.png" id="3_pcnqr"]
+[ext_resource type="Texture2D" uid="uid://lpad0blyfohl" path="res://assets/ui/options/back_hover.png" id="4_aq0g2"]
+[ext_resource type="Texture2D" uid="uid://da33tcrat8s8v" path="res://assets/ui/options/master.png" id="4_p2fji"]
+[ext_resource type="Texture2D" uid="uid://bbe0a1j0tpjbf" path="res://assets/ui/options/music.png" id="5_hud32"]
+[ext_resource type="Texture2D" uid="uid://c82gsxvnhvf53" path="res://assets/ui/options/sfx.png" id="6_d2cta"]
+[ext_resource type="Theme" uid="uid://cgconoji58hmb" path="res://assets/ui/options/options.tres" id="7_pd2eg"]
+[ext_resource type="Texture2D" uid="uid://dmi8ovx8ycmv2" path="res://assets/ui/options/goofy.png" id="8_dfyab"]
+[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="11_p2fji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcnqr"]
+bg_color = Color(0, 0, 0, 0.478431)
+
+[sub_resource type="Animation" id="Animation_hud32"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246.5, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.478431)]
+}
+
+[sub_resource type="Animation" id="Animation_pcnqr"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(2.73208, 1),
+"update": 0,
+"values": [Vector2(246.5, 51), Vector2(246.5, 657)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.478431), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p2fji"]
+resource_name = "reveal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.143587, 1),
+"update": 0,
+"values": [Vector2(246.5, 657), Vector2(246.5, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGBlur:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.478431)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2cta"]
+_data = {
+&"RESET": SubResource("Animation_hud32"),
+&"close": SubResource("Animation_pcnqr"),
+&"reveal": SubResource("Animation_p2fji")
+}
 
 [node name="SettingsMenu" type="CanvasLayer"]
 process_mode = 3
@@ -13,117 +115,132 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pcnqr")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 282.0
-offset_top = 100.0
-offset_right = 322.0
-offset_bottom = 140.0
-scale = Vector2(15.28, 13.64)
-color = Color(0.268454, 0.199111, 0.157796, 1)
+[node name="Frame" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -329.5
+offset_top = -597.0
+offset_right = 329.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_3wh55")
+metadata/_edit_group_ = true
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
+[node name="Contents" type="VBoxContainer" parent="Frame"]
+layout_direction = 2
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = 145.0
+offset_right = -114.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Master" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 237.0
-offset_right = 427.0
-offset_bottom = 282.0
-theme_override_font_sizes/font_size = 32
-text = "Master"
+[node name="Title" type="MarginContainer" parent="Frame/Contents"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
 
-[node name="MasterControl" type="HSlider" parent="Control/Master"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 21.0
-offset_right = 282.0
-offset_bottom = 37.0
+[node name="TextureRect" type="TextureRect" parent="Frame/Contents/Title"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_pcnqr")
+
+[node name="ControlMenu" type="HBoxContainer" parent="Frame/Contents"]
+layout_mode = 2
+
+[node name="Label" type="VBoxContainer" parent="Frame/Contents/ControlMenu"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Master" type="TextureRect" parent="Frame/Contents/ControlMenu/Label"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_p2fji")
+
+[node name="Music" type="TextureRect" parent="Frame/Contents/ControlMenu/Label"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_hud32")
+
+[node name="SFX" type="TextureRect" parent="Frame/Contents/ControlMenu/Label"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_d2cta")
+
+[node name="Inputs" type="VBoxContainer" parent="Frame/Contents/ControlMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 22
+
+[node name="MasterControl" type="HSlider" parent="Frame/Contents/ControlMenu/Inputs"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("7_pd2eg")
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="Music" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 281.0
-offset_right = 427.0
-offset_bottom = 326.0
-theme_override_font_sizes/font_size = 32
-text = "Music"
-
-[node name="MusicControl" type="HSlider" parent="Control/Music"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 21.0
-offset_right = 282.0
-offset_bottom = 37.0
+[node name="MusicControl" type="HSlider" parent="Frame/Contents/ControlMenu/Inputs"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("7_pd2eg")
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="SFX" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 327.0
-offset_right = 427.0
-offset_bottom = 372.0
-theme_override_font_sizes/font_size = 32
-text = "SFX"
-
-[node name="SFXControl" type="HSlider" parent="Control/SFX"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 21.0
-offset_right = 282.0
-offset_bottom = 37.0
+[node name="SFXControl" type="HSlider" parent="Frame/Contents/ControlMenu/Inputs"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("7_pd2eg")
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="GoofySFX" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 389.0
-offset_right = 789.0
-offset_bottom = 434.0
-theme_override_font_sizes/font_size = 32
-text = "Toggle Goofy SFX (Challenge 1)"
+[node name="Toggle" type="CheckButton" parent="Frame/Contents"]
+layout_mode = 2
+theme = ExtResource("7_pd2eg")
+icon = ExtResource("8_dfyab")
 
-[node name="Toggle" type="CheckButton" parent="Control/GoofySFX"]
-layout_mode = 0
-offset_left = 475.0
-offset_top = 2.0
-offset_right = 519.0
-offset_bottom = 26.0
-scale = Vector2(2, 2)
-
-[node name="Keymaps" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 167.0
-offset_right = 459.0
-offset_bottom = 198.0
-scale = Vector2(2, 2)
+[node name="Keymaps" type="Button" parent="Frame/Contents"]
+layout_mode = 2
 text = "Change Keymaps"
 
-[node name="Close" type="Button" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Frame"]
 layout_mode = 0
-offset_left = 301.0
-offset_top = 114.0
-offset_right = 309.0
-offset_bottom = 122.0
-text = " X "
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 171.0
+offset_bottom = 155.0
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 42
 
-[node name="ButtonSfx" parent="." instance=ExtResource("2_55vps")]
+[node name="Close" type="TextureButton" parent="Frame/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_ebbay")
+texture_hover = ExtResource("4_aq0g2")
 
-[connection signal="value_changed" from="Control/Master/MasterControl" to="." method="_on_master_control_value_changed"]
-[connection signal="value_changed" from="Control/Music/MusicControl" to="." method="_on_music_control_value_changed"]
-[connection signal="value_changed" from="Control/SFX/SFXControl" to="." method="_on_sfx_control_value_changed"]
-[connection signal="pressed" from="Control/Close" to="." method="_on_close_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d2cta")
+}
+
+[node name="ButtonSfx" parent="." instance=ExtResource("11_p2fji")]
+
+[connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/MasterControl" to="." method="_on_master_control_value_changed"]
+[connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="value_changed" from="Frame/Contents/ControlMenu/Inputs/SFXControl" to="." method="_on_sfx_control_value_changed"]
+[connection signal="pressed" from="Frame/MarginContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

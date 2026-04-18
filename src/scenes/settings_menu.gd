@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 # 1. Reference your slider nodes
-@onready var master_slider = $Control/Master/MasterControl
-@onready var music_slider  = $Control/Music/MusicControl
-@onready var sfx_slider    = $Control/SFX/SFXControl
+@onready var master_slider = $Frame/Contents/ControlMenu/Inputs/MasterControl
+@onready var music_slider  = $Frame/Contents/ControlMenu/Inputs/MusicControl
+@onready var sfx_slider    = $Frame/Contents/ControlMenu/Inputs/SFXControl
+@onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
     hide()
@@ -20,9 +21,11 @@ func open_settings() -> void:
     sfx_slider.value    = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(&"SFX")))
     
     show()
+    animation_player.play("reveal");
+    
 
 func close_settings() -> void:
-    hide()
+    animation_player.play("close");
 
 func _on_close_pressed() -> void:
     close_settings()
@@ -38,3 +41,8 @@ func _on_music_control_value_changed(value: float) -> void:
 
 func _on_sfx_control_value_changed(value: float) -> void:
     AudioManager.set_bus_volume_percent(&"SFX", value)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+    if (anim_name == 'close') :
+        hide();
