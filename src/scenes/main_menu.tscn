@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b7k6dspwo3ks3"]
+[gd_scene load_steps=38 format=3 uid="uid://b7k6dspwo3ks3"]
 
 [ext_resource type="Script" uid="uid://cb0saakdnwjcc" path="res://src/scenes/main_menu.gd" id="1_rm437"]
 [ext_resource type="Texture2D" uid="uid://bysi3kguhfoep" path="res://assets/ui/main_menu/main_menu_bg.png" id="2_1fbjp"]
@@ -26,6 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://c4kdd2ebmfoxw" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
 [ext_resource type="PackedScene" uid="uid://d3tivrpd3lcxr" path="res://src/scenes/tutorial_menu.tscn" id="23_6208y"]
 [ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="23_qboab"]
+[ext_resource type="Script" uid="uid://ckjrxw7ddqa44" path="res://src/scenes/exit_button.gd" id="23_v4pqo"]
+[ext_resource type="Texture2D" uid="uid://c7bb5isjbfybe" path="res://assets/ui/main_menu/button_text/exit/1.png" id="24_tyxad"]
+[ext_resource type="Texture2D" uid="uid://bswjhk7ln5f08" path="res://assets/ui/main_menu/button_text/exit/2.png" id="25_uchu4"]
+[ext_resource type="Texture2D" uid="uid://ck46cig5ptdoa" path="res://assets/ui/main_menu/button_text/exit/3.png" id="26_22y83"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yrdre"]
 frames = 3
@@ -79,6 +83,15 @@ frame_0/duration = 0.16
 frame_1/texture = ExtResource("18_805p8")
 frame_1/duration = 0.16
 frame_2/texture = ExtResource("19_1fbjp")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5t24u"]
+frames = 3
+frame_0/texture = ExtResource("24_tyxad")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("25_uchu4")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("26_22y83")
 frame_2/duration = 0.16
 
 [node name="MainMenu" type="Control"]
@@ -178,6 +191,29 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_6208y")
 
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_5sj7r")
+script = ExtResource("23_v4pqo")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -18.0
+offset_right = 44.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_5t24u")
+
 [node name="TitleCard" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
@@ -206,3 +242,6 @@ visible = false
 [connection signal="mouse_entered" from="VBoxContainer/TutorialButton" to="VBoxContainer/TutorialButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/TutorialButton" to="VBoxContainer/TutorialButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]
