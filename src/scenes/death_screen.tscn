@@ -1,63 +1,175 @@
-[gd_scene load_steps=4 format=3 uid="uid://dinc0qbdqtw07"]
+[gd_scene load_steps=27 format=3 uid="uid://dinc0qbdqtw07"]
 
 [ext_resource type="Script" uid="uid://c8wwn2u28fqg0" path="res://src/scenes/death_screen.gd" id="1_l20v2"]
+[ext_resource type="Texture2D" uid="uid://7r5xg57xbt1t" path="res://assets/ui/death/game_over/1.png" id="2_d5n06"]
 [ext_resource type="AudioStream" uid="uid://bau05kgyscwcw" path="res://assets/soundtracks/You Lost.wav" id="2_vvawb"]
+[ext_resource type="Texture2D" uid="uid://bb5aoess4fuqn" path="res://assets/ui/death/game_over/2.png" id="3_ov2u8"]
 [ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="3_wwcsm"]
+[ext_resource type="Texture2D" uid="uid://bbtyysq82axyq" path="res://assets/ui/death/game_over/3.png" id="4_uj45g"]
+[ext_resource type="Script" uid="uid://dqyfq5lq6ca7d" path="res://src/scenes/restart_button.gd" id="5_dcd2w"]
+[ext_resource type="Texture2D" uid="uid://c6noo52bowpcs" path="res://assets/ui/death/retry/1.png" id="8_ooj50"]
+[ext_resource type="Texture2D" uid="uid://pk4ytweowy7y" path="res://assets/ui/death/retry/2.png" id="9_glr4p"]
+[ext_resource type="Script" uid="uid://cqjnoyhxikpnk" path="res://src/scenes/menu_button.gd" id="9_xvl8i"]
+[ext_resource type="Texture2D" uid="uid://lkh0uy527vlv" path="res://assets/ui/death/retry/3.png" id="10_ij3b8"]
+[ext_resource type="Texture2D" uid="uid://da6a42rl4k771" path="res://assets/ui/death/menu/1.png" id="11_owjee"]
+[ext_resource type="Texture2D" uid="uid://ebq5jq4lw17x" path="res://assets/ui/death/menu/2.png" id="12_a1p2r"]
+[ext_resource type="Texture2D" uid="uid://b3v8srex36u5q" path="res://assets/ui/death/menu/3.png" id="13_kimaf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6wwk"]
+bg_color = Color(0, 0, 0, 0.478431)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cuxqo"]
+frames = 3
+frame_0/texture = ExtResource("2_d5n06")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("3_ov2u8")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("4_uj45g")
+frame_2/duration = 0.16
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x6wwk"]
+load_path = "res://.godot/imported/1.png-9712bdee758b8637e3258274dbd719ef.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dcd2w"]
+load_path = "res://.godot/imported/2.png-ff1c59588cea4fee13dba2f3646ed422.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xvl8i"]
+load_path = "res://.godot/imported/3.png-0b35a0978bdcb785e2903d965b7a1778.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_d5n06"]
+frames = 3
+frame_0/texture = SubResource("CompressedTexture2D_x6wwk")
+frame_0/duration = 0.16
+frame_1/texture = SubResource("CompressedTexture2D_dcd2w")
+frame_1/duration = 0.16
+frame_2/texture = SubResource("CompressedTexture2D_xvl8i")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_6e82k"]
+frames = 3
+frame_0/texture = ExtResource("8_ooj50")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("9_glr4p")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("10_ij3b8")
+frame_2/duration = 0.16
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ov2u8"]
+load_path = "res://.godot/imported/1.png-9712bdee758b8637e3258274dbd719ef.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uj45g"]
+load_path = "res://.godot/imported/2.png-ff1c59588cea4fee13dba2f3646ed422.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a61xr"]
+load_path = "res://.godot/imported/3.png-0b35a0978bdcb785e2903d965b7a1778.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_a0e11"]
+frames = 3
+frame_0/texture = SubResource("CompressedTexture2D_ov2u8")
+frame_0/duration = 0.16
+frame_1/texture = SubResource("CompressedTexture2D_uj45g")
+frame_1/duration = 0.16
+frame_2/texture = SubResource("CompressedTexture2D_a61xr")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ktsgr"]
+frames = 3
+frame_0/texture = ExtResource("11_owjee")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("12_a1p2r")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("13_kimaf")
+frame_2/duration = 0.16
 
 [node name="DeathScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_l20v2")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BGBlur" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x6wwk")
 
-[node name="Title" type="Label" parent="Control"]
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -236.0
+offset_right = 431.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, -32)
+texture = SubResource("AnimatedTexture_cuxqo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 492.5
-offset_right = 619.5
-offset_bottom = 23.0
+offset_left = -119.5
+offset_top = 287.0
+offset_right = 119.5
+offset_bottom = 393.0
 grow_horizontal = 2
-scale = Vector2(3, 3)
-pivot_offset = Vector2(64, -32)
-text = "Death Menu(tm)"
+theme_override_constants/separation = 15
+metadata/_edit_group_ = true
 
-[node name="RestartButton" type="Button" parent="Control"]
+[node name="RestartButton" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_d5n06")
+script = ExtResource("5_dcd2w")
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/RestartButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 453.0
-offset_top = 305.0
-offset_right = 523.0
-offset_bottom = 336.0
+offset_left = -56.0
+offset_top = -15.0
+offset_right = 56.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-text = "Restart"
+texture = SubResource("AnimatedTexture_6e82k")
 
-[node name="MenuButton" type="Button" parent="Control"]
+[node name="MenuButton" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_a0e11")
+script = ExtResource("9_xvl8i")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer/MenuButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 454.0
-offset_top = 428.0
-offset_right = 524.0
-offset_bottom = 459.0
+offset_left = -56.0
+offset_top = -15.0
+offset_right = 56.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-text = "Menu"
+texture = SubResource("AnimatedTexture_ktsgr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vvawb")
@@ -65,5 +177,9 @@ autoplay = true
 
 [node name="ButtonSfx" parent="." instance=ExtResource("3_wwcsm")]
 
-[connection signal="pressed" from="Control/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/RestartButton" to="Control/VBoxContainer/RestartButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/RestartButton" to="Control/VBoxContainer/RestartButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/MenuButton" to="Control/VBoxContainer/MenuButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/MenuButton" to="Control/VBoxContainer/MenuButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
