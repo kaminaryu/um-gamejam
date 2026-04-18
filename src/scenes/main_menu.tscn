@@ -1,6 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7k6dspwo3ks3"]
+[gd_scene load_steps=28 format=3 uid="uid://b7k6dspwo3ks3"]
 
 [ext_resource type="Script" uid="uid://cb0saakdnwjcc" path="res://src/scenes/main_menu.gd" id="1_rm437"]
+[ext_resource type="Texture2D" uid="uid://bysi3kguhfoep" path="res://assets/ui/main_menu/main_menu_bg.png" id="2_1fbjp"]
+[ext_resource type="Texture2D" uid="uid://btsh5mejpq58j" path="res://assets/ui/main_menu/button/1.png" id="2_iaawh"]
+[ext_resource type="Texture2D" uid="uid://cs8q1y6snigxq" path="res://assets/ui/main_menu/button/2.png" id="3_kp3xf"]
+[ext_resource type="Texture2D" uid="uid://dyuigxdldreu6" path="res://assets/ui/main_menu/button/3.png" id="4_chlrs"]
+[ext_resource type="Texture2D" uid="uid://6boriy08or62" path="res://assets/ui/main_menu/button/hover/1.png" id="5_yrdre"]
+[ext_resource type="Texture2D" uid="uid://n3xprrk75roh" path="res://assets/ui/main_menu/button/hover/2.png" id="6_klrpn"]
+[ext_resource type="Texture2D" uid="uid://bs4eluuolpvun" path="res://assets/ui/main_menu/button/hover/3.png" id="7_1ipax"]
+[ext_resource type="Texture2D" uid="uid://dbo7wga7pgf13" path="res://assets/ui/main_menu/button_text/play/1.png" id="8_n5k5b"]
+[ext_resource type="Texture2D" uid="uid://wvb55nlfn3h3" path="res://assets/ui/main_menu/button_text/play/2.png" id="9_ubq7q"]
+[ext_resource type="Texture2D" uid="uid://btjgpodhndtka" path="res://assets/ui/main_menu/button_text/play/3.png" id="10_6wcb6"]
+[ext_resource type="Texture2D" uid="uid://dqdtmgoskpxcf" path="res://assets/ui/main_menu/small_button/1.png" id="11_k6ncl"]
+[ext_resource type="Texture2D" uid="uid://sndecin4qerj" path="res://assets/ui/main_menu/small_button/2.png" id="12_xmjry"]
+[ext_resource type="Texture2D" uid="uid://bx4n2fl3l1va6" path="res://assets/ui/main_menu/small_button/3.png" id="13_hmoou"]
+[ext_resource type="Texture2D" uid="uid://b6esfrw43tj8b" path="res://assets/ui/main_menu/button_text/options/1.png" id="14_emcwr"]
+[ext_resource type="Texture2D" uid="uid://pmv2i00quupj" path="res://assets/ui/main_menu/button_text/options/2.png" id="15_805p8"]
+[ext_resource type="Texture2D" uid="uid://bleva0j6q05yf" path="res://assets/ui/main_menu/button_text/options/3.png" id="16_1fbjp"]
+[ext_resource type="Texture2D" uid="uid://b0f6pclm1ee84" path="res://assets/ui/main_menu/button_text/tutorial/1.png" id="17_emcwr"]
+[ext_resource type="Texture2D" uid="uid://w25il6lkyrst" path="res://assets/ui/main_menu/button_text/tutorial/2.png" id="18_805p8"]
+[ext_resource type="Texture2D" uid="uid://4bxvdgf2tg6c" path="res://assets/ui/main_menu/button_text/tutorial/3.png" id="19_1fbjp"]
+[ext_resource type="Texture2D" uid="uid://bnh0n0biwipm1" path="res://assets/ui/main_menu/title_card.png" id="20_805p8"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yrdre"]
+frames = 3
+frame_0/texture = ExtResource("2_iaawh")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("3_kp3xf")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("4_chlrs")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_n5k5b"]
+frames = 3
+frame_0/texture = ExtResource("5_yrdre")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("6_klrpn")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("7_1ipax")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2p8af"]
+frames = 3
+frame_0/texture = ExtResource("8_n5k5b")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("9_ubq7q")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("10_6wcb6")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5sj7r"]
+frames = 3
+frame_0/texture = ExtResource("11_k6ncl")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("12_xmjry")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("13_hmoou")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qboab"]
+frames = 3
+frame_0/texture = ExtResource("14_emcwr")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("15_805p8")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("16_1fbjp")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_6208y"]
+frames = 3
+frame_0/texture = ExtResource("17_emcwr")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("18_805p8")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("19_1fbjp")
+frame_2/duration = 0.16
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,46 +85,100 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rm437")
 
-[node name="Game Title" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -55.0
-offset_top = 128.0
-offset_right = 55.0
-offset_bottom = 152.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-scale = Vector2(5, 5)
-pivot_offset = Vector2(55, 12)
-text = "UM Game Jam"
+grow_vertical = 2
+texture = ExtResource("2_1fbjp")
 
-[node name="PlayButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 543.0
-offset_top = 219.0
-offset_right = 584.0
-offset_bottom = 250.0
-scale = Vector2(3, 3)
-text = "Play
-"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 256.0
+offset_right = -66.0
+offset_bottom = 527.0
+grow_horizontal = 0
+theme_override_constants/separation = 16
 
-[node name="OptionsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 504.0
-offset_top = 346.0
-offset_right = 574.0
-offset_bottom = 377.0
-scale = Vector2(3, 3)
-text = "Options"
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_yrdre")
+texture_hover = SubResource("AnimatedTexture_n5k5b")
 
-[node name="TutorialsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 506.0
-offset_top = 470.0
-offset_right = 575.0
-offset_bottom = 501.0
-scale = Vector2(3, 3)
-text = "Tutorial"
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = 28.0
+offset_right = -84.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_2p8af")
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = SubResource("AnimatedTexture_5sj7r")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/OptionsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -14.0
+offset_right = 80.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_qboab")
+
+[node name="TutorialButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = SubResource("AnimatedTexture_5sj7r")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TutorialButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -15.0
+offset_right = 85.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_6208y")
+
+[node name="TitleCard" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -717.0
+offset_top = 47.0
+offset_right = -59.0
+offset_bottom = 241.0
+grow_horizontal = 0
+texture = ExtResource("20_805p8")
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
