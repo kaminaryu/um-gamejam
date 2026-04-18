@@ -45,7 +45,7 @@ script = ExtResource("1_rm0dw")
 _enemy_name = "Red Enemy"
 _health = 15
 _damage = 10
-_speed = 80.0
+_speed = 70.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

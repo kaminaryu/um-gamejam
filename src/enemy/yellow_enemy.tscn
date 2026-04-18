@@ -45,7 +45,7 @@ script = ExtResource("1_jhtwy")
 _enemy_name = "Yellow Enemy"
 _health = 25
 _damage = 10
-_speed = 80.0
+_speed = 50.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

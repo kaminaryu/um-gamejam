@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		if collider.has_node("DamageableComponent"):
 			var component = collider.get_node("DamageableComponent")
 			collider.take_damage(damage)
-			component.handle_hit(velocity) # Visual/Nudge logic
+			component.handle_hit(velocity) # Visual/Nudge logicd
 			
 		velocity = velocity.bounce(normal)
-		global_position += normal * 2.0 # Clears the hitbox
+		global_position += normal * 3.0 # Clears the hitbox

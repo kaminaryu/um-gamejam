@@ -46,7 +46,7 @@ script = ExtResource("1_xso4u")
 _enemy_name = "Blue Enemy"
 _health = 20
 _damage = 10
-_speed = 80.0
+_speed = 60.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=7 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
+[ext_resource type="PackedScene" uid="uid://dp6mvmxqmwlf4" path="res://src/player/buddy.tscn" id="5_o81g6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font_size = 200
@@ -48,3 +49,6 @@ label_settings = SubResource("LabelSettings_5dlwx")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_5dlwx")
+
+[node name="Buddy" parent="." instance=ExtResource("5_o81g6")]
+position = Vector2(7, -132)

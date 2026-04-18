@@ -8,6 +8,7 @@ size = Vector2(16, 16)
 
 [node name="Buddy" type="CharacterBody2D" groups=["Entities"]]
 scale = Vector2(2, 2)
+collision_layer = 16
 script = ExtResource("1_c1ini")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

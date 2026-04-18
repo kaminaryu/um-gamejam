@@ -4,7 +4,7 @@ extends Label
 func _ready() -> void:
 	# 1. Reset the wave logic via the Autoload
 	WaveHandler.reset()
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	# 2. Start the countdown sequence
 	run_countdown()
 
