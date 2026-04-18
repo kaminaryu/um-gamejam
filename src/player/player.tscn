@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://8326h0bgf0cn" path="res://src/player/player.gd" id="1_rxibo"]
 [ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/player/player_spritesheet.png" id="2_mf2ua"]
 [ext_resource type="PackedScene" uid="uid://bkuhk6i3067lk" path="res://src/mechanism/mechanism_handler.tscn" id="3_mf2ua"]
-[ext_resource type="Script" path="res://src/player/i_frames.gd" id="5_5f2sf"]
+[ext_resource type="Script" uid="uid://dnktldbteouts" path="res://src/player/i_frames.gd" id="5_5f2sf"]
 [ext_resource type="PackedScene" uid="uid://3yj0m61kdrk5" path="res://src/player/passive_healing.tscn" id="6_jiejy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_244u8"]
