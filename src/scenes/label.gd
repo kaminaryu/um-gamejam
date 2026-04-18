@@ -1,9 +1,9 @@
 extends Label
 
-var audio: AudioStreamPlayer2D
+var audio: AudioStreamPlayer
 
 func _ready() -> void:
-	audio = $"../../AudioStreamPlayer2D"
+	audio = $"../../AudioStreamPlayer"
 	audio.volume_db = -10
 	WaveHandler.increased_wave.connect(_on_wave_increased)
 	# Start the very first sequence 

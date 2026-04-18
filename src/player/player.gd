@@ -14,9 +14,9 @@ var _is_invincible := false
 
 
 func _ready():
-    current_health = MAX_HEALTH
-    
-    $IFrames.finished_iframe.connect(_on_finished_iframe)
+	current_health = MAX_HEALTH
+	
+	$IFrames.finished_iframe.connect(_on_finished_iframe)
 
 
 func _physics_process(delta: float) -> void:
@@ -65,56 +65,56 @@ func _check_rebound():
 # Inside your Player script
 
 func apply_knockback(from_position: Vector2) -> void:
-    if (_is_invincible) :
-        return
-        
-    # Calculate direction from the enemy to the player
-    var push_dir = from_position.direction_to(global_position)
-    
-    # Set the knockback_velocity (the variable used in your handle_movement)
-    knockback_velocity = push_dir * rebound_strength
-    
+	if (_is_invincible) :
+		return
+		
+	# Calculate direction from the enemy to the player
+	var push_dir = from_position.direction_to(global_position)
+	
+	# Set the knockback_velocity (the variable used in your handle_movement)
+	knockback_velocity = push_dir * rebound_strength
+	
 
 func take_damage(dmg: int):
-    if (_is_invincible) :
-        return
-        
-    $IFrames.apply_iframe()
-    $PassiveHealing.stop_healing()
-    _is_invincible = true
-    
-    current_health -= dmg
-    
-    print("taking damage: ", current_health)
-    
-    var sprite = $Sprite2D
-    var tween = create_tween()
-    
-    sprite.modulate = Color(10,10,10)
-    
-    tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)\
-        .set_trans(Tween.TRANS_SINE)\
-        .set_ease(Tween.EASE_IN_OUT)
-        
-    if current_health <= 0:
-        GameMaster.player_death()
+	if (_is_invincible) :
+		return
+		
+	$IFrames.apply_iframe()
+	$PassiveHealing.stop_healing()
+	_is_invincible = true
+	
+	current_health -= dmg
+	
+	print("taking damage: ", current_health)
+	
+	var sprite = $Sprite2D
+	var tween = create_tween()
+	
+	sprite.modulate = Color(10,10,10)
+	
+	tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
+		
+	if current_health <= 0:
+		GameMaster.player_death()
 
 
 func die():
-    death.emit()
-    queue_free()
-    
-    
+	death.emit()
+	queue_free()
+	
+	
 func heal() -> void :
-    var delta_health = randi_range(3, 5)
-    current_health += delta_health
-    current_health = min(current_health, MAX_HEALTH)
-    print("Healing (", delta_health, "): ", current_health)
-    
+	var delta_health = randi_range(3, 5)
+	current_health += delta_health
+	current_health = min(current_health, MAX_HEALTH)
+	print("Healing (", delta_health, "): ", current_health)
+	
 
 func _on_finished_iframe() -> void :
-    _is_invincible = false
-    $PassiveHealing.init_healing()
+	_is_invincible = false
+	$PassiveHealing.init_healing()
 
 
 signal death
