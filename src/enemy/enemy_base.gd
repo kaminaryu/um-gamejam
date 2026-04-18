@@ -52,5 +52,6 @@ func _play_global_sfx(stream: AudioStream):
         player.bus = &"SFX"
         get_tree().root.add_child(player)
 
+
         player.play()
         player.finished.connect(player.queue_free)
