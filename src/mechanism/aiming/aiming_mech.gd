@@ -30,3 +30,5 @@ func on_shooting() -> void :
     bullet.global_position += Vector2.RIGHT.rotated(bullet.rotation) * PLAYER_SIZE * 1.75
 
     get_tree().root.add_child(bullet)
+    
+    $PlayerShoot.play()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dinc0qbdqtw07"]
+[gd_scene load_steps=4 format=3 uid="uid://dinc0qbdqtw07"]
 
 [ext_resource type="Script" uid="uid://c8wwn2u28fqg0" path="res://src/scenes/death_screen.gd" id="1_l20v2"]
 [ext_resource type="AudioStream" uid="uid://bau05kgyscwcw" path="res://assets/soundtracks/You Lost.wav" id="2_vvawb"]
+[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="3_wwcsm"]
 
 [node name="DeathScreen" type="CanvasLayer"]
 process_mode = 3
@@ -61,6 +62,8 @@ text = "Menu"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vvawb")
 autoplay = true
+
+[node name="ButtonSfx" parent="." instance=ExtResource("3_wwcsm")]
 
 [connection signal="pressed" from="Control/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]

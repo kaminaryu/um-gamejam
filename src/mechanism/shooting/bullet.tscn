@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b778wegs1e0et"]
+[gd_scene load_steps=9 format=3 uid="uid://b778wegs1e0et"]
 
 [ext_resource type="Script" uid="uid://bt74jr8qbimt2" path="res://src/mechanism/shooting/bullet.gd" id="1_fa3oe"]
 [ext_resource type="Texture2D" uid="uid://cl4ri3wb3svr5" path="res://assets/player/bullet_spritesheet.png" id="2_fa3oe"]
+[ext_resource type="Script" uid="uid://bh7r14ovsckul" path="res://src/mechanism/shooting/bullet_bounce.gd" id="3_gj1q4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj1q4"]
 atlas = ExtResource("2_fa3oe")
@@ -49,3 +50,6 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fa3oe")
+
+[node name="BulletBounce" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("3_gj1q4")
