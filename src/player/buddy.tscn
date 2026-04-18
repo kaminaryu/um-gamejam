@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp6mvmxqmwlf4"]
+
+[ext_resource type="Texture2D" uid="uid://cn5tb4yc0gktv" path="res://assets/Placeholder/buddy.png" id="1_2jyhv"]
+[ext_resource type="Script" uid="uid://bpsh7pu736bw7" path="res://src/player/buddy.gd" id="1_c1ini"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1ini"]
+size = Vector2(16, 16)
+
+[node name="Buddy" type="CharacterBody2D" groups=["Entities"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_c1ini")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_2jyhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c1ini")
+
+[node name="ShootingDelay" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="ShootingDelay" to="." method="_on_shooting_delay_timeout"]

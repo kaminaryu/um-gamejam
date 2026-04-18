@@ -5,6 +5,7 @@ const DEATH_MENU_SCENE := preload("res://src/scenes/death_screen.tscn")
 
 @onready var pause_menu: CanvasLayer = null
 var game_paused: bool
+var is_ingame: bool
 
 
 func _ready() -> void :
@@ -14,6 +15,7 @@ func _ready() -> void :
 func reset() -> void :
     pause_game(false)
     delete_all_entities()
+    is_ingame = false
     
     
 func delete_all_entities() -> void :
@@ -22,6 +24,9 @@ func delete_all_entities() -> void :
         
     
 func pause_game(pause: bool) -> void :
+    if (not is_ingame) :
+        return
+        
     game_paused = pause
     
     if (pause) :

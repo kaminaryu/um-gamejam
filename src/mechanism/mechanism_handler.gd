@@ -36,28 +36,38 @@ func _wave_increasing() -> void :
 	
 	
 func randomly_remove_mechanism() -> void :
-	var dice_roll: float = randf()
-	
-	# no remove necessary
-	if (dice_roll > percentage_to_lose_control) :
-		percentage_to_lose_control += lose_control_percentage_increment
-		percentage_to_lose_control = min(percentage_to_lose_control, 1)
-		
-		print("Wave: Not Losing Control")
-		print("Wave: % to remove control is now ", percentage_to_lose_control)
-		return
-		
-	# pick a control to remove randomly
-	var total_enabled_weight: float = calculate_total_enabled_weight()
-	
-	# everything disabled lol
-	if (total_enabled_weight == 0.0) :
-		return 
-		
-	var weighted_roll: float = randf() * total_enabled_weight
-	select_control_randomly(weighted_roll)
-	
-	
+    var dice_roll: float = randf()
+    
+    # no remove necessary
+    if (dice_roll > percentage_to_lose_control) :
+        percentage_to_lose_control += lose_control_percentage_increment
+        percentage_to_lose_control = min(percentage_to_lose_control, 1)
+        
+        print("Wave: Not Losing Control")
+        print("Wave: % to remove control is now ", percentage_to_lose_control)
+        return
+        
+        
+    # roll for buddy spawn (50% always)
+    dice_roll = randf()
+    
+    if (dice_roll > 0.5) :
+        print("Spawning Buddy...")
+        $BuddyHandler.spawn_buddy()
+        return
+        
+        
+    # pick a control to remove randomly
+    var total_enabled_weight: float = calculate_total_enabled_weight()
+    
+    # everything disabled lol
+    if (total_enabled_weight == 0.0) :
+        return 
+        
+    var weighted_roll: float = randf() * total_enabled_weight
+    select_control_randomly(weighted_roll)
+    
+    
 func calculate_total_enabled_weight() -> float :
 	var total_weight: float = 0.0
 	
