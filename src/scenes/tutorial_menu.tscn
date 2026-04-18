@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3tivrpd3lcxr"]
+[gd_scene load_steps=15 format=3 uid="uid://d3tivrpd3lcxr"]
 
 [ext_resource type="Texture2D" uid="uid://bs5l0jroe40vi" path="res://assets/ui/clipboard_frame.png" id="1_2q1jc"]
+[ext_resource type="Script" uid="uid://uwl6xk1du2sq" path="res://src/scenes/tutorial_menu.gd" id="1_ambg3"]
 [ext_resource type="Texture2D" uid="uid://b2g3clvgjceo" path="res://assets/ui/tutorial/tutorial_title.png" id="2_dfj4a"]
 [ext_resource type="Texture2D" uid="uid://ckasrfipsmp2m" path="res://assets/ui/tutorial/enemies.png" id="3_gt86l"]
 [ext_resource type="Texture2D" uid="uid://depbm66ykknnn" path="res://assets/ui/tutorial/controls.png" id="4_4ttsb"]
@@ -17,6 +18,7 @@
 bg_color = Color(0, 0, 0, 0.478431)
 
 [node name="TutorialMenu" type="CanvasLayer"]
+script = ExtResource("1_ambg3")
 
 [node name="BGBlur" type="Panel" parent="."]
 anchors_preset = 15
@@ -59,7 +61,6 @@ size_flags_horizontal = 4
 texture = ExtResource("2_dfj4a")
 
 [node name="SelectTutorial" type="Control" parent="Control/TextureRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,7 +115,7 @@ layout_mode = 2
 texture_normal = ExtResource("6_cipkq")
 texture_hover = ExtResource("7_ambg3")
 
-[node name="SelectTutorial2" type="Control" parent="Control/TextureRect"]
+[node name="TutorialPage" type="Control" parent="Control/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,7 +125,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TutorialFrame" type="TextureRect" parent="Control/TextureRect/SelectTutorial2"]
+[node name="TutorialFrame" type="TextureRect" parent="Control/TextureRect/TutorialPage"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -142,7 +143,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("9_tacun")
 
-[node name="ContentMargin" type="MarginContainer" parent="Control/TextureRect/SelectTutorial2/TutorialFrame"]
+[node name="ContentMargin" type="MarginContainer" parent="Control/TextureRect/TutorialPage/TutorialFrame"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,12 +157,12 @@ grow_vertical = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
-[node name="Content" type="VBoxContainer" parent="Control/TextureRect/SelectTutorial2/TutorialFrame/ContentMargin"]
+[node name="Content" type="VBoxContainer" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin"]
 custom_minimum_size = Vector2(3.205, 0)
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Title" type="Label" parent="Control/TextureRect/SelectTutorial2/TutorialFrame/ContentMargin/Content"]
+[node name="Title" type="Label" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.262745, 0.192157, 0.152941, 1)
@@ -169,12 +170,15 @@ theme_override_fonts/font = ExtResource("9_cipkq")
 text = "Title"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/TextureRect/SelectTutorial2/TutorialFrame/ContentMargin/Content"]
+[node name="Image" type="TextureRect" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
+custom_minimum_size = Vector2(0, 115.005)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("10_ambg3")
-expand_mode = 5
+expand_mode = 2
+stretch_mode = 5
 
-[node name="Description" type="Label" parent="Control/TextureRect/SelectTutorial2/TutorialFrame/ContentMargin/Content"]
+[node name="Description" type="Label" parent="Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.262745, 0.192157, 0.152941, 1)
@@ -184,7 +188,7 @@ text = "This is a cat lol! the the the he the the the the the the the the the th
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Buttons" type="HBoxContainer" parent="Control/TextureRect/SelectTutorial2"]
+[node name="Buttons" type="HBoxContainer" parent="Control/TextureRect/TutorialPage"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -201,19 +205,19 @@ theme_override_constants/separation = 320
 alignment = 1
 metadata/_edit_group_ = true
 
-[node name="Left" type="TextureButton" parent="Control/TextureRect/SelectTutorial2/Buttons"]
+[node name="Left" type="TextureButton" parent="Control/TextureRect/TutorialPage/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("8_4ttsb")
 
-[node name="Right" type="TextureButton" parent="Control/TextureRect/SelectTutorial2/Buttons"]
+[node name="Right" type="TextureButton" parent="Control/TextureRect/TutorialPage/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("10_cipkq")
 
-[node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/SelectTutorial2"]
+[node name="CloseButton" type="MarginContainer" parent="Control/TextureRect/TutorialPage"]
 offset_left = -251.0
 offset_top = -235.5
 offset_right = -160.0
@@ -221,7 +225,15 @@ offset_bottom = -144.5
 theme_override_constants/margin_left = 17
 theme_override_constants/margin_top = 42
 
-[node name="Close" type="TextureButton" parent="Control/TextureRect/SelectTutorial2/CloseButton"]
+[node name="Close" type="TextureButton" parent="Control/TextureRect/TutorialPage/CloseButton"]
 layout_mode = 2
 texture_normal = ExtResource("6_cipkq")
 texture_hover = ExtResource("7_ambg3")
+
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Enemies" to="." method="_on_enemies_pressed"]
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/MarginContainer/VBoxContainer/Mechanism" to="." method="_on_mechanism_pressed"]
+[connection signal="pressed" from="Control/TextureRect/SelectTutorial/CloseButton/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/TextureRect/TutorialPage/Buttons/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Control/TextureRect/TutorialPage/Buttons/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Control/TextureRect/TutorialPage/CloseButton/Close" to="." method="_on_close2_pressed"]
