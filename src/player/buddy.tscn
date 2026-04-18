@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1ini"]
 size = Vector2(16, 16)
 
-[node name="Buddy" type="CharacterBody2D"]
-position = Vector2(155, 78)
+[node name="Buddy" type="CharacterBody2D" groups=["Entities"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_c1ini")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

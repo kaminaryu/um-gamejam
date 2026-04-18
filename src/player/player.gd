@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MAX_HEALTH := 10
+const MAX_HEALTH := 100000
 const SPEED := 200
 const DASH_MULTIPLIER := 3
 
