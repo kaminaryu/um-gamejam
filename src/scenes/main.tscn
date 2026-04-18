@@ -7,14 +7,13 @@
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
 [ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="4_j04uq"]
 [ext_resource type="Texture2D" uid="uid://b7fwbipf16gl1" path="res://assets/ui/game/char_frame.png" id="5_kokaf"]
-[ext_resource type="AudioStream" uid="uid://tx41g51uogee" path="res://assets/soundtracks/Bouncing Pyramids.wav" id="5_o81g6"]
 [ext_resource type="Texture2D" uid="uid://cea6mdyedd3cy" path="res://assets/ui/game/health/health_background.png" id="6_lp058"]
 [ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/player/player_spritesheet.png" id="6_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://dlg7ojvasxekn" path="res://assets/ui/game/health/health_foreground.png" id="7_24j03"]
 [ext_resource type="Texture2D" uid="uid://cq5ak54bev4k7" path="res://assets/ui/game/texts/you.png" id="7_kbdt0"]
 [ext_resource type="Texture2D" uid="uid://dyjnbqw265c41" path="res://assets/ui/game/health/health_fill.png" id="8_p1ia5"]
 [ext_resource type="Texture2D" uid="uid://cspwv46mheiss" path="res://assets/ui/game/texts/health.png" id="11_4rjby"]
-[ext_resource type="Script" uid="uid://cgcf8q8stk5w4" path="res://src/player/health.gd" id="11_n75dp"]
+[ext_resource type="Script" path="res://src/player/health.gd" id="11_n75dp"]
 [ext_resource type="Texture2D" uid="uid://cctqiamlkmjml" path="res://assets/ui/game/texts/enemies_left.png" id="12_ccybt"]
 [ext_resource type="Texture2D" uid="uid://dfuq6lcdlev0k" path="res://assets/ui/game/wave_frame/waveframe.png" id="13_50ugh"]
 [ext_resource type="Texture2D" uid="uid://kav0n3332vqc" path="res://assets/ui/game/texts/wave_indicator.png" id="14_lcp4o"]
@@ -30,7 +29,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font = ExtResource("4_j04uq")
-font_size = 200
+font_size = 70
 outline_size = 25
 outline_color = Color(0, 0, 0, 1)
 
@@ -135,11 +134,14 @@ script = ExtResource("3_2lg1k")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 93.0
+offset_right = -93.0
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_5dlwx")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 script = ExtResource("4_5dlwx")
 
 [node name="PlayerHUD" type="MarginContainer" parent="CanvasLayer"]
@@ -422,7 +424,3 @@ offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_o81g6")
-autoplay = true

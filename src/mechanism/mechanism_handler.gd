@@ -1,5 +1,8 @@
 extends Node2D
 
+signal spawned_buddy
+signal disabled_mechanism
+
 var percentage_to_lose_control: float = 0.5
 var lose_control_percentage_increment: float = 0.1
 
@@ -54,6 +57,7 @@ func randomly_remove_mechanism() -> void :
 	if (dice_roll > 0.5) :
 		print("Spawning Buddy...")
 		$BuddyHandler.spawn_buddy()
+		spawned_buddy.emit("Buddy is Here!")
 		return
 		
 		
@@ -91,6 +95,7 @@ func select_control_randomly(roll: float) -> void :
 		if (roll < cummulative_weight) :
 			toggle_mech_control(key, false)
 			print("Disabled: ", key)
+			disabled_mechanism.emit(key)
 			return
 			
 	print("Wave: Everything Is Disabled")
