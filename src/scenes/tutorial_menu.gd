@@ -7,6 +7,9 @@ extends CanvasLayer
 @onready var image = $Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content/Image;
 @onready var desc = $Control/TextureRect/TutorialPage/TutorialFrame/ContentMargin/Content/Description;
 
+@onready var animation_player = $AnimationPlayer
+
+
 const categories = ['enemies', 'controls', 'mechanics'];
 
 var currentIndex = 0;
@@ -29,7 +32,7 @@ func go_back() -> void:
 
 
 func _on_close_pressed() -> void:
-	close_tutorial();
+	animation_player.play("close");
 
 
 func _on_enemies_pressed() -> void:
@@ -37,6 +40,7 @@ func _on_enemies_pressed() -> void:
 
 func show_tutorial_select() -> void:
 	show();
+	animation_player.play("reveal");
 
 func show_tutorial(category: String) -> void:
 	if (category not in categories):
@@ -92,3 +96,8 @@ func _on_mechanism_pressed() -> void:
 
 func _on_close2_pressed() -> void:
 	go_back();
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if (anim_name == 'close'):
+		close_tutorial();
