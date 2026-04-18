@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene load_steps=30 format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
@@ -15,6 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://cctqiamlkmjml" path="res://assets/ui/game/texts/enemies_left.png" id="12_ccybt"]
 [ext_resource type="Texture2D" uid="uid://dfuq6lcdlev0k" path="res://assets/ui/game/wave_frame/waveframe.png" id="13_50ugh"]
 [ext_resource type="Texture2D" uid="uid://kav0n3332vqc" path="res://assets/ui/game/texts/wave_indicator.png" id="14_lcp4o"]
+[ext_resource type="Texture2D" uid="uid://bxkt04273suis" path="res://assets/ui/game/icons/icon_frame.png" id="15_v252j"]
+[ext_resource type="Texture2D" uid="uid://cxvdwklnpyfer" path="res://assets/ui/game/icons/icon_aim.png" id="16_qsm7c"]
+[ext_resource type="Texture2D" uid="uid://ceyxqqp1qpi0m" path="res://assets/ui/game/icons/icon_dash.png" id="17_n75dp"]
+[ext_resource type="Texture2D" uid="uid://cmxnuaddalox7" path="res://assets/ui/game/icons/x.png" id="17_qsm7c"]
+[ext_resource type="Texture2D" uid="uid://d3e4a0fpdvkjk" path="res://assets/ui/game/icons/icon_pew.png" id="18_j04uq"]
+[ext_resource type="Texture2D" uid="uid://kxfj50yj3cvc" path="res://assets/ui/game/icons/icon_vision.png" id="19_tyryd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font_size = 200
@@ -96,6 +102,7 @@ polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, 
 metadata/_edit_lock_ = true
 
 [node name="BlackScreen" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
@@ -114,24 +121,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_5dlwx")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="PlayerHUD" type="MarginContainer" parent="CanvasLayer"]
 offset_right = 448.0
 offset_bottom = 129.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PlayerHUD"]
 layout_mode = 2
 theme_override_constants/separation = -4
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="CharFrame" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_kokaf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/HBoxContainer/TextureRect"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/PlayerHUD/HBoxContainer/CharFrame"]
 position = Vector2(62, 64)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qsm7c")
@@ -139,7 +146,7 @@ autoplay = "default"
 frame = 6
 frame_progress = 0.371537
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/TextureRect"]
+[node name="Youuuu" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/CharFrame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,7 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_kbdt0")
 
-[node name="Health" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="Health" type="TextureProgressBar" parent="CanvasLayer/PlayerHUD/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
@@ -165,7 +172,7 @@ texture_over = ExtResource("7_24j03")
 texture_progress = ExtResource("8_p1ia5")
 texture_progress_offset = Vector2(-0.56, 0)
 
-[node name="Health" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/Health"]
+[node name="HealthText" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/Health"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -180,7 +187,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_4rjby")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="WaveCounterHUD" type="VBoxContainer" parent="CanvasLayer"]
 texture_filter = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -192,18 +199,18 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/WaveCounterHUD"]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("12_ccybt")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("13_50ugh")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD/TextureRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -214,6 +221,162 @@ offset_right = 161.0
 offset_bottom = 21.5
 grow_vertical = 2
 texture = ExtResource("14_lcp4o")
+
+[node name="ControlIcons" type="HBoxContainer" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 166.0
+offset_top = 137.0
+offset_right = 327.0
+offset_bottom = 177.0
+theme_override_constants/separation = 15
+
+[node name="Aim" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_v252j")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Aim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_qsm7c")
+
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Aim"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_qsm7c")
+
+[node name="Dash" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_v252j")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Dash"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_n75dp")
+
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Dash"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_qsm7c")
+
+[node name="Shoot" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_v252j")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Shoot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_j04uq")
+
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Shoot"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_qsm7c")
+
+[node name="Vision" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_v252j")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Vision"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_tyryd")
+
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Vision"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_qsm7c")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_o81g6")

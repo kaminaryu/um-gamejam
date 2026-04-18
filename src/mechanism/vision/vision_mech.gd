@@ -30,7 +30,6 @@ func _process(delta: float) -> void :
 func fluctuate_light() -> void :
 	new_scale = randf_range(16, 26)
 	
-
 func _on_fluctuation_delay_timeout() -> void:
 	var random_delay := randf_range(3, 7)
 	$FluctuationDelay.start(random_delay)
