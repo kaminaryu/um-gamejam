@@ -25,6 +25,9 @@ func _physics_process(delta: float) -> void:
 	# 1. Bleed off knockback velocity every frame
 	knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, rebound_friction * delta)
 	handle_movement(delta)
+	
+	if (global_position.distance_to(Vector2(0, 0)) > 1900) :
+		global_position = (global_position - Vector2(0, 0)) * 0.8 
 
 func handle_movement(delta: float) -> void:
 	var direction := Vector2.ZERO

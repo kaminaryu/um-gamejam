@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ciklhrf8s1q5f"]
+[gd_scene format=3 uid="uid://ciklhrf8s1q5f"]
 
 [ext_resource type="Texture2D" uid="uid://cy7aus3c4hx1y" path="res://assets/background.png" id="1_32aa5"]
 [ext_resource type="PackedScene" uid="uid://c8qw7ykpxrqo0" path="res://src/player/player.tscn" id="1_kkvs4"]
@@ -103,34 +103,59 @@ font_color = Color(0.901961, 0.890196, 0.886275, 1)
 outline_size = 7
 outline_color = Color(0.156863, 0.156863, 0.156863, 1)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=744962704]
 script = ExtResource("1_o81g6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1413723976]
 z_index = -5
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_32aa5")
 
-[node name="Player" parent="." instance=ExtResource("1_kkvs4")]
+[node name="Player" parent="." unique_id=452304712 instance=ExtResource("1_kkvs4")]
 position = Vector2(0, 9)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="DumbassBorderSial" type="StaticBody2D" parent="." unique_id=977907604]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="Layer1" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=1116414399]
 build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
 metadata/_edit_lock_ = true
 
-[node name="BlackScreen" type="CanvasModulate" parent="."]
+[node name="Layer2" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=718403229]
+scale = Vector2(1.01, 1.01)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
+[node name="Layer3" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=2005411255]
+scale = Vector2(1.02, 1.02)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
+[node name="Layer4" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=495363208]
+scale = Vector2(1.03, 1.03)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
+[node name="Layer5" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=1044073866]
+scale = Vector2(1.04, 1.04)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
+[node name="BlackScreen" type="CanvasModulate" parent="." unique_id=464153567]
+visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="EnemySpawner" type="Marker2D" parent="."]
+[node name="EnemySpawner" type="Marker2D" parent="." unique_id=471889612]
 script = ExtResource("3_2lg1k")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1190144949]
 
-[node name="CountdownTimer" type="Label" parent="CanvasLayer"]
+[node name="CountdownTimer" type="Label" parent="CanvasLayer" unique_id=849419331]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -144,24 +169,24 @@ vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("4_5dlwx")
 
-[node name="PlayerHUD" type="MarginContainer" parent="CanvasLayer"]
+[node name="PlayerHUD" type="MarginContainer" parent="CanvasLayer" unique_id=590054195]
 offset_right = 448.0
 offset_bottom = 129.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PlayerHUD"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PlayerHUD" unique_id=1815024601]
 layout_mode = 2
 theme_override_constants/separation = -4
 
-[node name="CharFrame" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer"]
+[node name="CharFrame" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer" unique_id=1069186461]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_kokaf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/PlayerHUD/HBoxContainer/CharFrame"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/PlayerHUD/HBoxContainer/CharFrame" unique_id=1991440192]
 position = Vector2(62, 64)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qsm7c")
@@ -169,7 +194,7 @@ autoplay = "default"
 frame = 6
 frame_progress = 0.371537
 
-[node name="Youuuu" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/CharFrame"]
+[node name="Youuuu" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/CharFrame" unique_id=1013181559]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -184,7 +209,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_kbdt0")
 
-[node name="Health" type="TextureProgressBar" parent="CanvasLayer/PlayerHUD/HBoxContainer"]
+[node name="Health" type="TextureProgressBar" parent="CanvasLayer/PlayerHUD/HBoxContainer" unique_id=595547352]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
@@ -196,7 +221,7 @@ texture_progress = ExtResource("8_p1ia5")
 texture_progress_offset = Vector2(-0.56, 0)
 script = ExtResource("11_n75dp")
 
-[node name="HealthText" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/Health"]
+[node name="HealthText" type="TextureRect" parent="CanvasLayer/PlayerHUD/HBoxContainer/Health" unique_id=387340829]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -211,7 +236,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_4rjby")
 
-[node name="WaveCounterHUD" type="VBoxContainer" parent="CanvasLayer"]
+[node name="WaveCounterHUD" type="VBoxContainer" parent="CanvasLayer" unique_id=1432318837]
 texture_filter = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -223,28 +248,28 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaveCounterHUD"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaveCounterHUD" unique_id=2035461260]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/WaveCounterHUD/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/WaveCounterHUD/HBoxContainer" unique_id=1460234389]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("12_ccybt")
 
-[node name="Enemy_Label" type="Label" parent="CanvasLayer/WaveCounterHUD/HBoxContainer"]
+[node name="Enemy_Label" type="Label" parent="CanvasLayer/WaveCounterHUD/HBoxContainer" unique_id=1790955205]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_tyryd")
 horizontal_alignment = 1
 script = ExtResource("15_tx8mq")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD" unique_id=1743634049]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("13_50ugh")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WaveCounterHUD/TextureRect" unique_id=2128290479]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -256,7 +281,7 @@ offset_bottom = 21.5
 grow_vertical = 2
 texture = ExtResource("14_lcp4o")
 
-[node name="Wave Label" type="Label" parent="CanvasLayer/WaveCounterHUD/TextureRect"]
+[node name="Wave Label" type="Label" parent="CanvasLayer/WaveCounterHUD/TextureRect" unique_id=1050813270]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 7.0
@@ -268,7 +293,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("17_tyryd")
 
-[node name="ControlIcons" type="HBoxContainer" parent="CanvasLayer"]
+[node name="ControlIcons" type="HBoxContainer" parent="CanvasLayer" unique_id=629320449]
 texture_filter = 1
 offset_left = 166.0
 offset_top = 137.0
@@ -277,13 +302,13 @@ offset_bottom = 177.0
 theme_override_constants/separation = 15
 script = ExtResource("19_xxm0n")
 
-[node name="Aim" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+[node name="Aim" type="TextureRect" parent="CanvasLayer/ControlIcons" unique_id=1932869398]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("15_v252j")
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Aim"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Aim" unique_id=500546794]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -298,7 +323,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_qsm7c")
 
-[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Aim"]
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Aim" unique_id=242178978]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -314,13 +339,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
 
-[node name="Dash" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+[node name="Dash" type="TextureRect" parent="CanvasLayer/ControlIcons" unique_id=1826031971]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("15_v252j")
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Dash"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Dash" unique_id=1218510435]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -335,7 +360,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_n75dp")
 
-[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Dash"]
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Dash" unique_id=2061255270]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -351,13 +376,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
 
-[node name="Shoot" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+[node name="Shoot" type="TextureRect" parent="CanvasLayer/ControlIcons" unique_id=2027607717]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("15_v252j")
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Shoot"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Shoot" unique_id=1572734730]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -372,7 +397,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_j04uq")
 
-[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Shoot"]
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Shoot" unique_id=1351612002]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -388,13 +413,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
 
-[node name="Vision" type="TextureRect" parent="CanvasLayer/ControlIcons"]
+[node name="Vision" type="TextureRect" parent="CanvasLayer/ControlIcons" unique_id=2113040343]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("15_v252j")
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Vision"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/ControlIcons/Vision" unique_id=2132628676]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -409,7 +434,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_tyryd")
 
-[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Vision"]
+[node name="X" type="TextureRect" parent="CanvasLayer/ControlIcons/Vision" unique_id=1990092295]
 visible = false
 layout_mode = 1
 anchors_preset = 8
