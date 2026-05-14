@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b778wegs1e0et"]
+[gd_scene format=3 uid="uid://b778wegs1e0et"]
 
 [ext_resource type="Script" uid="uid://bt74jr8qbimt2" path="res://src/mechanism/shooting/bullet.gd" id="1_fa3oe"]
 [ext_resource type="Texture2D" uid="uid://cl4ri3wb3svr5" path="res://assets/player/bullet_spritesheet.png" id="2_fa3oe"]
-[ext_resource type="Script" path="res://src/mechanism/shooting/bullet_bounce.gd" id="3_gj1q4"]
+[ext_resource type="Script" uid="uid://bh7r14ovsckul" path="res://src/mechanism/shooting/bullet_bounce.gd" id="3_gj1q4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj1q4"]
 atlas = ExtResource("2_fa3oe")
@@ -36,20 +36,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fa3oe"]
 radius = 4.12311
 
-[node name="Bullet" type="CharacterBody2D" groups=["Bullet", "Entities"]]
+[node name="Bullet" type="CharacterBody2D" unique_id=667946855 groups=["Bullet", "Entities"]]
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_fa3oe")
 max_bounces = 2
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1671287209]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ptwqh")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1704210043]
 shape = SubResource("CircleShape2D_fa3oe")
 
-[node name="BulletBounce" type="AudioStreamPlayer2D" parent="."]
+[node name="BulletBounce" type="AudioStreamPlayer2D" parent="." unique_id=2005570882]
 script = ExtResource("3_gj1q4")

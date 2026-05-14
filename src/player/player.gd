@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	if (global_position.distance_to(Vector2(0, 0)) > 1900) :
 		global_position = (global_position - Vector2(0, 0)) * 0.8 
+		print(global_position)
 
 func handle_movement(delta: float) -> void:
 	var direction := Vector2.ZERO
