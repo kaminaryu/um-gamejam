@@ -1,0 +1,30 @@
+{
+	"Easy": {
+		"normal":  { "starting_wave": 1, "starting_amount": 5, "increment_step": 1   },
+		"split":   { "starting_wave": 3, "starting_amount": 1, "increment_step": 0.5 },
+		"big":     { "starting_wave": 5, "starting_amount": 1, "increment_step": 0.5 },
+		"fast":    { "starting_wave": 7, "starting_amount": 1, "increment_step": 0.5 },
+		"shoot":   { "starting_wave": 9, "starting_amount": 1, "increment_step": 0.5 }
+	},
+	"Medium": {
+		"normal":  { "starting_wave": 1, "starting_amount": 8,  "increment_step": 1.5, "retire_wave": 10 },
+		"split":   { "starting_wave": 2, "starting_amount": 2,  "increment_step": 1 },
+		"big":     { "starting_wave": 3, "starting_amount": 2,  "increment_step": 1 },
+		"fast":    { "starting_wave": 4, "starting_amount": 2,  "increment_step": 1 },
+		"shoot":   { "starting_wave": 5, "starting_amount": 2,  "increment_step": 1 }
+	},
+	"Hard": {
+		"normal":  { "starting_wave": 1, "starting_amount": 10, "increment_multiplier": 1.0, "retire_wave": 5 },
+		"split":   { "starting_wave": 1, "starting_amount": 3,  "increment_multiplier": 1.4 },
+		"big":     { "starting_wave": 2, "starting_amount": 2,  "increment_multiplier": 1.5 },
+		"fast":    { "starting_wave": 2, "starting_amount": 3,  "increment_multiplier": 1.4 },
+		"shoot":   { "starting_wave": 3, "starting_amount": 2,  "increment_multiplier": 1.6 }
+	},
+	"Impossible": {
+		"normal":  { "starting_wave": 1, "starting_amount": 1,  "increment_step": 7,   "chaos_variance": 5 },
+		"split":   { "starting_wave": 2, "starting_amount": 6,  "increment_step": 4,   "chaos_variance": 8 },
+		"big":     { "starting_wave": 2, "starting_amount": 4,  "increment_step": 5,   "chaos_variance": 6 },
+		"fast":    { "starting_wave": 2, "starting_amount": 8,  "increment_step": 6,   "chaos_variance": 10 },
+		"shoot":   { "starting_wave": 2, "starting_amount": 5,  "increment_step": 5,   "chaos_variance": 9 }
+	}
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8qw7ykpxrqo0"]
+[gd_scene format=3 uid="uid://c8qw7ykpxrqo0"]
 
 [ext_resource type="Script" uid="uid://ddggcu105usen" path="res://src/enemy/enemy_components/damageable_component.gd" id="1_mf2ua"]
 [ext_resource type="Script" uid="uid://8326h0bgf0cn" path="res://src/player/player.gd" id="1_rxibo"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkuhk6i3067lk" path="res://src/mechanism/mechanism_handler.tscn" id="3_mf2ua"]
 [ext_resource type="Script" uid="uid://dnktldbteouts" path="res://src/player/i_frames.gd" id="5_5f2sf"]
 [ext_resource type="PackedScene" uid="uid://3yj0m61kdrk5" path="res://src/player/passive_healing.tscn" id="6_jiejy"]
-[ext_resource type="Script" path="res://src/player/player_hurt.gd" id="7_o822w"]
+[ext_resource type="Script" uid="uid://b811gb17u6cm3" path="res://src/player/player_hurt.gd" id="7_o822w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_244u8"]
 size = Vector2(64, 64)
@@ -124,15 +124,15 @@ _data = {
 &"flashing": SubResource("Animation_jiejy")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1348774296 groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_rxibo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849356538]
 shape = SubResource("RectangleShape2D_244u8")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1701453694]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_8ydov")
@@ -140,25 +140,23 @@ autoplay = "default"
 frame = 8
 frame_progress = 0.311851
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1570790808]
 zoom = Vector2(0.5, 0.5)
 
-[node name="MechanismHandler" parent="." instance=ExtResource("3_mf2ua")]
+[node name="MechanismHandler" parent="." unique_id=705290733 instance=ExtResource("3_mf2ua")]
 
-[node name="DamageableComponent" type="Node2D" parent="."]
+[node name="DamageableComponent" type="Node2D" parent="." unique_id=1491383280]
 script = ExtResource("1_mf2ua")
 
-[node name="IFrames" type="Node2D" parent="."]
+[node name="IFrames" type="Node2D" parent="." unique_id=2028585422]
 script = ExtResource("5_5f2sf")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="IFrames"]
-libraries = {
-&"": SubResource("AnimationLibrary_o822w")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="IFrames" unique_id=481789012]
+libraries/ = SubResource("AnimationLibrary_o822w")
 
-[node name="PassiveHealing" parent="." instance=ExtResource("6_jiejy")]
+[node name="PassiveHealing" parent="." unique_id=1852084473 instance=ExtResource("6_jiejy")]
 
-[node name="PlayerHurt" type="AudioStreamPlayer2D" parent="."]
+[node name="PlayerHurt" type="AudioStreamPlayer2D" parent="." unique_id=169366615]
 bus = &"SFX"
 script = ExtResource("7_o822w")
 

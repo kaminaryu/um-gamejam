@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b7k6dspwo3ks3"]
+[gd_scene format=3 uid="uid://b7k6dspwo3ks3"]
 
 [ext_resource type="Script" uid="uid://cb0saakdnwjcc" path="res://src/scenes/main_menu.gd" id="1_rm437"]
 [ext_resource type="Texture2D" uid="uid://bysi3kguhfoep" path="res://assets/ui/main_menu/main_menu_bg.png" id="2_1fbjp"]
@@ -26,10 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://c4kdd2ebmfoxw" path="res://src/scenes/settings_menu.tscn" id="22_5sj7r"]
 [ext_resource type="PackedScene" uid="uid://d3tivrpd3lcxr" path="res://src/scenes/tutorial_menu.tscn" id="23_6208y"]
 [ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="23_qboab"]
-[ext_resource type="Script" path="res://src/scenes/exit_button.gd" id="23_v4pqo"]
+[ext_resource type="Script" uid="uid://ckjrxw7ddqa44" path="res://src/scenes/exit_button.gd" id="23_v4pqo"]
 [ext_resource type="Texture2D" uid="uid://c7bb5isjbfybe" path="res://assets/ui/main_menu/button_text/exit/1.png" id="24_tyxad"]
 [ext_resource type="Texture2D" uid="uid://bswjhk7ln5f08" path="res://assets/ui/main_menu/button_text/exit/2.png" id="25_uchu4"]
 [ext_resource type="Texture2D" uid="uid://ck46cig5ptdoa" path="res://assets/ui/main_menu/button_text/exit/3.png" id="26_22y83"]
+[ext_resource type="PackedScene" uid="uid://cecqqrq5l8bb2" path="res://src/ui/splash_tutorial.tscn" id="31_uchu4"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yrdre"]
 frames = 3
@@ -94,7 +95,7 @@ frame_1/duration = 0.16
 frame_2/texture = ExtResource("26_22y83")
 frame_2/duration = 0.16
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1721540200]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,7 +104,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rm437")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=989754428]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -113,7 +114,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1fbjp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=841418868]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -125,14 +126,14 @@ offset_bottom = 527.0
 grow_horizontal = 0
 theme_override_constants/separation = 16
 
-[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer" unique_id=1971188486]
 texture_filter = 1
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_yrdre")
 texture_hover = SubResource("AnimatedTexture_n5k5b")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PlayButton"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PlayButton" unique_id=4370194]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,7 +146,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_2p8af")
 
-[node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer" unique_id=1986640031]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
@@ -153,7 +154,7 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_5sj7r")
 script = ExtResource("15_ri8ns")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/OptionsButton"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/OptionsButton" unique_id=304951568]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -168,7 +169,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_qboab")
 
-[node name="TutorialButton" type="TextureButton" parent="VBoxContainer"]
+[node name="TutorialButton" type="TextureButton" parent="VBoxContainer" unique_id=183831510]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
@@ -176,7 +177,7 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_5sj7r")
 script = ExtResource("19_276oj")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TutorialButton"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TutorialButton" unique_id=585141418]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -191,7 +192,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_6208y")
 
-[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer" unique_id=1160281144]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
@@ -199,7 +200,7 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AnimatedTexture_5sj7r")
 script = ExtResource("23_v4pqo")
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ExitButton"]
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ExitButton" unique_id=117522128]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -214,7 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_5t24u")
 
-[node name="TitleCard" type="TextureRect" parent="."]
+[node name="TitleCard" type="TextureRect" parent="." unique_id=556627739]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
@@ -227,13 +228,16 @@ offset_bottom = 241.0
 grow_horizontal = 0
 texture = ExtResource("20_805p8")
 
-[node name="SettingsMenu" parent="." instance=ExtResource("22_5sj7r")]
+[node name="SettingsMenu" parent="." unique_id=893988031 instance=ExtResource("22_5sj7r")]
 visible = false
 
-[node name="TutorialMenu" parent="." instance=ExtResource("23_6208y")]
+[node name="TutorialMenu" parent="." unique_id=689843307 instance=ExtResource("23_6208y")]
 visible = false
 
-[node name="ButtonSfx" parent="." instance=ExtResource("23_qboab")]
+[node name="ButtonSfx" parent="." unique_id=533651164 instance=ExtResource("23_qboab")]
+
+[node name="SplashTutorial" parent="." unique_id=1220072086 instance=ExtResource("31_uchu4")]
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_mouse_entered"]

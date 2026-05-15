@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://d3e4a0fpdvkjk" path="res://assets/ui/game/icons/icon_pew.png" id="18_j04uq"]
 [ext_resource type="Texture2D" uid="uid://kxfj50yj3cvc" path="res://assets/ui/game/icons/icon_vision.png" id="19_tyryd"]
 [ext_resource type="Script" uid="uid://dxokp8y1qnnna" path="res://src/ui/control_icons.gd" id="19_xxm0n"]
+[ext_resource type="Script" uid="uid://bcuo0d6xjvo4s" path="res://src/scenes/diff_text.gd" id="27_2sd1y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font = ExtResource("4_j04uq")
@@ -122,8 +123,20 @@ build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
 metadata/_edit_lock_ = true
 
+[node name="Layer6" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=550711148]
+scale = Vector2(1.005, 1.005)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
 [node name="Layer2" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=718403229]
 scale = Vector2(1.01, 1.01)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
+[node name="Layer7" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=728724817]
+scale = Vector2(1.015, 1.015)
 build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
 metadata/_edit_lock_ = true
@@ -134,8 +147,20 @@ build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
 metadata/_edit_lock_ = true
 
+[node name="Layer8" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=951219566]
+scale = Vector2(1.025, 1.025)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
 [node name="Layer4" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=495363208]
 scale = Vector2(1.03, 1.03)
+build_mode = 1
+polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
+metadata/_edit_lock_ = true
+
+[node name="Layer9" type="CollisionPolygon2D" parent="DumbassBorderSial" unique_id=1720355364]
+scale = Vector2(1.035, 1.035)
 build_mode = 1
 polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, -903, -1590, -1110, -1442, -1325, -1247, -1485, -1051, -1630, -804, -1736, -496, -1801, -202, -1805, 220, -1655, 732, -1451, 1092, -1294, 1265, -1091, 1449, -904, 1567, -691, 1679, -445, 1754, -217, 1808, 51, 1814, 304, 1792, 587, 1717, 821, 1613, 1044, 1476, 1228, 1326, 1420, 1120, 1580, 880, 1688, 625, 1777, 356, 1815, -70, 1737, -547, 1548, -973, 1242, -1325, 1045, -1492, 832, -1611, 611, -1722, 407, -1777)
 metadata/_edit_lock_ = true
@@ -147,13 +172,45 @@ polygon = PackedVector2Array(143, -1818, -142, -1817, -340, -1791, -544, -1738, 
 metadata/_edit_lock_ = true
 
 [node name="BlackScreen" type="CanvasModulate" parent="." unique_id=464153567]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="EnemySpawner" type="Marker2D" parent="." unique_id=471889612]
 script = ExtResource("3_2lg1k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1190144949]
+
+[node name="DiffLabel" type="Control" parent="CanvasLayer" unique_id=1341971131]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 903.0
+offset_top = 511.0
+offset_right = 943.0
+offset_bottom = 551.0
+scale = Vector2(0.4, 0.4)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DiffLabel" unique_id=1454864968]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/DiffLabel/TextureRect" unique_id=1601549367]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.25001
+offset_top = -33.749985
+offset_right = 92.75
+offset_bottom = 54.250015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_j04uq")
+theme_override_font_sizes/font_size = 64
+text = "Ez"
+horizontal_alignment = 1
 
 [node name="CountdownTimer" type="Label" parent="CanvasLayer" unique_id=849419331]
 anchors_preset = 15
@@ -405,10 +462,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -10.5
-offset_right = 11.0
-offset_bottom = 7.5
+offset_left = -25.5
+offset_top = -24.5
+offset_right = 24.5
+offset_bottom = 21.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
@@ -449,3 +506,10 @@ offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
+
+[node name="DiffText" type="Label" parent="CanvasLayer" unique_id=360949534]
+offset_left = 679.0
+offset_top = 165.0
+offset_right = 719.0
+offset_bottom = 188.0
+script = ExtResource("27_2sd1y")

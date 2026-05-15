@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ba81nnvlqc6pg"]
+
+[ext_resource type="Script" uid="uid://je74u23hf5dd" path="res://src/ui/splash_tutorial_button.gd" id="1_jsdka"]
+[ext_resource type="Texture2D" uid="uid://toblvjie2a41" path="res://assets/ui/splash_tutorial/arrow.png" id="1_wge3w"]
+
+[node name="SplashTutorialButton" type="TextureButton" unique_id=733451007]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_wge3w")
+script = ExtResource("1_jsdka")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

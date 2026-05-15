@@ -1,0 +1,992 @@
+[gd_scene format=3 uid="uid://cecqqrq5l8bb2"]
+
+[ext_resource type="Script" uid="uid://c6aiornospqlb" path="res://src/ui/splash_tutorial.gd" id="1_dy8hi"]
+[ext_resource type="Texture2D" uid="uid://r462cojadagl" path="res://assets/ui/splash_tutorial/control.png" id="1_pssjr"]
+[ext_resource type="Texture2D" uid="uid://bg33abj00ljqh" path="res://assets/ui/splash_tutorial/background.png" id="2_nal8h"]
+[ext_resource type="PackedScene" uid="uid://ba81nnvlqc6pg" path="res://src/ui/splash_tutorial_button.tscn" id="2_pssjr"]
+[ext_resource type="Script" uid="uid://dyvmslqdojyp5" path="res://src/ui/title.gd" id="4_cb368"]
+[ext_resource type="Texture2D" uid="uid://bxkt04273suis" path="res://assets/ui/game/icons/icon_frame.png" id="5_dk0uc"]
+[ext_resource type="Texture2D" uid="uid://cty60oyjc8scs" path="res://assets/ui/options/back.png" id="5_jl2jp"]
+[ext_resource type="Texture2D" uid="uid://cxvdwklnpyfer" path="res://assets/ui/game/icons/icon_aim.png" id="6_f15ki"]
+[ext_resource type="Texture2D" uid="uid://lpad0blyfohl" path="res://assets/ui/options/back_hover.png" id="6_kqhfe"]
+[ext_resource type="Script" uid="uid://c64ya256xm64j" path="res://src/scenes/close.gd" id="7_ar7xw"]
+[ext_resource type="Texture2D" uid="uid://cmxnuaddalox7" path="res://assets/ui/game/icons/x.png" id="7_o0gwk"]
+[ext_resource type="Texture2D" uid="uid://ceyxqqp1qpi0m" path="res://assets/ui/game/icons/icon_dash.png" id="8_gnq66"]
+[ext_resource type="Texture2D" uid="uid://d3e4a0fpdvkjk" path="res://assets/ui/game/icons/icon_pew.png" id="9_jbleb"]
+[ext_resource type="Texture2D" uid="uid://kxfj50yj3cvc" path="res://assets/ui/game/icons/icon_vision.png" id="10_oyihk"]
+[ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="11_nt5dx"]
+[ext_resource type="Texture2D" uid="uid://bshhhy21vwu1p" path="res://assets/player/buddy.png" id="13_da3n8"]
+[ext_resource type="Texture2D" uid="uid://cea6mdyedd3cy" path="res://assets/ui/game/health/health_background.png" id="15_lqq6n"]
+[ext_resource type="Texture2D" uid="uid://dlg7ojvasxekn" path="res://assets/ui/game/health/health_foreground.png" id="16_5frg4"]
+[ext_resource type="Texture2D" uid="uid://dyjnbqw265c41" path="res://assets/ui/game/health/health_fill.png" id="17_nal8h"]
+[ext_resource type="Script" uid="uid://cgcf8q8stk5w4" path="res://src/player/health.gd" id="18_cb368"]
+[ext_resource type="Texture2D" uid="uid://btsh5mejpq58j" path="res://assets/ui/main_menu/button/1.png" id="19_5frg4"]
+[ext_resource type="Texture2D" uid="uid://cs8q1y6snigxq" path="res://assets/ui/main_menu/button/2.png" id="20_nal8h"]
+[ext_resource type="Texture2D" uid="uid://dyuigxdldreu6" path="res://assets/ui/main_menu/button/3.png" id="21_cb368"]
+[ext_resource type="Texture2D" uid="uid://6boriy08or62" path="res://assets/ui/main_menu/button/hover/1.png" id="22_jl2jp"]
+[ext_resource type="Texture2D" uid="uid://n3xprrk75roh" path="res://assets/ui/main_menu/button/hover/2.png" id="23_kqhfe"]
+[ext_resource type="Texture2D" uid="uid://bs4eluuolpvun" path="res://assets/ui/main_menu/button/hover/3.png" id="24_ar7xw"]
+[ext_resource type="PackedScene" uid="uid://cxnsmm4sho8h6" path="res://src/scenes/button_sfx.tscn" id="31_kqhfe"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_e7y26"]
+frames = 3
+frame_0/texture = ExtResource("19_5frg4")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("20_nal8h")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("21_cb368")
+frame_2/duration = 0.16
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kithf"]
+frames = 3
+frame_0/texture = ExtResource("22_jl2jp")
+frame_0/duration = 0.16
+frame_1/texture = ExtResource("23_kqhfe")
+frame_1/duration = 0.16
+frame_2/texture = ExtResource("24_ar7xw")
+frame_2/duration = 0.16
+
+[node name="SplashTutorial" type="CanvasLayer" unique_id=1220072086]
+script = ExtResource("1_dy8hi")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1981590000]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nal8h")
+
+[node name="Controls" type="Control" parent="." unique_id=463766338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="TextureRect" parent="Controls" unique_id=1733857000]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pssjr")
+
+[node name="Next" parent="Controls" unique_id=733451007 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 0.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+flip_h = true
+
+[node name="Movement" type="Label" parent="Controls" unique_id=977778163]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.0
+offset_top = 87.0
+offset_right = -147.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 32
+text = "Movement"
+horizontal_alignment = 1
+
+[node name="Shoot" type="Label" parent="Controls" unique_id=1694063039]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 87.0
+offset_right = 163.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 32
+text = "Shoot"
+horizontal_alignment = 1
+
+[node name="Dash" type="Label" parent="Controls" unique_id=544797510]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = 87.0
+offset_right = 398.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 32
+text = "Dash"
+horizontal_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="Controls" unique_id=1743122556]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 100.0
+offset_bottom = 77.0
+scale = Vector2(1.5, 1.5)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_jl2jp")
+texture_hover = ExtResource("6_kqhfe")
+script = ExtResource("7_ar7xw")
+
+[node name="Title" type="Label" parent="Controls" unique_id=214616603]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 103.0
+offset_right = 162.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Controls"
+horizontal_alignment = 1
+script = ExtResource("4_cb368")
+
+[node name="Mechanism" type="Control" parent="." unique_id=505785036]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Prev" parent="Mechanism" unique_id=544296960 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="Next" parent="Mechanism" unique_id=1967147671 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 0.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+flip_h = true
+
+[node name="Shooting" type="TextureRect" parent="Mechanism" unique_id=1977819535]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Enabled Mechs" type="HBoxContainer" parent="Mechanism" unique_id=978653944]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 203.00002
+offset_right = 372.0
+offset_bottom = 243.00002
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 12
+
+[node name="Aim" type="TextureRect" parent="Mechanism/Enabled Mechs" unique_id=1950738470]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Enabled Mechs/Aim" unique_id=1174920683]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_f15ki")
+
+[node name="X" type="TextureRect" parent="Mechanism/Enabled Mechs/Aim" unique_id=585098339]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Dash" type="TextureRect" parent="Mechanism/Enabled Mechs" unique_id=1166221138]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Enabled Mechs/Dash" unique_id=70000803]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gnq66")
+
+[node name="X" type="TextureRect" parent="Mechanism/Enabled Mechs/Dash" unique_id=1424566547]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Shoot" type="TextureRect" parent="Mechanism/Enabled Mechs" unique_id=1274880171]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Enabled Mechs/Shoot" unique_id=1146013235]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_jbleb")
+
+[node name="X" type="TextureRect" parent="Mechanism/Enabled Mechs/Shoot" unique_id=674490592]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -24.5
+offset_right = 24.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Vision" type="TextureRect" parent="Mechanism/Enabled Mechs" unique_id=250924560]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Enabled Mechs/Vision" unique_id=1167900166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_oyihk")
+
+[node name="X" type="TextureRect" parent="Mechanism/Enabled Mechs/Vision" unique_id=1791932326]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Enabled" type="Label" parent="Mechanism" unique_id=791011891]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -56.0
+offset_right = -61.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 28
+text = "All System Functioning"
+horizontal_alignment = 1
+
+[node name="Disabled Mechs" type="HBoxContainer" parent="Mechanism" unique_id=202561602]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 358.0
+offset_right = 372.0
+offset_bottom = 398.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 12
+
+[node name="Aim" type="TextureRect" parent="Mechanism/Disabled Mechs" unique_id=1167040616]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Disabled Mechs/Aim" unique_id=1049724073]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_f15ki")
+
+[node name="X" type="TextureRect" parent="Mechanism/Disabled Mechs/Aim" unique_id=99762203]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Dash" type="TextureRect" parent="Mechanism/Disabled Mechs" unique_id=1394954002]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Disabled Mechs/Dash" unique_id=20601525]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gnq66")
+
+[node name="X" type="TextureRect" parent="Mechanism/Disabled Mechs/Dash" unique_id=1346445933]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Shoot" type="TextureRect" parent="Mechanism/Disabled Mechs" unique_id=245699834]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Disabled Mechs/Shoot" unique_id=1437380270]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -10.5
+offset_right = 9.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_jbleb")
+
+[node name="X" type="TextureRect" parent="Mechanism/Disabled Mechs/Shoot" unique_id=961367487]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -24.5
+offset_right = 24.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Vision" type="TextureRect" parent="Mechanism/Disabled Mechs" unique_id=910281142]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_dk0uc")
+
+[node name="Icon" type="TextureRect" parent="Mechanism/Disabled Mechs/Vision" unique_id=1772297875]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_oyihk")
+
+[node name="X" type="TextureRect" parent="Mechanism/Disabled Mechs/Vision" unique_id=674581188]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o0gwk")
+
+[node name="Disabled" type="Label" parent="Mechanism" unique_id=1919525745]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = 99.0
+offset_right = -61.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 28
+text = "All System Malfunctioned"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="Mechanism" unique_id=715898771]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -104.0
+offset_right = 640.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 28
+text = "After every wave beaten,
+System will update.
+
+But each update might
+break ProtoBot.
+
+And some features might 
+be unavailable"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Mechanism" unique_id=168973448]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 103.0
+offset_right = 162.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Mechanism"
+horizontal_alignment = 1
+script = ExtResource("4_cb368")
+
+[node name="Buddy" type="Control" parent="." unique_id=1930800922]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Prev" parent="Buddy" unique_id=228284540 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="Next" parent="Buddy" unique_id=691566663 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 0.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="Buddy" unique_id=635902803]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -93.0
+offset_right = 25.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("13_da3n8")
+
+[node name="Desc" type="Label" parent="Buddy" unique_id=276889521]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -399.0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 28
+text = "After every wave beaten, another NanoBot 
+called \"buddy\" will assist you.
+
+But be careful, his bullets are also lethal to you~"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Buddy" unique_id=1244993479]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 102.0
+offset_right = 106.0
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Buddy"
+horizontal_alignment = 1
+script = ExtResource("4_cb368")
+
+[node name="Health" type="Control" parent="." unique_id=1245830693]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Next" parent="Health" unique_id=101076943 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 0.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+flip_h = true
+
+[node name="Prev" parent="Health" unique_id=1029586744 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="Health" type="TextureProgressBar" parent="Health" unique_id=127072760]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -80.0
+offset_right = 164.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 67.0
+texture_under = ExtResource("15_lqq6n")
+texture_over = ExtResource("16_5frg4")
+texture_progress = ExtResource("17_nal8h")
+texture_progress_offset = Vector2(-0.56, 0)
+script = ExtResource("18_cb368")
+
+[node name="Desc" type="Label" parent="Health" unique_id=242129226]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.0
+offset_top = 93.0
+offset_right = 393.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 32
+text = "If you do not get damaged for 5 seconds,
+ProtoBot will heal..."
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Health" unique_id=2116310202]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_top = 100.0
+offset_right = 122.0
+offset_bottom = 164.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Health"
+horizontal_alignment = 1
+script = ExtResource("4_cb368")
+
+[node name="Difficulty" type="Control" parent="." unique_id=94104068]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Prev" parent="Difficulty" unique_id=247374468 instance=ExtResource("2_pssjr")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="Desc" type="Label" parent="Difficulty" unique_id=518087943]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.0
+offset_top = -144.0
+offset_right = 393.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 32
+text = "How brave are you?"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Difficulty" unique_id=865073919]
+modulate = Color(0.29000002, 0.9763334, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 103.0
+offset_right = 162.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Difficulty"
+horizontal_alignment = 1
+script = ExtResource("4_cb368")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Difficulty" unique_id=418393781]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -72.0
+offset_right = 261.0
+offset_bottom = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 60
+
+[node name="TopBox" type="HBoxContainer" parent="Difficulty/VBoxContainer" unique_id=1133339847]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="Easy" type="TextureButton" parent="Difficulty/VBoxContainer/TopBox" unique_id=419647153]
+modulate = Color(0.33996522, 1.8247963, 0, 1)
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_e7y26")
+texture_hover = SubResource("AnimatedTexture_kithf")
+
+[node name="Label" type="Label" parent="Difficulty/VBoxContainer/TopBox/Easy" unique_id=1917238330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.25001
+offset_top = -33.749985
+offset_right = 92.75
+offset_bottom = 54.250015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Ez"
+horizontal_alignment = 1
+
+[node name="Medium" type="TextureButton" parent="Difficulty/VBoxContainer/TopBox" unique_id=2145193950]
+modulate = Color(1.52783, 1.8247963, 0, 1)
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_e7y26")
+texture_hover = SubResource("AnimatedTexture_kithf")
+
+[node name="Label" type="Label" parent="Difficulty/VBoxContainer/TopBox/Medium" unique_id=1570925966]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.25001
+offset_top = -33.749985
+offset_right = 92.75
+offset_bottom = 54.250015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Mid fr"
+
+[node name="BottomBox" type="HBoxContainer" parent="Difficulty/VBoxContainer" unique_id=527010909]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="Hard" type="TextureButton" parent="Difficulty/VBoxContainer/BottomBox" unique_id=1487584271]
+modulate = Color(1.8247963, 1.1417739, 0, 1)
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_e7y26")
+texture_hover = SubResource("AnimatedTexture_kithf")
+
+[node name="Label" type="Label" parent="Difficulty/VBoxContainer/BottomBox/Hard" unique_id=2005721595]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.25001
+offset_top = -33.749985
+offset_right = 92.75
+offset_bottom = 54.250015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "Tuff"
+horizontal_alignment = 1
+
+[node name="Impossible" type="TextureButton" parent="Difficulty/VBoxContainer/BottomBox" unique_id=1606353192]
+modulate = Color(1.8247963, 0.3102684, 0.3102684, 1)
+texture_filter = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AnimatedTexture_e7y26")
+texture_hover = SubResource("AnimatedTexture_kithf")
+
+[node name="Label" type="Label" parent="Difficulty/VBoxContainer/BottomBox/Impossible" unique_id=1206462185]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.25001
+offset_top = -33.749985
+offset_right = 92.75
+offset_bottom = 54.250015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_nt5dx")
+theme_override_font_sizes/font_size = 64
+text = "CHAOS"
+
+[node name="ButtonSfx" parent="." unique_id=1495137726 instance=ExtResource("31_kqhfe")]
+
+[connection signal="button_down" from="Controls/Next" to="." method="_on_next_button_down"]
+[connection signal="button_down" from="Controls/BackButton" to="." method="_on_back_button_button_down"]
+[connection signal="mouse_entered" from="Controls/BackButton" to="Controls/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Controls/BackButton" to="Controls/BackButton" method="_on_mouse_exited"]
+[connection signal="button_down" from="Mechanism/Prev" to="." method="_on_prev_button_down"]
+[connection signal="button_down" from="Mechanism/Next" to="." method="_on_next_button_down"]
+[connection signal="button_down" from="Buddy/Prev" to="." method="_on_prev_button_down"]
+[connection signal="button_down" from="Buddy/Next" to="." method="_on_next_button_down"]
+[connection signal="button_down" from="Health/Next" to="." method="_on_next_button_down"]
+[connection signal="button_down" from="Health/Prev" to="." method="_on_prev_button_down"]
+[connection signal="button_down" from="Difficulty/Prev" to="." method="_on_prev_button_down"]
+[connection signal="button_down" from="Difficulty/VBoxContainer/TopBox/Easy" to="." method="_on_easy_button_down"]
+[connection signal="button_down" from="Difficulty/VBoxContainer/TopBox/Medium" to="." method="_on_medium_button_down"]
+[connection signal="button_down" from="Difficulty/VBoxContainer/BottomBox/Hard" to="." method="_on_hard_button_down"]
+[connection signal="button_down" from="Difficulty/VBoxContainer/BottomBox/Impossible" to="." method="_on_impossible_button_down"]
