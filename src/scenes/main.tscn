@@ -529,10 +529,11 @@ texture = ExtResource("17_qsm7c")
 
 [node name="AimingTip" type="Label" parent="CanvasLayer" unique_id=28197127]
 visible = false
-offset_left = 97.0
+offset_left = 18.0
 offset_top = 183.0
-offset_right = 392.0
+offset_right = 381.0
 offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_j04uq")
 text = "Aiming
 
 If disable, ProtoBot will aim randomly."
@@ -540,10 +541,11 @@ horizontal_alignment = 1
 
 [node name="DashTip" type="Label" parent="CanvasLayer" unique_id=604633696]
 visible = false
-offset_left = 97.0
+offset_left = 62.0
 offset_top = 183.0
-offset_right = 392.0
+offset_right = 437.0
 offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_j04uq")
 text = "Dashing
 
 If disable, ProtoBot will dash randomly."
@@ -551,21 +553,22 @@ horizontal_alignment = 1
 
 [node name="ShootingTip" type="Label" parent="CanvasLayer" unique_id=1284478879]
 visible = false
-offset_left = 97.0
+offset_left = 104.0
 offset_top = 183.0
-offset_right = 392.0
+offset_right = 489.0
 offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_j04uq")
 text = "Shooting
 
 If disable, ProtoBot will shoot randomly."
 horizontal_alignment = 1
 
 [node name="VisionTip" type="Label" parent="CanvasLayer" unique_id=1056209911]
-visible = false
-offset_left = 53.0
+offset_left = 85.0
 offset_top = 183.0
-offset_right = 450.0
+offset_right = 575.0
 offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_j04uq")
 text = "Vision
 
 If disable, ProtoBot's vision will fluctuate randomly."
