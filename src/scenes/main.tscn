@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cs7sfdx31skay" path="res://src/enemy/enemy_spawner/enemy_spawner.gd" id="3_2lg1k"]
 [ext_resource type="Script" uid="uid://dgf1y4mtvsmce" path="res://src/scenes/label.gd" id="4_5dlwx"]
 [ext_resource type="FontFile" uid="uid://7iba2x65hssf" path="res://assets/font/Pixelscapes.ttf" id="4_j04uq"]
+[ext_resource type="Script" uid="uid://ds32ytgg76dvb" path="res://src/scenes/diff_label.gd" id="5_h8ax2"]
 [ext_resource type="Texture2D" uid="uid://b7fwbipf16gl1" path="res://assets/ui/game/char_frame.png" id="5_kokaf"]
 [ext_resource type="Texture2D" uid="uid://cea6mdyedd3cy" path="res://assets/ui/game/health/health_background.png" id="6_lp058"]
 [ext_resource type="Texture2D" uid="uid://djvdicttabypj" path="res://assets/player/player_spritesheet.png" id="6_p1ia5"]
@@ -26,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://d3e4a0fpdvkjk" path="res://assets/ui/game/icons/icon_pew.png" id="18_j04uq"]
 [ext_resource type="Texture2D" uid="uid://kxfj50yj3cvc" path="res://assets/ui/game/icons/icon_vision.png" id="19_tyryd"]
 [ext_resource type="Script" uid="uid://dxokp8y1qnnna" path="res://src/ui/control_icons.gd" id="19_xxm0n"]
-[ext_resource type="Script" uid="uid://bcuo0d6xjvo4s" path="res://src/scenes/diff_text.gd" id="27_2sd1y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dlwx"]
 font = ExtResource("4_j04uq")
@@ -180,36 +180,56 @@ script = ExtResource("3_2lg1k")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1190144949]
 
 [node name="DiffLabel" type="Control" parent="CanvasLayer" unique_id=1341971131]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 903.0
-offset_top = 511.0
-offset_right = 943.0
-offset_bottom = 551.0
+offset_left = 900.0
+offset_top = 541.0
+offset_right = 940.0
+offset_bottom = 581.0
 scale = Vector2(0.4, 0.4)
+script = ExtResource("5_h8ax2")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DiffLabel" unique_id=1454864968]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/DiffLabel/TextureRect" unique_id=1601549367]
+[node name="Easy" type="Label" parent="CanvasLayer/DiffLabel" unique_id=1601549367]
+visible = false
+modulate = Color(0.16666675, 1, 0, 1)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.25001
-offset_top = -33.749985
-offset_right = 92.75
-offset_bottom = 54.250015
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 76.0
+offset_bottom = 64.0
 theme_override_fonts/font = ExtResource("4_j04uq")
 theme_override_font_sizes/font_size = 64
 text = "Ez"
+horizontal_alignment = 1
+
+[node name="Medium" type="Label" parent="CanvasLayer/DiffLabel" unique_id=870390916]
+visible = false
+modulate = Color(0.76666665, 1, 0, 1)
+layout_mode = 1
+offset_right = 224.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("4_j04uq")
+theme_override_font_sizes/font_size = 64
+text = "Mid Fr"
+horizontal_alignment = 1
+
+[node name="Hard" type="Label" parent="CanvasLayer/DiffLabel" unique_id=961122562]
+visible = false
+modulate = Color(1, 0.36666667, 0, 1)
+layout_mode = 1
+offset_right = 172.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("4_j04uq")
+theme_override_font_sizes/font_size = 64
+text = "Tuff"
+horizontal_alignment = 1
+
+[node name="Impossible" type="Label" parent="CanvasLayer/DiffLabel" unique_id=141653490]
+modulate = Color(0.6, 0.078, 0.078, 1)
+layout_mode = 1
+offset_right = 244.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("4_j04uq")
+theme_override_font_sizes/font_size = 64
+text = "CHAOS"
 horizontal_alignment = 1
 
 [node name="CountdownTimer" type="Label" parent="CanvasLayer" unique_id=849419331]
@@ -507,9 +527,55 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qsm7c")
 
-[node name="DiffText" type="Label" parent="CanvasLayer" unique_id=360949534]
-offset_left = 679.0
-offset_top = 165.0
-offset_right = 719.0
-offset_bottom = 188.0
-script = ExtResource("27_2sd1y")
+[node name="AimingTip" type="Label" parent="CanvasLayer" unique_id=28197127]
+visible = false
+offset_left = 97.0
+offset_top = 183.0
+offset_right = 392.0
+offset_bottom = 258.0
+text = "Aiming
+
+If disable, ProtoBot will aim randomly."
+horizontal_alignment = 1
+
+[node name="DashTip" type="Label" parent="CanvasLayer" unique_id=604633696]
+visible = false
+offset_left = 97.0
+offset_top = 183.0
+offset_right = 392.0
+offset_bottom = 258.0
+text = "Dashing
+
+If disable, ProtoBot will dash randomly."
+horizontal_alignment = 1
+
+[node name="ShootingTip" type="Label" parent="CanvasLayer" unique_id=1284478879]
+visible = false
+offset_left = 97.0
+offset_top = 183.0
+offset_right = 392.0
+offset_bottom = 258.0
+text = "Shooting
+
+If disable, ProtoBot will shoot randomly."
+horizontal_alignment = 1
+
+[node name="VisionTip" type="Label" parent="CanvasLayer" unique_id=1056209911]
+visible = false
+offset_left = 53.0
+offset_top = 183.0
+offset_right = 450.0
+offset_bottom = 258.0
+text = "Vision
+
+If disable, ProtoBot's vision will fluctuate randomly."
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="CanvasLayer/ControlIcons/Aim" to="." method="_on_aim_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ControlIcons/Aim" to="." method="_on_aim_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ControlIcons/Dash" to="." method="_on_dash_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ControlIcons/Dash" to="." method="_on_dash_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ControlIcons/Shoot" to="." method="_on_shoot_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ControlIcons/Shoot" to="." method="_on_shoot_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ControlIcons/Vision" to="." method="_on_vision_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ControlIcons/Vision" to="." method="_on_vision_mouse_exited"]
