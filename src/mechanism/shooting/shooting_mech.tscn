@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy64dygpjdpcw"]
+[gd_scene format=3 uid="uid://dy64dygpjdpcw"]
 
 [ext_resource type="Script" uid="uid://n6c8m0g74dt7" path="res://src/mechanism/shooting/shooting_mech.gd" id="1_7ob86"]
 [ext_resource type="Script" uid="uid://6epmaivqp1rb" path="res://src/mechanism/shooting/uncontrolled.gd" id="2_co5bm"]
 [ext_resource type="Script" uid="uid://conndbphlir1m" path="res://src/mechanism/shooting/controlled.gd" id="3_f0eqr"]
 
-[node name="ShootingMech" type="Node2D"]
+[node name="ShootingMech" type="Node2D" unique_id=111097088]
 script = ExtResource("1_7ob86")
 
-[node name="Controlled" type="Node2D" parent="."]
+[node name="Controlled" type="Node2D" parent="." unique_id=550297489]
 script = ExtResource("3_f0eqr")
 
-[node name="ShootingDelay" type="Timer" parent="Controlled"]
+[node name="ShootingDelay" type="Timer" parent="Controlled" unique_id=1754058212]
 wait_time = 0.4
 one_shot = true
 
-[node name="Uncontrolled" type="Node2D" parent="."]
+[node name="Uncontrolled" type="Node2D" parent="." unique_id=1229630580]
 script = ExtResource("2_co5bm")
 
-[node name="Timer" type="Timer" parent="Uncontrolled"]
+[node name="Timer" type="Timer" parent="Uncontrolled" unique_id=1524047680]
 autostart = true
 
 [connection signal="timeout" from="Controlled/ShootingDelay" to="Controlled" method="_on_shooting_delay_timeout"]
