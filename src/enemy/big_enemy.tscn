@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjxtk3i8yy03u"]
+[gd_scene format=3 uid="uid://cjxtk3i8yy03u"]
 
 [ext_resource type="Script" uid="uid://b5xb7qahgyst4" path="res://src/enemy/enemy.gd" id="1_8bncd"]
 [ext_resource type="Texture2D" uid="uid://ctrtmhqgmujr6" path="res://assets/enemy/fat_enemy_spritesheet.png" id="2_8bncd"]
@@ -38,7 +38,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4s3r"]
 radius = 69.029
 
-[node name="BigEnemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="BigEnemy" type="CharacterBody2D" unique_id=2129979082 groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_8bncd")
 _enemy_name = "Big Enemy"
@@ -46,7 +46,7 @@ _health = 60
 _damage = 30
 _speed = 40.0
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1911475488]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4opmr")
@@ -54,14 +54,14 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.63906
 
-[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+[node name="EnemyCollision" type="CollisionShape2D" parent="." unique_id=1043432617]
 shape = SubResource("CircleShape2D_m4s3r")
 
-[node name="MovementComponent" type="Node2D" parent="."]
+[node name="MovementComponent" type="Node2D" parent="." unique_id=2082833430]
 script = ExtResource("3_7u44w")
 
-[node name="DamageableComponent" type="Node2D" parent="."]
+[node name="DamageableComponent" type="Node2D" parent="." unique_id=266384207]
 script = ExtResource("4_7f7tr")
 
-[node name="AttackComponent" type="Node2D" parent="."]
+[node name="AttackComponent" type="Node2D" parent="." unique_id=1453431450]
 script = ExtResource("5_4opmr")
