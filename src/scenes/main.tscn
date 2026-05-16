@@ -564,6 +564,7 @@ If disable, ProtoBot will shoot randomly."
 horizontal_alignment = 1
 
 [node name="VisionTip" type="Label" parent="CanvasLayer" unique_id=1056209911]
+visible = false
 offset_left = 85.0
 offset_top = 183.0
 offset_right = 575.0
